@@ -33,3 +33,13 @@ footer {
   color: rgb(206, 84, 84);
   transform: scale(1.2);
 }
+
+/* modal */
+.modal-image {
+  content: "";
+  display: block;
+  height: 100%;
+  background-image: url(img/marc-olivier-paquin-2_RQhbu0ZDQ-unsplash.jpg);
+  background-size: cover;
+  background-position: center;
+}
