@@ -5,8 +5,6 @@ body {
 }
 
 body::after {
-  position: absolute;
-  bottom: 0;
   content: "";
   display: block;
   height: 180px;
