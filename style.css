@@ -2,6 +2,7 @@ body {
   position: relative;
   min-height: 100vh;
   margin: 0;
+  background-color: #f1eee5;
 }
 
 body::after {
@@ -10,13 +11,45 @@ body::after {
   height: 180px;
 }
 
+.sign-form,
+.card-tugas,
+.modal-content,
+.card-gallery {
+  background-color: #f399bf;
+}
+
+/* navbar */
+nav {
+  background-color: #f7c42a;
+}
+
+/* index */
+.about-us {
+  background-image: url(img/bg\ about\ us.svg);
+  background-size: cover;
+  background-position: center;
+  padding-top: 80px;
+}
+
+/* gallery */
+.card-1::before {
+  content: "";
+  display: block;
+  background-image: url(img/splash.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 50px;
+  margin-left: -35px;
+  margin-bottom: -20px;
+}
+
 /* footer */
 footer {
   height: 180px;
   width: 100%;
   position: absolute;
   bottom: 0;
-  background-color: lightgrey;
+  background-color: #395caa;
 }
 
 .icons {
