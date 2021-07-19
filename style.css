@@ -24,15 +24,14 @@ nav {
 }
 
 /* index */
-.about-us {
-  background-image: url(img/bg\ about\ us.svg);
+.index-container {
+  background-image: url(img/background\ yeay\ 1.svg);
   background-size: cover;
   background-position: center;
-  padding-top: 80px;
 }
 
 /* gallery */
-.card-1::before {
+/* .card-1::before {
   content: "";
   display: block;
   background-image: url(img/splash.svg);
@@ -41,6 +40,22 @@ nav {
   height: 50px;
   margin-left: -35px;
   margin-bottom: -20px;
+} */
+
+/* login signup*/
+.sign-container {
+  min-height: 100vh;
+  background-image: url(img/bg\ web\ -\ sign\ up\ log\ in\ 2\ 2.svg);
+  background-size: cover;
+  background-position: center;
+}
+
+/* penugasan */
+.tugas-container {
+  min-height: 100vh;
+  background-image: url(img/Web\ juga-01\ 2.svg);
+  background-size: cover;
+  background-position: center bottom;
 }
 
 /* footer */
