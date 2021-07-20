@@ -30,6 +30,20 @@ nav {
   background-position: center;
 }
 
+.poro {
+  position: absolute;
+  z-index: 2;
+  bottom: 0px;
+  left: 0px;
+  width: 280px;
+}
+
+@media screen and (max-width: 576px) {
+  .poro {
+    display: none;
+  }
+}
+
 /* gallery */
 /* .card-1::before {
   content: "";
@@ -43,11 +57,21 @@ nav {
 } */
 
 /* login signup*/
-.sign-container {
-  min-height: 100vh;
+.sign-bg {
+  min-height: calc(100vh - 180px);
   background-image: url(img/bg\ web\ -\ sign\ up\ log\ in\ 2\ 2.svg);
   background-size: cover;
   background-position: center;
+}
+
+.sign-bg .container {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.sign-form {
+  border-radius: 20px;
 }
 
 /* penugasan */
@@ -56,6 +80,24 @@ nav {
   background-image: url(img/Web\ juga-01\ 2.svg);
   background-size: cover;
   background-position: center bottom;
+}
+
+/* panitia */
+.panitia-bg {
+  height: 100%;
+  width: 100%;
+  background-image: url(img/orasiclass.svg);
+  background-size: cover;
+  background-position: center top;
+}
+
+.supervisor-bg {
+  height: 100%;
+  width: 100%;
+  background-image: url(img/ntmt.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 /* footer */
