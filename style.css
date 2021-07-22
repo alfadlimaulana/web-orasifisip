@@ -86,9 +86,13 @@ nav {
 .panitia-bg {
   height: 100%;
   width: 100%;
-  background-image: url(img/orasiclass.svg);
+  background-image: url(img/Panitia\ Inti.svg);
   background-size: cover;
   background-position: center top;
+}
+
+.panitia-bg p {
+  margin-top: 10px;
 }
 
 .supervisor-bg {
