@@ -26,7 +26,7 @@ if(isset($_SESSION["login_peserta"])){
 
 if(isset($_POST["login_peserta"])){
   
-  $username_peserta = $_POST["username_peserta"];
+  $GLOBALS['username_peserta'] = $_POST["username_peserta"];
   $password_peserta = $_POST["password_peserta"];
   
   $result = mysqli_query($conn, "SELECT * FROM peserta WHERE username_peserta = '$username_peserta'");
@@ -49,7 +49,7 @@ if(isset($_POST["login_peserta"])){
         setcookie('key', hash('sha256', $database['username_peserta']), time()+300);
       }
 
-      header("Location: absensi.php");
+      header("Location: penugasan.php");
       exit;
     //}
   }
