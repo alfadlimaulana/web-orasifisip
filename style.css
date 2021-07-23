@@ -5,6 +5,12 @@ body {
   background-color: #f1eee5;
 }
 
+body::before {
+  content: "";
+  display: block;
+  height: 67.6px;
+}
+
 body::after {
   content: "";
   display: block;
@@ -104,6 +110,18 @@ nav {
   background-position: center;
 }
 
+/* absensi */
+.absensi-bg {
+  min-height: calc(100vh - 180px);
+  background-image: url(img/Group\ 14.png);
+  background-size: cover;
+  background-position: center;
+}
+
+.absensi-bg .table {
+  background-color: #f399bf;
+}
+
 /* footer */
 footer {
   height: 180px;
@@ -111,6 +129,7 @@ footer {
   position: absolute;
   bottom: 0;
   background-color: #395caa;
+  color: white;
 }
 
 .icons {
