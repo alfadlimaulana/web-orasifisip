@@ -1,21 +1,25 @@
 <?php
- 
+
+session_start();
 require 'functions.php';
 
-$username_peserta = $_COOKIE["username"];
+
+$username_peserta =   $_SESSION["login_peserta"];
+
+//die;
 
 $database = query("SELECT * FROM peserta WHERE username_peserta = '$username_peserta'")[0];
 
-if(isset($_POST["submit"])){
+if(isset($_POST["submit1"])){
   //cek berhasil atau tidak
-  if(submit($_POST) > 0){
+  if(submit($_POST, "penugasan1") > 0){
     echo "<script>
-            alert('Tugas BERHASIL dikumpulkan!');
+            alert('Tugas 1 BERHASIL dikumpulkan!');
             document.location.href = '';
           </script>";
   }else{
     echo "<script>
-            alert('Tugas GAGAL dikumpulkan!');
+            alert('Tugas 1 GAGAL dikumpulkan!');
             document.location.href = '';
           </script>";
   }
@@ -124,7 +128,7 @@ if(isset($_POST["submit"])){
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quidem quo quam iusto cumque! Dolores impedit totam repellendus ratione odio unde. Ducimus provident veritatis odio minus quisquam sint similique, illum odit ut
                   inventore? Aut enim unde debitis dicta, est fugit recusandae consectetur nesciunt consequuntur eius!
                 </p>
-                <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
+                <input type="hidden" name="username_peserta" value="<?= $database['username_peserta'] ?>">
                   <div class="submit-form text-start mt-5">
                     <label for="file" class="form-label">Pengumpulan</label>
                     <input class="form-control" type="file" id="file" name="file" required/>
@@ -137,8 +141,7 @@ if(isset($_POST["submit"])){
           </div>
           <div class="modal-footer border-0">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-            <button type="submit" class="btn btn-primary" name="submit" ">Selesai</button>
-            <!-- onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan') -->
+            <button type="submit" class="btn btn-primary" name="submit1" onclick="return confirm('Kumpulkan Tugas 1?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan')">Selesai</button>
           </div>
         </div>
       </div>

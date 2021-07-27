@@ -20,13 +20,16 @@ if(isset($_COOKIE["username"]) && isset($_COOKIE["key"])){
 
 //cek session
 if(isset($_SESSION["login_peserta"])){
-  header("Location: absensi.php");
+    echo "<script>
+            alert('Anda telah login');
+            document.location.href = 'index.php';
+        </script>";
   exit;
 } 
 
 if(isset($_POST["login_peserta"])){
   
-  $GLOBALS['username_peserta'] = $_POST["username_peserta"];
+  $username_peserta = $_POST["username_peserta"];
   $password_peserta = $_POST["password_peserta"];
   
   $result = mysqli_query($conn, "SELECT * FROM peserta WHERE username_peserta = '$username_peserta'");
@@ -36,20 +39,19 @@ if(isset($_POST["login_peserta"])){
   if(mysqli_num_rows($result) === 1 && mysqli_num_rows($result2) === 1){
     //cek password
     $database = mysqli_fetch_assoc($result);
-    setcookie('username', $database['username_peserta'], time()+ (60 * 60 * 24 * 30));
+    //setcookie('username', $database['username_peserta'], time()+ (60 * 60 * 24 * 30));
     //if(password_verify($password_peserta, $database["password_peserta"])){
-      
       //set session
-      $_SESSION["login_peserta"] = true;
+      $_SESSION["login_peserta"] = $username_peserta;
 
       //cek tetap masuk
       if(isset($_POST["keep_login"])){
         //buat cookie
-        setcookie('username', $database['username_peserta'], time()+300);
-        setcookie('key', hash('sha256', $database['username_peserta']), time()+300);
+        setcookie('username', $database['username_peserta'], time()+(60 * 60 * 24 * 30));
+        setcookie('key', hash('sha256', $database['username_peserta']), time()+(60 * 60 * 24 * 30));
       }
 
-      header("Location: penugasan.php");
+      header("Location: index.php");
       exit;
     //}
   }
