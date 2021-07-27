@@ -24,12 +24,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
-            <a class="nav-link" href="#gallery">Gallery</a>
-            <a class="nav-link" href="#informasi">Informasi</a>
-            <a class="nav-link" href="panitia.html">Panitia Inti</a>
-            <a class="nav-link" href="livestream.html">Livestream</a>
-            <a class="nav-link" href="penugasan.html">Penugasan</a>
-            <a class="nav-link" href="absensi.html">Absensi</a>
+            <a class="nav-link" href="dashboard-penugasan.php">Penugasan</a>
+            <a class="nav-link" href="dashboard-absensi.php">Absensi</a>
             <a class="nav-link" href="login.html">Login</a>
           </div>
         </div>
@@ -37,29 +33,35 @@
     </nav>
     <!-- akhir navbar -->
 
-    <!-- login container -->
-    <div class="sign-bg">
-      <div class="container">
-        <div class="row d-flex align-items-center justify-content-center pt-5 mx-2 g-3">
-          <div class="sign-form align-self-center col-md-8 col-lg-6 mb-4 p-5">
-            <h2 class="text-center">LOG IN</h2>
-            <label for="usernameInput" class="form-label mt-3 mb-1">Email address</label>
-            <input type="text" class="form-control" id="usernameInput" placeholder="Masukkan Usename" />
-            <label for="passwordInput" class="form-label mt-2 mb-1">Password</label>
-            <input type="password" class="form-control" id="passwordInput" placeholder="Masukkan Password" />
-            <div class="form-check mt-1">
-              <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" />
-              <label class="form-check-label" for="defaultCheck1"> Ingat Saya </label>
-            </div>
-            <div class="sign-button text-center">
-              <a href="#" class="btn btn-primary mt-4" role="button" style="width: 50%">LOG IN</a>
-              <p class="mt-2 align-self-center">Belum terdaftar? <a href="daftar.html">Daftar Di sini</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="container-fluid absensi-bg d-flex align-items-center">
+      <table class="table align-middle mt-4 mx-5">
+        <thead>
+          <tr>
+            <th scope="col">Username</th>
+            <th scope="col">Kelompok</th>
+            <th scope="col">Nama File</th>
+            <th scope="col">Waktu Pengumpulan</th>
+            <th scope="col">Nilai</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">alfadli</th>
+            <td>1</td>
+            <td>alfadli_tugas1.docx</td>
+            <td>12:10:15</td>
+            <td>100</td>
+          </tr>
+          <tr>
+            <th scope="row">wafi</th>
+            <td>2</td>
+            <td>wafi_tugas1.docx</td>
+            <td>14:10:15</td>
+            <td>10</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <!-- akhir login container -->
 
     <!-- footer -->
     <footer class="text-center">
