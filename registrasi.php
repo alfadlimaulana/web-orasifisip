@@ -78,7 +78,7 @@ if(isset($_POST["regist_peserta"])){
               <div class="row mt-2">
                 <div class="col">
                   <label for="prodiInput" class="form-label">Kelompok</label>
-                  <input type="text" class="form-control" id="usernameInput" placeholder="Masukkan Username" name="kelompok" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['kelompok']; }?>" required/>
+                  <input type="text" class="form-control" id="usernameInput" placeholder="Masukkan Kelompok" name="kelompok" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['kelompok']; }?>" required/>
                 </div>
               </div>
               <div class="row mt-2">

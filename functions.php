@@ -92,7 +92,7 @@ function registrasi_peserta($data){
 
 	//insert petugas ke database
 	mysqli_query($conn, "INSERT INTO peserta VALUES
-						 ('$username_peserta', '$nama_peserta', '$program_studi', NULL, NULL, NULL, NULL,  NULL,  NULL, '$password_peserta', '$kelompok')");
+						 ('$username_peserta', '$nama_peserta', '$program_studi', '$kelompok', NULL,  NULL,  NULL, '$password_peserta')");
 
 	return mysqli_affected_rows($conn);
 }
@@ -144,21 +144,20 @@ function upload(){
 	return $nama_file;
 }
 
-function submit($data){
+function submit($data, $penugasan){
 	global $conn;
 	//ambil data dari tiap elemen dalam form
 	$username_peserta = htmlspecialchars($data["username_peserta"]);
-
 	//upload gambar
 	$file = upload();
 
+	$id_tugas = $username_peserta . '_' . $penugasan;
+
 	if(!$file){return false;}
 
-	//query insert data ke tabel buku
-	$query = "UPDATE peserta SET 
-	tugas1 = '$file'
-  WHERE username_peserta = '$username_peserta'
-  ";
+	//query insert data ke tabel penugasan
+	$query = "INSERT INTO $penugasan VALUES
+	('$id_tugas', '$file', NOW(),  NULL, '$username_peserta')";
 	mysqli_query($conn, $query);
 
 	return mysqli_affected_rows($conn);

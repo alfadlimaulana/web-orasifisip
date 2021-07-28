@@ -1,21 +1,25 @@
 <?php
- 
+
+session_start();
 require 'functions.php';
 
-$username_peserta = $_COOKIE["username"];
+
+$username_peserta =   $_SESSION["login_peserta"];
+
+//die;
 
 $database = query("SELECT * FROM peserta WHERE username_peserta = '$username_peserta'")[0];
 
-if(isset($_POST["submit"])){
+if(isset($_POST["submit1"])){
   //cek berhasil atau tidak
-  if(submit($_POST) > 0){
+  if(submit($_POST, "penugasan1") > 0){
     echo "<script>
-            alert('Tugas BERHASIL dikumpulkan!');
+            alert('Tugas 1 BERHASIL dikumpulkan!');
             document.location.href = '';
           </script>";
   }else{
     echo "<script>
-            alert('Tugas GAGAL dikumpulkan!');
+            alert('Tugas 1 GAGAL dikumpulkan!');
             document.location.href = '';
           </script>";
   }
@@ -118,14 +122,25 @@ if(isset($_POST["submit"])){
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <!-- body modal -->
-            <div class="rounded-bottom">
-              <div class="modal-body margin-left-20 margin-right-20 border-0">
-                <div class="row margin-bottom-30">
-                  <div class="col-md-5">
-                    <div class="border-grad">
-                      <img class="img" src="img/image-test.png" width="100%" />
-                    </div>
+          <!-- body modal -->
+          <div class="rounded-bottom">
+            <div class="modal-body margin-left-20 margin-right-20 border-0">
+              <div class="row margin-bottom-30">
+                <div class="col-md-5">
+                  <div class="border-grad">
+                    <img class="img" src="img/image-test.png" width="100%" />
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <div>
+                <p class="mt-3 px-4">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quidem quo quam iusto cumque! Dolores impedit totam repellendus ratione odio unde. Ducimus provident veritatis odio minus quisquam sint similique, illum odit ut
+                  inventore? Aut enim unde debitis dicta, est fugit recusandae consectetur nesciunt consequuntur eius!
+                </p>
+                <input type="hidden" name="username_peserta" value="<?= $database['username_peserta'] ?>">
+                  <div class="submit-form text-start mt-5">
+                    <label for="file" class="form-label">Pengumpulan</label>
+                    <input class="form-control" type="file" id="file" name="file" required/>
                   </div>
                   <div class="col-md-7">
                     <p class="mt-3 px-4">
@@ -141,13 +156,10 @@ if(isset($_POST["submit"])){
                 </div>
               </div>
             </div>
-
-            <!-- modal footer -->
-            <div class="modal-footer border-0">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-              <button type="submit" class="btn btn-primary" name="submit">Selesai</button>
-              <!-- onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan') -->
-            </div>
+          </div>
+          <div class="modal-footer border-0">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+            <button type="submit" class="btn btn-primary" name="submit1" onclick="return confirm('Kumpulkan Tugas 1?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan')">Selesai</button>
           </div>
         </div>
       </div>
