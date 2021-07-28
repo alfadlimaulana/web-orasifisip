@@ -48,7 +48,7 @@ if(!isset($_SESSION["login_peserta"])) {
             <a class="nav-link nav-hidden" href="penugasan.html">Penugasan</a>
             <a class="nav-link nav-hidden" href="absensi.html">Absensi</a>
             <a class="nav-link" href="login.html">Login</a>
-            <a class="nav-link" href="logout.php">Logout</a> 
+            <a class="nav-link nav-hidden" href="logout.php">Logout</a> 
             <!-- <button onclick="hideNav()">hide</button>          -->
           </div>
         </div>
