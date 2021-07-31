@@ -36,6 +36,7 @@ if(isset($_POST["login_peserta"])){
   $result2 = mysqli_query($conn, "SELECT * FROM peserta WHERE password_peserta = '$password_peserta'");
 
   //cek username
+  //wap gimana kalo ini jadi if(mysqli_num_rows === 1 && $result['password'] === $password_peserta)? jadi si result2nya bisa dihapus
   if(mysqli_num_rows($result) === 1 && mysqli_num_rows($result2) === 1){
     //cek password
     $database = mysqli_fetch_assoc($result);
@@ -81,7 +82,7 @@ if(isset($_POST["login_peserta"])){
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
-      <a class="navbar-brand" href="index.html"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
+        <a class="navbar-brand" href="index.html"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -89,11 +90,12 @@ if(isset($_POST["login_peserta"])){
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="#gallery">Gallery</a>
             <a class="nav-link" href="#informasi">Informasi</a>
-            <a class="nav-link" href="panitia.html">Panitia Inti</a>
-            <a class="nav-link" href="livestream.html">Livestream</a>
-            <a class="nav-link" href="penugasan.html">Penugasan</a>
-            <a class="nav-link" href="absensi.html">Absensi</a>
-            <a class="nav-link" href="login.html">Login</a>
+            <a class="nav-link" href="panitia.php">Panitia Inti</a>
+            <!-- <a class="nav-link" href="livestream.html">Livestream</a> -->
+            <a class="nav-link nav-hidden" href="penugasan.php">Penugasan</a>
+            <a class="nav-link nav-hidden" href="absensi.php">Absensi</a>
+            <a class="nav-link" href="login.php">Login</a>
+            <a class="nav-link nav-hidden" href="logout.php">Logout</a> 
           </div>
         </div>
       </div>

@@ -31,6 +31,7 @@ function btntoggle() {
   }
 
   absenbtn.addEventListener("click", function () {
-    absenbtn.parentElement.previousElementSibling.innerHTML = "hadir";
+    const keterangan = document.querySelector("table tbody tr td:nth-child(3)");
+    keterangan.innerHTML = "hadir";
   });
 }

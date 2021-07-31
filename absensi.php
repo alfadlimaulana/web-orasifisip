@@ -1,3 +1,17 @@
+<?php
+session_start();
+require 'functions.php';
+
+if(!isset($_SESSION["login_peserta"])){
+    echo "<script>
+            alert('Mohon Login terlebih dahulu.');
+            document.location.href = 'login.php';
+        </script>";
+  exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,11 +40,12 @@
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="#gallery">Gallery</a>
             <a class="nav-link" href="#informasi">Informasi</a>
-            <a class="nav-link" href="panitia.html">Panitia Inti</a>
-            <a class="nav-link" href="livestream.html">Livestream</a>
-            <a class="nav-link" href="penugasan.html">Penugasan</a>
-            <a class="nav-link" href="absensi.html">Absensi</a>
-            <a class="nav-link" href="login.html">Login</a>
+            <a class="nav-link" href="panitia.php">Panitia Inti</a>
+            <!-- <a class="nav-link" href="livestream.html">Livestream</a> -->
+            <a class="nav-link nav-hidden" href="penugasan.php">Penugasan</a>
+            <a class="nav-link nav-hidden" href="absensi.php">Absensi</a>
+            <a class="nav-link" href="login.php">Login</a>
+            <a class="nav-link nav-hidden" href="logout.php">Logout</a> 
           </div>
         </div>
       </div>
@@ -53,7 +68,7 @@
             <td>Senin, 12-07-2021</td>
             <td>Tidak Hadir</td>
             <td>
-              <button type="button" class="btn btn-primary">Absen</button>
+              <button type="button" class="btn btn-primary btn-1" disabled>Absen</button>
             </td>
           </tr>
           <tr>
@@ -61,7 +76,7 @@
             <td>Senin, 12-07-2021</td>
             <td>Tidak Hadir</td>
             <td>
-              <button type="button" class="btn" disabled>Absen</button>
+              <button type="button" class="btn btn-primary btn-2" disabled>Absen</button>
             </td>
           </tr>
           <tr>
@@ -69,7 +84,7 @@
             <td>Senin, 12-07-2021</td>
             <td>Tidak Hadir</td>
             <td>
-              <button type="button" class="btn" disabled>Absen</button>
+              <button type="button" class="btn btn-primary btn-3" disabled>Absen</button>
             </td>
           </tr>
         </tbody>
@@ -95,6 +110,10 @@
     </footer>
     <!-- akhir footer -->
 
+    <script src="js/script.js"></script>
+    <script>
+      btntoggle();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

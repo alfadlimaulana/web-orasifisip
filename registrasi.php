@@ -37,7 +37,7 @@ if(isset($_POST["regist_peserta"])){
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
-      <a class="navbar-brand" href="index.html"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
+        <a class="navbar-brand" href="index.html"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,11 +45,12 @@ if(isset($_POST["regist_peserta"])){
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="#gallery">Gallery</a>
             <a class="nav-link" href="#informasi">Informasi</a>
-            <a class="nav-link" href="panitia.html">Panitia Inti</a>
-            <a class="nav-link" href="livestream.html">Livestream</a>
-            <a class="nav-link" href="penugasan.html">Penugasan</a>
-            <a class="nav-link" href="absensi.html">Absensi</a>
-            <a class="nav-link" href="login.html">Login</a>
+            <a class="nav-link" href="panitia.php">Panitia Inti</a>
+            <!-- <a class="nav-link" href="livestream.html">Livestream</a> -->
+            <a class="nav-link nav-hidden" href="penugasan.php">Penugasan</a>
+            <a class="nav-link nav-hidden" href="absensi.php">Absensi</a>
+            <a class="nav-link" href="login.php">Login</a>
+            <a class="nav-link nav-hidden" href="logout.php">Logout</a> 
           </div>
         </div>
       </div>
@@ -70,31 +71,46 @@ if(isset($_POST["regist_peserta"])){
                 </div>
               </div>
               <div class="row mt-2">
+              <div class="col">
+                <label class="form-label" for="inputGroupSelect01">Program Studi</label>
+                <select class="form-select" name="program_studi" id="inputGroupSelect01">
+                  <option selected>Pilih Prodi</option>
+                  <option value="D4 Administrasi Keuangan Publik">D4 Administrasi Keuangan Publik</option>
+                  <option value="D4 Administrasi Pemerintahan">D4 Administrasi Pemerintahan</option>
+                  <option value="D4 Bisnis Logistik">D4 Bisnis Logistik</option>
+                  <option value="D4 Kearsipan Digital">D4 Kearsipan Digital</option>
+                  <option value="S1 Administrasi Publik">S1 Administrasi Publik</option>
+                  <option value="S1 Hubungan Internasional">S1 Hubungan Internasional</option>
+                  <option value="S1 Kesejahteraan Sosial">S1 Kesejahteraan Sosial</option>
+                  <option value="S1 Ilmu Pemerintahan">S1 Ilmu Pemerintahan</option>
+                  <option value="S1 Antropologi">S1 Antropologi</option>
+                  <option value="S1 Administrasi Bisnis">S1 Administrasi Bisnis</option>
+                  <option value="S1 Sosiologi">S1 Sosiologi</option>
+                  <option value="S1 Ilmu Politik">S1 Ilmu Politik</option>
+                  <option value="S1 Administrasi Bisnis PSDKU">S1 Administrasi Bisnis PSDKU</option>
+                </select>
+              </div>
+            </div>
+              <div class="row mt-2">
                 <div class="col">
-                  <label for="prodiInput" class="form-label">Program Studi</label>
-                  <input type="text" class="form-control" id="usernameInput" placeholder="Masukkan Program Studi" name="program_studi" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['program_studi']; }?>" required/>
+                  <label for="kelInput" class="form-label">Kelompok</label>
+                  <input type="text" class="form-control" id="kelInput" placeholder="Masukkan Kelompok" name="kelompok" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['kelompok']; }?>" required/>
                 </div>
               </div>
               <div class="row mt-2">
                 <div class="col">
-                  <label for="prodiInput" class="form-label">Kelompok</label>
-                  <input type="text" class="form-control" id="usernameInput" placeholder="Masukkan Kelompok" name="kelompok" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['kelompok']; }?>" required/>
-                </div>
-              </div>
-              <div class="row mt-2">
-                <div class="col">
-                  <label for="prodiInput" class="form-label">Username</label>
+                  <label for="usernameInput" class="form-label">Username</label>
                   <input type="text" class="form-control" id="usernameInput" placeholder="Masukkan Username" name="username_peserta" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['username_peserta']; }?>" required/>
                 </div>
               </div>
               <div class="row mt-2 g-2 mb-1">
                 <div class="col-xs-12 col-md-6">
-                  <label for="usernameInput" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="usernameInput" placeholder="Masukkan Password" name="password_peserta" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['password_peserta']; }?>" required/>
+                  <label for="passInput" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="passInput" placeholder="Masukkan Password" name="password_peserta" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['password_peserta']; }?>" required/>
                 </div>
                 <div class="col-xs-12 col-md-6">
-                  <label for="passwordInput" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="passwordInput" placeholder="Konfirmasi Password" name="password2_peserta" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['password2_peserta']; }?>" required />
+                  <label for="pass2Input" class="form-label">Konfirmasi Pasword</label>
+                  <input type="password" class="form-control" id="pass2Input" placeholder="Konfirmasi Password" name="password2_peserta" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['password2_peserta']; }?>" required />
                 </div>
               </div>
               <div class="sign-button text-center">

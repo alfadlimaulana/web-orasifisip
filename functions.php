@@ -79,7 +79,7 @@ function registrasi_peserta($data){
 	}
 
 	//validasi password
-	if($password_panitia !== $password2_panitia){
+	if($password_peserta !== $password2_peserta){
 		echo "<script>
             	alert('Konfirmasi password tidak sesuai!');
           	  </script>";
@@ -134,7 +134,7 @@ function upload(){
 		return false;
 	}
 
-	//lolos cek, gambar diumpload
+	//lolos cek, file diupload
 
 	
 	//upload ke directory
