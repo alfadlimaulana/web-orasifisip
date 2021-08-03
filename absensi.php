@@ -1,7 +1,9 @@
 <?php
+
 session_start();
 require 'functions.php';
 
+//aing nambahin ini bener kan wap??
 if(!isset($_SESSION["login_peserta"])){
     echo "<script>
             alert('Mohon Login terlebih dahulu.');
@@ -9,6 +11,28 @@ if(!isset($_SESSION["login_peserta"])){
         </script>";
   exit;
 }
+
+$username_peserta = $_SESSION["login_peserta"];
+
+//die;
+
+$database = query("SELECT * FROM peserta WHERE username_peserta = '$username_peserta'")[0];
+
+if(isset($_POST["absensi1"])){
+  //cek berhasil atau tidak
+  if(absensi($_POST, "absen1") > 0){
+    echo "<script>
+            alert('Absensi BERHASIL!');
+            document.location.href = '';
+          </script>";
+  }else{
+    echo "<script>
+            alert('Absensi GAGAL!');
+            
+          </script>";
+  }
+}
+
 ?>
 
 
@@ -68,7 +92,10 @@ if(!isset($_SESSION["login_peserta"])){
             <td>Senin, 12-07-2021</td>
             <td>Tidak Hadir</td>
             <td>
-              <button type="button" class="btn btn-primary btn-1" disabled>Absen</button>
+            <form action="" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
+              <button type="submit" class="btn btn-primary" name="absensi1">Absen</button>
+              </form>
             </td>
           </tr>
           <tr>
@@ -76,7 +103,9 @@ if(!isset($_SESSION["login_peserta"])){
             <td>Senin, 12-07-2021</td>
             <td>Tidak Hadir</td>
             <td>
+            <form action="" method="post" enctype="multipart/form-data">
               <button type="button" class="btn btn-primary btn-2" disabled>Absen</button>
+              </form>
             </td>
           </tr>
           <tr>
@@ -84,7 +113,9 @@ if(!isset($_SESSION["login_peserta"])){
             <td>Senin, 12-07-2021</td>
             <td>Tidak Hadir</td>
             <td>
+            <form action="" method="post" enctype="multipart/form-data">
               <button type="button" class="btn btn-primary btn-3" disabled>Absen</button>
+              </form>
             </td>
           </tr>
         </tbody>

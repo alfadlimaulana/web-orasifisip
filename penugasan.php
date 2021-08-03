@@ -83,7 +83,7 @@ if(isset($_POST["submit1"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 1</h5>
               <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary btn-1 mt-4" data-bs-toggle="modal" data-bs-target="#tugas1" disabled>Detail</button>
+              <button type="button" class="btn btn-primary btn-1 mt-4" data-bs-toggle="modal" data-bs-target="#tugas1" >Detail</button>
             </div>
           </div>
         </div>3
@@ -92,7 +92,7 @@ if(isset($_POST["submit1"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 2</h5>
               <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary btn-2 mt-4" data-bs-toggle="modal" data-bs-target="#tugas2" disabled>Detail</button>
+              <button type="button" class="btn btn-primary btn-2 mt-4" data-bs-toggle="modal" data-bs-target="#tugas2">Detail</button>
             </div>
           </div>
         </div>
@@ -120,8 +120,8 @@ if(isset($_POST["submit1"])){
     </div>
     <!-- akhir grid tugas -->
 
-    <!-- Modal 1-->
-    <form action="" method="post" enctype="multipart/form-data">
+       <!-- Modal 1-->
+       <form action="" method="post" enctype="multipart/form-data">
       <div class="modal fade" id="tugas1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
@@ -131,32 +131,21 @@ if(isset($_POST["submit1"])){
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-          <!-- body modal -->
-          <div class="rounded-bottom">
-            <div class="modal-body margin-left-20 margin-right-20 border-0">
-              <div class="row margin-bottom-30">
-                <div class="col-md-5">
-                  <div class="border-grad">
-                    <img class="img" src="img/image-test.png" width="100%" />
-                  </div>
-                </div>
-                <div class="col-md-7">
-                  <div>
-                <p class="mt-3 px-4">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quidem quo quam iusto cumque! Dolores impedit totam repellendus ratione odio unde. Ducimus provident veritatis odio minus quisquam sint similique, illum odit ut
-                  inventore? Aut enim unde debitis dicta, est fugit recusandae consectetur nesciunt consequuntur eius!
-                </p>
-                <input type="hidden" name="username_peserta" value="<?= $database['username_peserta'] ?>">
-                  <div class="submit-form text-start mt-5">
-                    <label for="file" class="form-label">Pengumpulan</label>
-                    <input class="form-control" type="file" id="file" name="file" required/>
+            <!-- body modal -->
+            <div class="rounded-bottom">
+              <div class="modal-body margin-left-20 margin-right-20 border-0">
+                <div class="row margin-bottom-30">
+                  <div class="col-md-5">
+                    <div class="border-grad">
+                      <img class="img" src="img/image-test.png" width="100%" />
+                    </div>
                   </div>
                   <div class="col-md-7">
                     <p class="mt-3 px-4">
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quidem quo quam iusto cumque! Dolores impedit totam repellendus ratione odio unde. Ducimus provident veritatis odio minus quisquam sint similique, illum odit
                       inventore? Aut enim unde debitis dicta, est fugit recusandae consectetur nesciunt consequuntur eius!
                     </p>
-                    <input type="hidden" name="username_peserta" value="<?= $database['username_peserta'] ?>" />
+                    <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
                     <div class="submit-form text-start mt-5">
                       <label for="file" class="form-label">Pengumpulan</label>
                       <input class="form-control" type="file" id="file" name="file" required />
@@ -165,10 +154,13 @@ if(isset($_POST["submit1"])){
                 </div>
               </div>
             </div>
-          </div>
-          <div class="modal-footer border-0">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-            <button type="submit" class="btn btn-primary" name="submit1" onclick="return confirm('Kumpulkan Tugas 1?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan')">Selesai</button>
+
+            <!-- modal footer -->
+            <div class="modal-footer border-0">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+              <button type="submit" class="btn btn-primary" name="submit1" onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan')">Selesai</button>
+              <!--  -->
+            </div>
           </div>
         </div>
       </div>
@@ -337,6 +329,6 @@ if(isset($_POST["submit1"])){
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    <script>togglebtn()</script>
+    <!-- <script>togglebtn()</script> -->
   </body>
 </html>

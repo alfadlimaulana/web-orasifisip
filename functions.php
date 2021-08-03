@@ -162,3 +162,15 @@ function submit($data, $penugasan){
 
 	return mysqli_affected_rows($conn);
 }
+
+function absensi($data, $absen){
+	global $conn;
+	//ambil data dari tiap elemen dalam form
+	$username_peserta = htmlspecialchars($data["username_peserta"]);
+
+	//query insert data ke tabel penugasan
+	$query = "UPDATE peserta SET $absen = NOW() WHERE username_peserta = '$username_peserta'";
+	mysqli_query($conn, $query);
+
+	return mysqli_affected_rows($conn);
+}
