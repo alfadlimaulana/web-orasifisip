@@ -76,23 +76,24 @@ if(isset($_POST["submit1"])){
     <!-- akhir navbar -->
 
     <!-- Grid Tugas -->
-    <div class="container-fluid tugas-container py-5 px-5 d-flex align-items-center">
+    <div class="container-fluid tugas-container py-5 px-5 d-flex flex-column align-items-center justify-content-center">
       <div class="row g-3">
         <div class="col-ms-12 col-md-6 col-lg-3">
           <div class="card card-tugas">
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 1</h5>
               <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary btn-1 mt-4" data-bs-toggle="modal" data-bs-target="#tugas1" disabled>Detail</button>
+              <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#tugas1">Detail</button>
             </div>
           </div>
-        </div>3
+        </div>
+
         <div class="col-ms-12 col-md-6 col-lg-3">
           <div class="card card-tugas">
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 2</h5>
               <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary btn-2 mt-4" data-bs-toggle="modal" data-bs-target="#tugas2" disabled>Detail</button>
+              <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#tugas2">Detail</button>
             </div>
           </div>
         </div>
@@ -102,7 +103,7 @@ if(isset($_POST["submit1"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 3</h5>
               <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary btn-3 mt-4" data-bs-toggle="modal" data-bs-target="#tugas3" disabled>Detail</button>
+              <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#tugas3">Detail</button>
             </div>
           </div>
         </div>
@@ -112,10 +113,14 @@ if(isset($_POST["submit1"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 4</h5>
               <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary btn-4 mt-4" data-bs-toggle="modal" data-bs-target="#tugas4" disabled>Detail</button>
+              <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#tugas4">Detail</button>
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="row">
+        <a href="nilai.html" role="button" class="btn btn-primary mt-5">Lihat Nilai</a>
       </div>
     </div>
     <!-- akhir grid tugas -->
