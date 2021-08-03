@@ -33,7 +33,14 @@ if(isset($_POST["absensi1"])){
   }
 }
 
+$students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_peserta = '$username_peserta'")[0];
 ?>
+
+<?php if($students['absen1'] != NULL) : ?>
+  <script>
+    absenbtn.parentElement.previousElementSibling.innerHTML = "hadir";
+  </script>
+<?php endif; ?>  
 
 
 <!DOCTYPE html>
@@ -93,9 +100,9 @@ if(isset($_POST["absensi1"])){
             <td>Tidak Hadir</td>
             <td>
             <form action="" method="post" enctype="multipart/form-data">
-            <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
+              <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
               <button type="submit" class="btn btn-primary" name="absensi1">Absen</button>
-              </form>
+            </form>
             </td>
           </tr>
           <tr>
@@ -104,8 +111,9 @@ if(isset($_POST["absensi1"])){
             <td>Tidak Hadir</td>
             <td>
             <form action="" method="post" enctype="multipart/form-data">
-              <button type="button" class="btn btn-primary btn-2" disabled>Absen</button>
-              </form>
+              <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
+              <button type="submit" class="btn btn-primary" name="absensi2">Absen</button>
+            </form>
             </td>
           </tr>
           <tr>
@@ -114,8 +122,9 @@ if(isset($_POST["absensi1"])){
             <td>Tidak Hadir</td>
             <td>
             <form action="" method="post" enctype="multipart/form-data">
-              <button type="button" class="btn btn-primary btn-3" disabled>Absen</button>
-              </form>
+              <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
+              <button type="submit" class="btn btn-primary" name="absensi3">Absen</button>
+            </form>
             </td>
           </tr>
         </tbody>
@@ -141,10 +150,10 @@ if(isset($_POST["absensi1"])){
     </footer>
     <!-- akhir footer -->
 
-    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/script.js"></script>
     <script>
       btntoggle();
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
