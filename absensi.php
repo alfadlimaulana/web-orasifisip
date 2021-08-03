@@ -9,7 +9,16 @@ if(!isset($_SESSION["login_peserta"])){
         </script>";
   exit;
 }
+
+$username_peserta = $_SESSION["login_peserta"];
+$students = query("SELECT absensi1, absensi2, absensi3 FROM peserta WHERE username_peserta = '$username_peserta'");
 ?>
+
+<?php if($students[0]['absensi1'] != NULL) : ?>
+  <script>
+    absenbtn.parentElement.previousElementSibling.innerHTML = "hadir";
+  </script>
+<?php endif; ?>  
 
 
 <!DOCTYPE html>
@@ -62,32 +71,35 @@ if(!isset($_SESSION["login_peserta"])){
             <th scope="col">Absen</th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Senin, 12-07-2021</td>
-            <td>Tidak Hadir</td>
-            <td>
-              <button type="button" class="btn btn-primary btn-1" disabled>Absen</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Senin, 12-07-2021</td>
-            <td>Tidak Hadir</td>
-            <td>
-              <button type="button" class="btn btn-primary btn-2" disabled>Absen</button>
-            </td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Senin, 12-07-2021</td>
-            <td>Tidak Hadir</td>
-            <td>
-              <button type="button" class="btn btn-primary btn-3" disabled>Absen</button>
-            </td>
-          </tr>
-        </tbody>
+
+        <form action="" method="POST">
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Senin, 12-07-2021</td>
+              <td>Tidak Hadir</td>
+              <td>
+                <button type="button" class="btn btn-primary btn-1" name="absen1" disabled>Absen</button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Senin, 12-07-2021</td>
+              <td>Tidak Hadir</td>
+              <td>
+                <button type="button" class="btn btn-primary btn-2" name="absen2" disabled>Absen</button>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Senin, 12-07-2021</td>
+              <td>Tidak Hadir</td>
+              <td>
+                <button type="button" class="btn btn-primary btn-3" name="absen3" disabled>Absen</button>
+              </td>
+            </tr>
+          </tbody>
+        </form>
       </table>
 </div>
 
@@ -110,10 +122,10 @@ if(!isset($_SESSION["login_peserta"])){
     </footer>
     <!-- akhir footer -->
 
-    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/script.js"></script>
     <script>
       btntoggle();
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
