@@ -20,7 +20,7 @@ if(isset($_COOKIE["username"]) && isset($_COOKIE["key"])){
 
 //cek session
 if(isset($_SESSION["login_panitia"])){
-  header("Location: dashboard.php");
+  header("Location: dashboard-nilai1.php");
   exit;
 } 
 
