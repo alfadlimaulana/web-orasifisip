@@ -31,6 +31,36 @@ if(isset($_POST["absensi1"])){
   }
 }
 
+if(isset($_POST["absensi2"])){
+  //cek berhasil atau tidak
+  if(absensi($_POST, "absen2") > 0){
+    echo "<script>
+            alert('Absensi BERHASIL!');
+            document.location.href = '';
+
+          </script>";
+  }else{
+    echo "<script>
+            alert('Absensi GAGAL!');
+          </script>";
+  }
+}
+
+if(isset($_POST["absensi3"])){
+  //cek berhasil atau tidak
+  if(absensi($_POST, "absen3") > 0){
+    echo "<script>
+            alert('Absensi BERHASIL!');
+            document.location.href = '';
+
+          </script>";
+  }else{
+    echo "<script>
+            alert('Absensi GAGAL!');
+          </script>";
+  }
+}
+
 $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_peserta = '$username_peserta'")[0];
 ?>
 
