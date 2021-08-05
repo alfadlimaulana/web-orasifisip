@@ -3,7 +3,6 @@
 session_start();
 require 'functions.php';
 
-//aing nambahin ini bener kan wap??
 if(!isset($_SESSION["login_peserta"])){
     echo "<script>
             alert('Mohon Login terlebih dahulu.');
@@ -24,11 +23,11 @@ if(isset($_POST["absensi1"])){
     echo "<script>
             alert('Absensi BERHASIL!');
             document.location.href = '';
+
           </script>";
   }else{
     echo "<script>
             alert('Absensi GAGAL!');
-            
           </script>";
   }
 }
@@ -36,12 +35,12 @@ if(isset($_POST["absensi1"])){
 $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_peserta = '$username_peserta'")[0];
 ?>
 
-<?php if($students['absen1'] != NULL) : ?>
-  <script>
-    absenbtn.parentElement.previousElementSibling.innerHTML = "hadir";
-  </script>
-<?php endif; ?>  
 
+<?php 
+if($students['absen1'] != NULL) {
+  
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -99,10 +98,10 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
             <td>Senin, 12-07-2021</td>
             <td>Tidak Hadir</td>
             <td>
-            <form action="" method="post" enctype="multipart/form-data">
-              <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-              <button type="submit" class="btn btn-primary" name="absensi1">Absen</button>
-            </form>
+              <form action="" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
+                <button type="submit" class="btn btn-primary btn-1" name="absensi1" disabled>Absen</button>
+              </form>
             </td>
           </tr>
           <tr>
@@ -112,7 +111,7 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
             <td>
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-              <button type="submit" class="btn btn-primary" name="absensi2">Absen</button>
+              <button type="submit" class="btn btn-primary btn-2" name="absensi2" disabled>Absen</button>
             </form>
             </td>
           </tr>
@@ -123,7 +122,7 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
             <td>
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-              <button type="submit" class="btn btn-primary" name="absensi3">Absen</button>
+              <button type="submit" class="btn btn-primary btn-3" name="absensi3" disabled>Absen</button>
             </form>
             </td>
           </tr>
@@ -151,7 +150,7 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
     <!-- akhir footer -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script src="js/script.js"></script>
     <script>
       btntoggle();
     </script>

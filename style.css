@@ -114,6 +114,9 @@ nav {
   background-position: center;
 }
 
+.container-kadiv img {
+  object-fit: cover;
+}
 /* absensi */
 .absensi-bg {
   min-height: calc(100vh - 180px);
