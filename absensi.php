@@ -31,16 +31,37 @@ if(isset($_POST["absensi1"])){
             
           </script>";
   }
+
+  echo "<script>
+  window.onload = function(){
+    hideNav()};
+</script>";
+
+  $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_peserta = '$username_peserta'")[0];
+
+  if($students['absen1'] != NULL){
+    echo "<script>
+            window.onload = function(){
+              hideNav()};
+        </script>";
+  }else{
+    echo "<script>
+            window.onload = function(){
+              showNav()};
+        </script>";
+  }
+
+  <?php if() : ?>
+    <script>
+      absenbtn.parentElement.previousElementSibling.innerHTML = "hadir";
+    </script>
+  <?php endif; ?> 
 }
 
-$students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_peserta = '$username_peserta'")[0];
+
 ?>
 
-<?php if($students['absen1'] != NULL) : ?>
-  <script>
-    absenbtn.parentElement.previousElementSibling.innerHTML = "hadir";
-  </script>
-<?php endif; ?>  
+ 
 
 
 <!DOCTYPE html>
@@ -101,7 +122,7 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
             <td>
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-              <button type="submit" class="btn btn-primary" name="absensi1">Absen</button>
+              <button type="submit" class="btn btn-primary" name="absensi1" disabled>Absen</button>
             </form>
             </td>
           </tr>
@@ -112,7 +133,7 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
             <td>
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-              <button type="submit" class="btn btn-primary" name="absensi2">Absen</button>
+              <button type="submit" class="btn btn-primary" name="absensi2" disabled>Absen</button>
             </form>
             </td>
           </tr>
@@ -123,7 +144,7 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
             <td>
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-              <button type="submit" class="btn btn-primary" name="absensi3">Absen</button>
+              <button type="submit" class="btn btn-primary" name="absensi3" disabled>Absen</button>
             </form>
             </td>
           </tr>
@@ -150,10 +171,12 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
     </footer>
     <!-- akhir footer -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/script.js"></script>
+    <script src="js/script.js"></script>
     <script>
-      btntoggle();
+
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
   </body>
 </html>
