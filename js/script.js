@@ -30,12 +30,19 @@ function btntoggle() {
     absenbtn.removeAttribute("disabled");
   }
 
-  // absenbtn.addEventListener("click", function () {
-  //   absenbtn.parentElement.parentElement.previousElementSibling.innerHTML = "hadir";
-  // });
+  absenbtn.addEventListener("click", function () {
+    absenbtn.parentElement.parentElement.previousElementSibling.innerHTML = "hadir";
+  });
+
+  return absenbtn;
 }
 
 function ketHadir() {
-  var container = document.querySelector("table");
-  container.addEventListener("click", function (e) {});
+  var absenbtn = container.querySelectorAll(".btn");
+  absenbtn.forEach(function (el) {
+    el.addEventListener("click", function (e) {
+      e.target.parentElement.parentElement.previousElementSibling.innerHTML = "hadir";
+      e.preventDefault();
+    });
+  });
 }
