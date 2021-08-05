@@ -14,10 +14,10 @@ function showNav() {
 
 function btntoggle() {
   const now = new Date();
-  const day1 = new Date("2021-08-05T16:21:00");
-  const day2 = new Date("2021-08-06T16:28:00");
-  const day3 = new Date("2021-08-07T17:40:00");
-  const end = new Date("2021-08-08T17:40:00");
+  const day1 = new Date("2021-08-04T16:21:00");
+  const day2 = new Date("2021-08-05T16:28:00");
+  const day3 = new Date("2021-08-06T17:40:00");
+  const end = new Date("2021-08-07T17:40:00");
 
   if (now.getTime() >= day1.getTime() && now.getTime() <= day2.getTime()) {
     var absenbtn = document.querySelector(".btn-1");
@@ -37,5 +37,5 @@ function btntoggle() {
 
 function ketHadir() {
   var container = document.querySelector("table");
-  console.log(container);
+  container.addEventListener("click", function (e) {});
 }
