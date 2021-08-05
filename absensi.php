@@ -32,6 +32,36 @@ if(isset($_POST["absensi1"])){
   }
 }
 
+if(isset($_POST["absensi2"])){
+  //cek berhasil atau tidak
+  if(absensi($_POST, "absen2") > 0){
+    echo "<script>
+            alert('Absensi BERHASIL!');
+            document.location.href = '';
+
+          </script>";
+  }else{
+    echo "<script>
+            alert('Absensi GAGAL!');
+          </script>";
+  }
+}
+
+if(isset($_POST["absensi3"])){
+  //cek berhasil atau tidak
+  if(absensi($_POST, "absen3") > 0){
+    echo "<script>
+            alert('Absensi BERHASIL!');
+            document.location.href = '';
+
+          </script>";
+  }else{
+    echo "<script>
+            alert('Absensi GAGAL!');
+          </script>";
+  }
+}
+
 $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_peserta = '$username_peserta'")[0];
 if($students['absen1'] != NULL) : ?>
   <script>
@@ -106,7 +136,7 @@ if($students['absen1'] != NULL) {
             <td>
               <form action="" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-                <button type="submit" class="btn btn-primary btn-1" name="absensi1" disabled>Absen</button>
+                <button type="submit" class="btn btn-primary btn-1" name="absensi1">Absen</button>
               </form>
             </td>
           </tr>
@@ -128,7 +158,7 @@ if($students['absen1'] != NULL) {
             <td>
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-              <button type="submit" class="btn btn-primary btn-3" name="absensi3" disabled>Absen</button>
+              <button type="submit" class="btn btn-primary btn-3" name="absensi3">Absen</button>
             </form>
             </td>
           </tr>
