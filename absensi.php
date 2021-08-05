@@ -23,7 +23,6 @@ if(isset($_POST["absensi1"])){
     echo "<script>
             alert('Absensi BERHASIL!');
             document.location.href = '';
-
           </script>";
   }else{
     echo "<script>
@@ -33,21 +32,8 @@ if(isset($_POST["absensi1"])){
 }
 
 $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_peserta = '$username_peserta'")[0];
-if($students['absen1'] != NULL) : ?>
-  <script>
-    absenbtn.parentElement.previousElementSibling.innerHTML = "hadir";
-  </script>
-<?php endif; ?> 
-
-<?php 
-if($students['absen1'] != NULL) {
-  echo "<script> 
-          var absenbtn = document.querySelector('.btn-1');
-          console.log(absenbtn);
-          absenbtn.parentElement.parentElement.previousElementSibling.innerHTML = 'hadir';
-        </script>";
-};
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -107,6 +93,14 @@ if($students['absen1'] != NULL) {
               <form action="" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
                 <button type="submit" class="btn btn-primary btn-1" name="absensi1" disabled>Absen</button>
+                <?php 
+                if($students['absen1'] != NULL) :
+                  echo "<script>
+                          window.onload = function(){
+                            ketHadir('.btn-1');
+                          };
+                        </script>";
+                endif; ?> 
               </form>
             </td>
           </tr>
@@ -118,6 +112,15 @@ if($students['absen1'] != NULL) {
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
               <button type="submit" class="btn btn-primary btn-2" name="absensi2" disabled>Absen</button>
+              <?php 
+                if($students['absen2'] != NULL) :
+                  echo "<script>
+                          window.onload = function(){
+                            ketHadir('.btn-2');
+                          };
+                        </script>";
+                endif; 
+              ?> 
             </form>
             </td>
           </tr>
@@ -129,6 +132,14 @@ if($students['absen1'] != NULL) {
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
               <button type="submit" class="btn btn-primary btn-3" name="absensi3" disabled>Absen</button>
+              <?php 
+                if($students['absen3'] != NULL) :
+                  echo "<script>
+                          window.onload = function(){
+                            ketHadir('.btn-1');
+                          };
+                        </script>";
+                endif; ?> 
             </form>
             </td>
           </tr>

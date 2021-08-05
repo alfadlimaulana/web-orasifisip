@@ -37,12 +37,7 @@ function btntoggle() {
   return absenbtn;
 }
 
-function ketHadir() {
-  var absenbtn = container.querySelectorAll(".btn");
-  absenbtn.forEach(function (el) {
-    el.addEventListener("click", function (e) {
-      e.target.parentElement.parentElement.previousElementSibling.innerHTML = "hadir";
-      e.preventDefault();
-    });
-  });
+function ketHadir(absenbtn) {
+  var btn = document.querySelector(absenbtn);
+  btn.parentElement.parentElement.previousElementSibling.innerHTML = "hadir";
 }
