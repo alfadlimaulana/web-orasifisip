@@ -26,6 +26,7 @@ if(!isset($_SESSION["login_peserta"])){
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- font -->
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
@@ -43,11 +44,10 @@ if(!isset($_SESSION["login_peserta"])){
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="#gallery">Gallery</a>
-            <!-- <a class="nav-link" href="#informasi">Informasi</a> -->
             <a class="nav-link" href="panitia.php">Panitia Inti</a>
-            <!-- <a class="nav-link" href="livestream.php">Livestream</a> -->
             <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
             <a class="nav-link hide-link" href="absensi.php">Absensi</a>
+            <a class="nav-link hide-link" href="kelompok.html">Kelompok</a>
             <a class="nav-link" href="login.php">Login</a>
             <a class="nav-link hide-link" href="logout.php">Logout</a>
           </div>
@@ -86,7 +86,7 @@ if(!isset($_SESSION["login_peserta"])){
       <img class="img-fluid my-2" src="img/Logo.svg" alt="logo" />
       <div class="row mx-2">
         <div class="col">
-          <h2>ORASI 2021</h2>
+          <h2 class="animate__animated animate__bounce">ORASI 2021</h2>
         </div>
       </div>
       <div class="row mx-2">
@@ -104,7 +104,7 @@ if(!isset($_SESSION["login_peserta"])){
       <!-- Gallery -->
       <section id="gallery" class="container-fluid text-center bg-transparent p-5" style="background-color: lightgrey">
         <h2>CHECK THIS OUT</h2>
-        <div class="row justify-content-center pt-3 g-4">
+        <div class="row justify-content-center pt-3 g-4 animate__animated animate__slideInUp">
           <div class="col-sm-6 col col-md-4 card-1">
             <div class="card card-gallery">
               <img src="img/YoutubeThumbnailSize-1-1280x720.jpg" class="card-img-top" alt="..." />

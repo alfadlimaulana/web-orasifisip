@@ -45,6 +45,7 @@ if(isset($_POST["submit1"])){
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- font -->
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
@@ -55,20 +56,19 @@ if(isset($_POST["submit1"])){
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
+        <a class="navbar-brand d-flex align-items-center" href="index.php" style="font-weight: 490;"> <img src="img/Logo.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" />ORASI FISIP UNPAD</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="#gallery">Gallery</a>
-            <a class="nav-link" href="#informasi">Informasi</a>
             <a class="nav-link" href="panitia.php">Panitia Inti</a>
-            <!-- <a class="nav-link" href="livestream.html">Livestream</a> -->
-            <a class="nav-link nav-hidden" href="penugasan.php">Penugasan</a>
-            <a class="nav-link nav-hidden" href="absensi.php">Absensi</a>
+            <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
+            <a class="nav-link hide-link" href="absensi.php">Absensi</a>
+            <a class="nav-link hide-link" href="kelompok.html">Kelompok</a>
             <a class="nav-link" href="login.php">Login</a>
-            <a class="nav-link nav-hidden" href="logout.php">Logout</a> 
+            <a class="nav-link hide-link" href="logout.php">Logout</a>
           </div>
         </div>
       </div>
@@ -77,13 +77,13 @@ if(isset($_POST["submit1"])){
 
     <!-- Grid Tugas -->
     <div class="container-fluid tugas-container py-5 px-5 d-flex flex-column align-items-center justify-content-center">
-      <div class="row g-3">
+      <div class="row g-3 animate__animated animate__fadeIn">
         <div class="col-ms-12 col-md-6 col-lg-3">
           <div class="card card-tugas">
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 1</h5>
               <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#tugas1">Detail</button>
+              <button type="button" class="btn btn-primary btn-1 mt-4" data-bs-toggle="modal" data-bs-target="#tugas1" disabled>Detail</button>
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@ if(isset($_POST["submit1"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 2</h5>
               <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#tugas2">Detail</button>
+              <button type="button" class="btn btn-primary btn-2 mt-4" data-bs-toggle="modal" data-bs-target="#tugas2" disabled>Detail</button>
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@ if(isset($_POST["submit1"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 3</h5>
               <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#tugas3">Detail</button>
+              <button type="button" class="btn btn-primary btn-3 mt-4" data-bs-toggle="modal" data-bs-target="#tugas3" disabled>Detail</button>
             </div>
           </div>
         </div>
@@ -113,13 +113,13 @@ if(isset($_POST["submit1"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 4</h5>
               <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary mt-4" data-bs-toggle="modal" data-bs-target="#tugas4">Detail</button>
+              <button type="button" class="btn btn-primary btn-4 mt-4" data-bs-toggle="modal" data-bs-target="#tugas4" disabled>Detail</button>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="row">
+      <div class="row animate__animated animate__fadeInUp">
         <a href="nilai.html" role="button" class="btn btn-primary mt-5">Lihat Nilai</a>
       </div>
     </div>
@@ -197,8 +197,7 @@ if(isset($_POST["submit1"])){
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quidem quo quam iusto cumque! Dolores impedit totam repellendus ratione odio unde. Ducimus provident veritatis odio minus quisquam sint similique, illum odit
                       inventore? Aut enim unde debitis dicta, est fugit recusandae consectetur nesciunt consequuntur eius!
                     </p>
-                    <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-                    <div class="submit-form text-start mt-5">
+                    <div class=" text-center m-3">
                       <a href="">Link Form</a>
                     </div>
                   </div>
@@ -290,10 +289,8 @@ if(isset($_POST["submit1"])){
                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quidem quo quam iusto cumque! Dolores impedit totam repellendus ratione odio unde. Ducimus provident veritatis odio minus quisquam sint similique, illum odit
                       inventore? Aut enim unde debitis dicta, est fugit recusandae consectetur nesciunt consequuntur eius!
                     </p>
-                    <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-                    <div class="submit-form text-start mt-5">
-                      <label for="file" class="form-label">Pengumpulan</label>
-                      <input class="form-control" type="file" id="file" name="file" required />
+                    <div class=" text-center m-3">
+                      <a href="youtube.com">Go To Youtube</a>
                     </div>
                   </div>
                 </div>
@@ -332,7 +329,9 @@ if(isset($_POST["submit1"])){
     <!-- akhir footer -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-    <!-- <script>togglebtn()</script> -->
+    <script src="js/script.js"></script>
+    <script>
+      btntoggle();
+    </script>
   </body>
 </html>
