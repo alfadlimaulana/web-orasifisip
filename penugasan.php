@@ -126,7 +126,7 @@ if(isset($_POST["submit1"])){
     <!-- akhir grid tugas -->
 
        <!-- Modal 1-->
-       <form action="" method="post" enctype="multipart/form-data">
+    <form action="" method="post" enctype="multipart/form-data">
       <div class="modal fade" id="tugas1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
@@ -199,8 +199,7 @@ if(isset($_POST["submit1"])){
                     </p>
                     <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
                     <div class="submit-form text-start mt-5">
-                      <label for="file" class="form-label">Pengumpulan</label>
-                      <input class="form-control" type="file" id="file" name="file" required />
+                      <a href="">Link Form</a>
                     </div>
                   </div>
                 </div>

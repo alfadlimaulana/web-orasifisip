@@ -116,7 +116,7 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>Senin, 12-07-2021</td>
+            <td>Kamis, 26-08-2021</td>
             <td>
               <?php if($students['absen1'] != NULL) : ?>
                 Hadir
@@ -134,7 +134,7 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
           </tr>
           <tr>
             <th scope="row">2</th>
-            <td>Senin, 12-07-2021</td>
+            <td>Jumat, 27-08-2021</td>
             <td>
               <?php if($students['absen2'] != NULL) : ?>
                 Hadir
@@ -151,7 +151,7 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
           </tr>
           <tr>
             <th scope="row">3</th>
-            <td>Senin, 12-07-2021</td>
+            <td>Sabtu, 28-08-2021</td>
             <td>
               <?php if($students['absen3'] != NULL) : ?>
                 hadir
