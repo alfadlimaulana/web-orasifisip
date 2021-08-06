@@ -23,7 +23,6 @@ if(isset($_POST["absensi1"])){
     echo "<script>
             alert('Absensi BERHASIL!');
             document.location.href = '';
-
           </script>";
   }else{
     echo "<script>
@@ -53,7 +52,6 @@ if(isset($_POST["absensi3"])){
     echo "<script>
             alert('Absensi BERHASIL!');
             document.location.href = '';
-
           </script>";
   }else{
     echo "<script>
@@ -64,6 +62,7 @@ if(isset($_POST["absensi3"])){
 
 $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_peserta = '$username_peserta'")[0];
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -84,27 +83,26 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
+        <a class="navbar-brand d-flex align-items-center" href="index.php" style="font-weight: 490;"> <img src="img/Logo.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" />ORASI FISIP UNPAD</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="#gallery">Gallery</a>
-            <a class="nav-link" href="#informasi">Informasi</a>
             <a class="nav-link" href="panitia.php">Panitia Inti</a>
-            <!-- <a class="nav-link" href="livestream.html">Livestream</a> -->
-            <a class="nav-link nav-hidden" href="penugasan.php">Penugasan</a>
-            <a class="nav-link nav-hidden" href="absensi.php">Absensi</a>
+            <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
+            <a class="nav-link hide-link" href="absensi.php">Absensi</a>
+            <a class="nav-link hide-link" href="kelompok.html">Kelompok</a>
             <a class="nav-link" href="login.php">Login</a>
-            <a class="nav-link nav-hidden" href="logout.php">Logout</a> 
+            <a class="nav-link hide-link" href="logout.php">Logout</a>
           </div>
         </div>
       </div>
     </nav>
     <!-- akhir navbar -->
 
-    <div class="container-fluid absensi-bg d-flex align-items-center">
+    <div class="container-fluid absensi-bg d-flex align-items-center table-responsive">
       <table class="table align-middle mt-4 mx-5">
         <thead>
           <tr>
@@ -117,19 +115,32 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
         <tbody>
           <tr>
             <th scope="row">1</th>
-            <td>Senin, 12-07-2021</td>
-            <td>Tidak Hadir</td>
+            <td>Kamis, 26-08-2021</td>
+            <td>
+              <?php if($students['absen1'] != NULL) : ?>
+                Hadir
+              <?php else :?>
+                Tidak Hadir
+              <?php endif;?>
+            </td>
             <td>
               <form action="" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-                <button type="submit" class="btn btn-primary btn-1" name="absensi1">Absen</button>
+                <button type="submit" class="btn btn-primary btn-1" name="absensi1" disabled>Absen</button>
+                
               </form>
             </td>
           </tr>
           <tr>
             <th scope="row">2</th>
-            <td>Senin, 12-07-2021</td>
-            <td>Tidak Hadir</td>
+            <td>Jumat, 27-08-2021</td>
+            <td>
+              <?php if($students['absen2'] != NULL) : ?>
+                Hadir
+              <?php else :?>
+                Tidak Hadir
+              <?php endif;?>
+            </td>
             <td>
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
@@ -139,12 +150,18 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
           </tr>
           <tr>
             <th scope="row">3</th>
-            <td>Senin, 12-07-2021</td>
-            <td>Tidak Hadir</td>
+            <td>Sabtu, 28-08-2021</td>
+            <td>
+              <?php if($students['absen3'] != NULL) : ?>
+                hadir
+              <?php else :?>
+                tidak hadir
+              <?php endif;?>
+            </td>
             <td>
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-              <button type="submit" class="btn btn-primary btn-3" name="absensi3">Absen</button>
+              <button type="submit" class="btn btn-primary btn-3" name="absensi3" disabled>Absen</button>
             </form>
             </td>
           </tr>
@@ -170,10 +187,9 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
       </div>
     </footer>
     <!-- akhir footer -->
+
     <script src="js/script.js"></script>
-    <script>
-      btntoggle();
-    </script>
+    <script>btntoggle();</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

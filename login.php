@@ -25,7 +25,13 @@ if(isset($_SESSION["login_peserta"])){
             document.location.href = 'index.php';
         </script>";
   exit;
-} 
+}else{
+  echo "<script>
+            window.onload = function(){
+              hideNav();
+            }
+        </script>";
+}
 
 if(isset($_POST["login_peserta"])){
   
@@ -82,20 +88,15 @@ if(isset($_POST["login_peserta"])){
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
+        <a class="navbar-brand d-flex align-items-center" href="index.php" style="font-weight: 490;"> <img src="img/Logo.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" />ORASI FISIP UNPAD</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="#gallery">Gallery</a>
-            <a class="nav-link" href="#informasi">Informasi</a>
             <a class="nav-link" href="panitia.php">Panitia Inti</a>
-            <!-- <a class="nav-link" href="livestream.html">Livestream</a> -->
-            <a class="nav-link nav-hidden" href="penugasan.php">Penugasan</a>
-            <a class="nav-link nav-hidden" href="absensi.php">Absensi</a>
             <a class="nav-link" href="login.php">Login</a>
-            <a class="nav-link nav-hidden" href="logout.php">Logout</a> 
           </div>
         </div>
       </div>
@@ -103,13 +104,13 @@ if(isset($_POST["login_peserta"])){
     <!-- akhir navbar -->
 
     <!-- login container -->
-    <form action="" method="post">
-      <div class="sign-bg">
-        <div class="container">
+    <div class="sign-bg">
+      <div class="container d-flex align-items-center">
+        <form class="flex-grow-1" action="" method="post">
           <!-- apabila error -->
           <?php if(isset($error)) : ?>
-            <p class="text-center" style="color:red; font-style: italic;">username / password salah</p>
-          <?php endif; ?>  
+          <p class="text-center" style="color: red; font-style: italic">username / password salah</p>
+          <?php endif; ?>
           <!-- akhir apabila error -->
           <div class="row d-flex align-items-center justify-content-center pt-5 mx-2 g-3">
             <div class="sign-form align-self-center col-md-8 col-lg-6 mb-4 p-5">
@@ -119,7 +120,7 @@ if(isset($_POST["login_peserta"])){
               <label for="passwordInput" class="form-label mt-2 mb-1">Password</label>
               <input type="password" class="form-control" id="passwordInput" placeholder="Masukkan Password" name="password_peserta" value="<?php if(isset($_POST["login_peserta"])){ echo $_POST['password_peserta']; }?>" required/>
               <div class="form-check mt-1">
-                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="keep_login"/>
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="keep_login" />
                 <label class="form-check-label" for="defaultCheck1"> Ingat Saya </label>
               </div>
               <div class="sign-button text-center">
@@ -128,9 +129,9 @@ if(isset($_POST["login_peserta"])){
               </div>
             </div>
           </div>
-        </div>
+        </form>
       </div>
-    </form>
+    </div>
     <!-- akhir login container -->
 
     <!-- footer -->
@@ -151,7 +152,8 @@ if(isset($_POST["login_peserta"])){
       </div>
     </footer>
     <!-- akhir footer -->
-
+    
+    <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

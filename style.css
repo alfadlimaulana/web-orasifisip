@@ -8,7 +8,7 @@ body {
 body::before {
   content: "";
   display: block;
-  height: 67.6px;
+  height: 66px;
 }
 
 body::after {
@@ -38,6 +38,7 @@ nav {
   background-image: url(img/background\ yeay\ 1.svg);
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 }
 
 .poro {
@@ -54,17 +55,9 @@ nav {
   }
 }
 
-/* gallery */
-/* .card-1::before {
-  content: "";
-  display: block;
-  background-image: url(img/splash.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 50px;
-  margin-left: -35px;
-  margin-bottom: -20px;
-} */
+.animate__animated.animate__bounce {
+  --animate-duration: 2s;
+}
 
 /* login signup*/
 .sign-bg {
@@ -92,10 +85,18 @@ nav {
   background-position: center bottom;
 }
 
+.animate__animated.animate__fadeIn {
+  --animate-duration: 2s;
+}
+
+.animate__animated.animate__fadeInUp {
+  --animate-duration: 2s;
+  --animate-delay: 1s;
+}
+
 /* panitia */
 .panitia-bg {
-  height: 100%;
-  width: 100%;
+  min-height: calc(100vh - 180px);
   background-image: url(img/Panitia\ Inti.svg);
   background-size: cover;
   background-position: center top;
@@ -114,9 +115,6 @@ nav {
   background-position: center;
 }
 
-.container-kadiv img {
-  object-fit: cover;
-}
 /* absensi */
 .absensi-bg {
   min-height: calc(100vh - 180px);
