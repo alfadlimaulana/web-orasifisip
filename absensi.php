@@ -52,7 +52,6 @@ if(isset($_POST["absensi3"])){
     echo "<script>
             alert('Absensi BERHASIL!');
             document.location.href = '';
-
           </script>";
   }else{
     echo "<script>
@@ -118,58 +117,52 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
           <tr>
             <th scope="row">1</th>
             <td>Senin, 12-07-2021</td>
-            <td>Tidak Hadir</td>
+            <td>
+              <?php if($students['absen1'] != NULL) : ?>
+                Hadir
+              <?php else :?>
+                Tidak Hadir
+              <?php endif;?>
+            </td>
             <td>
               <form action="" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
                 <button type="submit" class="btn btn-primary btn-1" name="absensi1" disabled>Absen</button>
-                <?php 
-                if($students['absen1'] != NULL) :
-                  echo "<script>
-                          window.onload = function(){
-                            ketHadir('.btn-1');
-                          };
-                        </script>";
-                endif; ?> 
+                
               </form>
             </td>
           </tr>
           <tr>
             <th scope="row">2</th>
             <td>Senin, 12-07-2021</td>
-            <td>Tidak Hadir</td>
+            <td>
+              <?php if($students['absen2'] != NULL) : ?>
+                Hadir
+              <?php else :?>
+                Tidak Hadir
+              <?php endif;?>
+            </td>
             <td>
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
               <button type="submit" class="btn btn-primary btn-2" name="absensi2" disabled>Absen</button>
-              <?php 
-                if($students['absen2'] != NULL) :
-                  echo "<script>
-                          window.onload = function(){
-                            ketHadir('.btn-2');
-                          };
-                        </script>";
-                endif; 
-              ?> 
             </form>
             </td>
           </tr>
           <tr>
             <th scope="row">3</th>
             <td>Senin, 12-07-2021</td>
-            <td>Tidak Hadir</td>
+            <td>
+              <?php if($students['absen3'] != NULL) : ?>
+                hadir
+              <?php else :?>
+                tidak hadir
+              <?php endif;?>
+            </td>
             <td>
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
               <button type="submit" class="btn btn-primary btn-3" name="absensi3" disabled>Absen</button>
-              <?php 
-                if($students['absen3'] != NULL) :
-                  echo "<script>
-                          window.onload = function(){
-                            ketHadir('.btn-1');
-                          };
-                        </script>";
-                endif; ?> 
             </form>
             </td>
           </tr>
@@ -196,9 +189,7 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
     </footer>
     <!-- akhir footer -->
     <script src="js/script.js"></script>
-    <script>
-      btntoggle();
-    </script>
+    <script>btntoggle();</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

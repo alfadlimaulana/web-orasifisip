@@ -1,3 +1,21 @@
+<?php
+session_start();
+require 'functions.php';
+
+//cek session
+if(!isset($_SESSION["login_peserta"])){
+  echo "<script>
+          window.onload = function(){
+          hideNav()};
+        </script>";
+}else{
+  echo "<script>
+          window.onload = function(){
+          showNav()};
+        </script>";
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -169,6 +187,7 @@
     </footer>
     <!-- akhir footer -->
 
+    <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

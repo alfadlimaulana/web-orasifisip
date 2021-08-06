@@ -43,9 +43,9 @@ if(!isset($_SESSION["login_peserta"])){
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="#gallery">Gallery</a>
-            <a class="nav-link" href="#informasi">Informasi</a>
+            <!-- <a class="nav-link" href="#informasi">Informasi</a> -->
             <a class="nav-link" href="panitia.php">Panitia Inti</a>
-            <a class="nav-link" href="livestream.php">Livestream</a>
+            <!-- <a class="nav-link" href="livestream.php">Livestream</a> -->
             <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
             <a class="nav-link hide-link" href="absensi.php">Absensi</a>
             <a class="nav-link" href="login.php">Login</a>

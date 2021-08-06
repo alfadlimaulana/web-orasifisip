@@ -8,7 +8,7 @@ body {
 body::before {
   content: "";
   display: block;
-  height: 67.6px;
+  height: 66px;
 }
 
 body::after {
@@ -54,18 +54,6 @@ nav {
   }
 }
 
-/* gallery */
-/* .card-1::before {
-  content: "";
-  display: block;
-  background-image: url(img/splash.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 50px;
-  margin-left: -35px;
-  margin-bottom: -20px;
-} */
-
 /* login signup*/
 .sign-bg {
   min-height: calc(100vh - 180px);
@@ -94,9 +82,8 @@ nav {
 
 /* panitia */
 .panitia-bg {
-  height: 100%;
-  width: 100%;
-  background-image: url(img/Panitia\ Inti.svg);
+  min-height: calc(100vh - 180px);
+  background-image: url(img/Panitia\ Inti.png);
   background-size: cover;
   background-position: center top;
 }
@@ -114,9 +101,6 @@ nav {
   background-position: center;
 }
 
-.container-kadiv img {
-  object-fit: cover;
-}
 /* absensi */
 .absensi-bg {
   min-height: calc(100vh - 180px);
