@@ -63,20 +63,6 @@ if(isset($_POST["absensi3"])){
 }
 
 $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_peserta = '$username_peserta'")[0];
-if($students['absen1'] != NULL) : ?>
-  <script>
-    absenbtn.parentElement.previousElementSibling.innerHTML = "hadir";
-  </script>
-<?php endif; ?> 
-
-<?php 
-if($students['absen1'] != NULL) {
-  echo "<script> 
-          var absenbtn = document.querySelector('.btn-1');
-          console.log(absenbtn);
-          absenbtn.parentElement.parentElement.previousElementSibling.innerHTML = 'hadir';
-        </script>";
-};
 ?>
 <!DOCTYPE html>
 <html lang="en">
