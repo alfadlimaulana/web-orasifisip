@@ -32,7 +32,52 @@ if(isset($_POST["submit1"])){
           </script>";
   }
 }
-  
+
+if(isset($_POST["submit2"])){
+  //cek berhasil atau tidak
+  if(submit($_POST, "penugasan2") > 0){
+    echo "<script>
+            alert('Tugas 2 BERHASIL dikumpulkan!');
+            document.location.href = '';
+          </script>";
+  }else{
+    echo "<script>
+            alert('Tugas 2 GAGAL dikumpulkan!');
+            document.location.href = '';
+          </script>";
+  }
+}
+
+if(isset($_POST["submit3"])){
+  //cek berhasil atau tidak
+  if(submit($_POST, "penugasan3") > 0){
+    echo "<script>
+            alert('Tugas 3 BERHASIL dikumpulkan!');
+            document.location.href = '';
+          </script>";
+  }else{
+    echo "<script>
+            alert('Tugas 3 GAGAL dikumpulkan!');
+            document.location.href = '';
+          </script>";
+  }
+}
+
+  if(isset($_POST["submit4"])){
+    //cek berhasil atau tidak
+    if(submit($_POST, "penugasan4") > 0){
+      echo "<script>
+              alert('Tugas 4 BERHASIL dikumpulkan!');
+              document.location.href = '';
+            </script>";
+    }else{
+      echo "<script>
+              alert('Tugas 4 GAGAL dikumpulkan!');
+              document.location.href = '';
+            </script>";
+    }
+  }
+
 ?>
 
 <!DOCTYPE html>
@@ -87,7 +132,6 @@ if(isset($_POST["submit1"])){
             </div>
           </div>
         </div>
-
         <div class="col-ms-12 col-md-6 col-lg-3">
           <div class="card card-tugas">
             <div class="card-body text-center p-5">
@@ -103,7 +147,7 @@ if(isset($_POST["submit1"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 3</h5>
               <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary btn-3 mt-4" data-bs-toggle="modal" data-bs-target="#tugas3" disabled>Detail</button>
+              <button type="button" class="btn btn-primary btn-3 mt-4" data-bs-toggle="modal" data-bs-target="#tugas3">Detail</button>
             </div>
           </div>
         </div>
@@ -113,7 +157,7 @@ if(isset($_POST["submit1"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 4</h5>
               <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary btn-4 mt-4" data-bs-toggle="modal" data-bs-target="#tugas4" disabled>Detail</button>
+              <button type="button" class="btn btn-primary btn-4 mt-4" data-bs-toggle="modal" data-bs-target="#tugas4">Detail</button>
             </div>
           </div>
         </div>
@@ -208,7 +252,7 @@ if(isset($_POST["submit1"])){
             <!-- modal footer -->
             <div class="modal-footer border-0">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-              <button type="submit" class="btn btn-primary" name="submit">Selesai</button>
+              <button type="submit" class="btn btn-primary" name="submit2" onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan')">Selesai</button>
               <!-- onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan') -->
             </div>
           </div>
@@ -255,7 +299,7 @@ if(isset($_POST["submit1"])){
             <!-- modal footer -->
             <div class="modal-footer border-0">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-              <button type="submit" class="btn btn-primary" name="submit">Selesai</button>
+              <button type="submit" class="btn btn-primary" name="submit3" onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan')">Selesai</button>
               <!-- onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan') -->
             </div>
           </div>
@@ -300,7 +344,7 @@ if(isset($_POST["submit1"])){
             <!-- modal footer -->
             <div class="modal-footer border-0">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-              <button type="submit" class="btn btn-primary" name="submit">Selesai</button>
+              <button type="submit" class="btn btn-primary" name="submit4" onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan')">Selesai</button>
               <!-- onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan') -->
             </div>
           </div>
