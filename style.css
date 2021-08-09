@@ -115,6 +115,11 @@ nav {
   background-position: center;
 }
 
+.text-divisi {
+  text-decoration: none !important;
+  color: black;
+}
+
 /* absensi */
 .absensi-bg {
   min-height: calc(100vh - 180px);
