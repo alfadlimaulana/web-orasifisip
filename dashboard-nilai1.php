@@ -1,5 +1,6 @@
 <?php
 session_start();
+require 'functions.php';
 
 if(!isset($_SESSION["login_panitia"])){
 
@@ -10,7 +11,6 @@ if(!isset($_SESSION["login_panitia"])){
   exit;
 }  
 
-require 'functions.php';
 $students = query("SELECT * FROM peserta NATURAL JOIN penugasan1");
 
 //tombol cari ditekan
@@ -40,7 +40,7 @@ if(isset($_POST["cari"])){
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
+      <a class="navbar-brand" href="dashboard.php"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -48,43 +48,55 @@ if(isset($_POST["cari"])){
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="dashboard-penugasan.php">Penugasan</a>
             <a class="nav-link" href="dashboard-absensi.php">Absensi</a>
-            <a class="nav-link" href="login.html">Login</a>
+            <a class="nav-link" href="login-panitia.php">Login</a>
           </div>
         </div>
       </div>
     </nav>
     <!-- akhir navbar -->
 
-    <div class="container-fluid absensi-bg d-flex align-items-center">
-      <table class="table align-middle mt-4 mx-5">
-        <thead>
-          <tr>
-            <th scope="col">Username</th>
-            <th scope="col">Nama Peserta</th>
-            <th scope="col">Kelompok</th>
-            <th scope="col">Nama File</th>
-            <th scope="col">Waktu Pengumpulan</th>
-            <th scope="col">Nilai</th>
-          </tr>
-        </thead>
-        <tbody>
-        <?php  foreach($students as $student): ?>
-          <?php $username_peserta = $student["username_peserta"]; ?>  
-          <tr>
-            <td><?= $student["username_peserta"]; ?></td>
-            <th scope="row"><?= $student["nama_peserta"]; ?></th>
-            <td><?= $student["kelompok"]; ?></td>
-            <td><embed src="file/<?= $student["nama_file"]; ?>" width="100%"/></td>
-            <td><?= $student["waktu_pengumpulan"]; ?></td>
-            <td><?= $student["nilai"]; ?></td>
-            <td>
-              <a href="ubah.php?username_peserta=<?= $student["username_peserta"]; ?>" onclick="return confirm('Ubah data <?= $username_peserta ?> ?')">Ubah</a> | 
-              <a href="hapus.php?username_peserta=<?= $student["username_peserta"]; ?>" onclick="return confirm('Hapus data <?= $username_panitia ?> ?')">Hapus</a>
-            </td>
-          </tr>
-          <?php  endforeach; ?>
-        </tbody>
-      </table>
+    <div class="container-fluid absensi-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-6 col-sm-4 col-lg-3 ms-auto">
+            <div class="input-group search-form mt-4 mb-1">
+              <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
+              <input type="text" class="form-control" placeholder="Kata Kunci" aria-label="Username" aria-describedby="basic-addon1" />
+            </div>
+          </div>
+        </div>
+        <div class="row table-responsive">
+          <table class="table align-middle">
+            <thead>
+              <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Nama Peserta</th>
+                <th scope="col">Kelompok</th>
+                <th scope="col">Nama File</th>
+                <th scope="col">Waktu Pengumpulan</th>
+                <th scope="col">Nilai</th>
+              </tr>
+            </thead>
+            <tbody>
+            <?php  foreach($students as $student): ?>
+              <?php $username_peserta = $student["username_peserta"]; ?>  
+              <tr>
+                <td><?= $student["username_peserta"]; ?></td>
+                <th scope="row"><?= $student["nama_peserta"]; ?></th>
+                <td><?= $student["kelompok"]; ?></td>
+                <td><embed src="file/<?= $student["nama_file"]; ?>" width="100%"/></td>
+                <td><?= $student["waktu_pengumpulan"]; ?></td>
+                <td><?= $student["nilai"]; ?></td>
+                <td>
+                  <a href="ubah.php?username_peserta=<?= $student['username_peserta']; ?>" onclick="return confirm('Ubah data <?= $username_peserta ?> ?')">Ubah</a> | 
+                  <a href="hapus.php?username_peserta=<?= $student['username_peserta']; ?>" onclick="return confirm('Hapus data <?= $username_panitia ?> ?')">Hapus</a>
+                </td>
+              </tr>
+              <?php  endforeach; ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
 
     <!-- footer -->

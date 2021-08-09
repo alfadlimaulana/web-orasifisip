@@ -123,7 +123,7 @@ nav {
   background-position: center;
 }
 
-.absensi-bg .table {
+.table {
   background-color: #f399bf;
 }
 
@@ -160,4 +160,28 @@ footer {
   background-image: url(img/marc-olivier-paquin-2_RQhbu0ZDQ-unsplash.jpg);
   /* background-size: cover; */
   background-position: center;
+}
+
+/* index panitia (dashboard) */
+.index-panitia .fas {
+  font-size: 80px;
+}
+
+.index-panitia .kolom-direct:hover {
+  background-color: lightblue;
+}
+
+.index-panitia .kolom-direct:nth-child(1):hover {
+  border-start-start-radius: 30px;
+  border-end-start-radius: 30px;
+}
+
+.index-panitia .kolom-direct:nth-child(2):hover {
+  border-start-end-radius: 30px;
+  border-end-end-radius: 30px;
+}
+
+.index-panitia .row .col-sm-8 {
+  background-color: white;
+  border-radius: 30px;
 }

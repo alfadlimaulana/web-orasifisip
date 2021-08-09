@@ -8,6 +8,7 @@
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- font -->
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
@@ -18,7 +19,7 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
-      <a class="navbar-brand" href="index.html"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
+      <a class="navbar-brand" href="dashboard.php"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -26,7 +27,7 @@
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="dashboard-penugasan.php">Penugasan</a>
             <a class="nav-link" href="dashboard-absensi.php">Absensi</a>
-            <a class="nav-link" href="login.html">Login</a>
+            <a class="nav-link" href="login-panitia.php">Login</a>
           </div>
         </div>
       </div>
@@ -35,13 +36,13 @@
 
     <!-- Grid Tugas -->
     <div class="container-fluid tugas-container py-5 px-5 d-flex align-items-center justify-content-center">
-      <div class="row g-3">
+      <div class="row g-3 animate__animated animate__fadeIn">
         <div class="col-ms-12 col-md-6 col-lg-3">
           <div class="card card-tugas">
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 1</h5>
               <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <a href="dashboard-nilai1.html" role="button" class="btn btn-primary mt-4">Lihat Nilai</a>
+              <a href="dashboard-nilai1.php" role="button" class="btn btn-primary mt-4">Lihat Nilai</a>
             </div>
           </div>
         </div>

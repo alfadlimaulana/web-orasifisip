@@ -30,6 +30,7 @@ if(isset($_POST["cari"])){
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- font -->
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
@@ -40,66 +41,41 @@ if(isset($_POST["cari"])){
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ms-auto">
-            <a class="nav-link" href="#gallery">Gallery</a>
-            <a class="nav-link" href="#informasi">Informasi</a>
-            <a class="nav-link" href="panitia.php">Panitia Inti</a>
-            <!-- <a class="nav-link" href="livestream.html">Livestream</a> -->
-            <a class="nav-link nav-hidden" href="penugasan.php">Penugasan</a>
-            <a class="nav-link nav-hidden" href="absensi.php">Absensi</a>
-            <a class="nav-link" href="login.php">Login</a>
-            <a class="nav-link nav-hidden" href="logout.php">Logout</a> 
-            <!-- <button onclick="hideNav()">hide</button>          -->
-          </div>
-        </div>
+      <a class="navbar-brand mx-auto" href="dashboard.php"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
       </div>
     </nav>
     <!-- akhir navbar -->
-
-    <div class="container-fluid">
-      <table class="table align-middle mt-4">
-        <thead>
-          <tr>
-            <th scope="col">Username</th>
-            <th scope="col">Nama</th>
-            <th scope="col">Prodi</th>
-            <th scope="col">tugas1</th>
-            <th scope="col">tugas2</th>
-            <th scope="col">tugas3</th>
-            <th scope="col">absen1</th>
-            <th scope="col">absen2</th>
-            <th scope="col">absen3</th>
-            <th scope="col">password</th>
-          </tr>
-        </thead>
-        <tbody>
-        <?php  foreach($students as $student): ?>
-          <?php $username_peserta = $student["username_peserta"]; ?>  
-          <tr>
-            <td><?= $student["username_peserta"]; ?></td>
-            <th scope="row"><?= $student["nama_peserta"]; ?></th>
-            <td><?= $student["program_studi"]; ?></td>
-            <td><?= $student["tugas1"]; ?></td>
-            <td><?= $student["tugas2"]; ?></td>
-            <td><?= $student["tugas3"]; ?></td>
-            <td><?= $student["absen1"]; ?></td>
-            <td><?= $student["absen2"]; ?></td>
-            <td><?= $student["absen3"]; ?></td>
-            <td><?= $student["password_peserta"]; ?></td>
-            <td>
-              <a href="ubah.php?username_peserta=<?= $student["username_peserta"]; ?>" onclick="return confirm('Ubah data <?= $username_peserta ?> ?')">Ubah</a> | 
-              <a href="hapus.php?username_peserta=<?= $student["username_peserta"]; ?>" onclick="return confirm('Hapus data <?= $username_panitia ?> ?')">Hapus</a>
-            </td>
-          </tr>
-          <?php  endforeach; ?>
-        </tbody>
-      </table>
+    
+    <!-- table -->
+    <div class="container index-panitia text-center pt-5">
+      <h1>Selamat datang, Admin!</h1>
+      <p>Apa yang ingin anda lakukan?</p>
+      <div class="row justify-content-center">
+        <div class="col-sm-8 mt-3 animate__animated animate__fadeInUp">
+          <div class="row">
+            <div class="col-sm-12 kolom-direct col-lg-6 text-center p-4">  
+              <a href="dashboard-penugasan.php" style="text-decoration: none; color:black;">
+                <img class="float-start" src="img/tugas-icon.svg" alt="penugasan" height="100%">
+                <div class="d-flex flex-column justify-content-center p-3" style="height: 100%;">
+                  <h5>Penugasan</h5>
+                  <p class="m-0">Anda dapat melihat tugas dan nilai setiap peserta disini</p>
+                </div>
+              </a>        
+            </div>
+            <div class="col-sm-12 kolom-direct col-lg-6 text-center p-4"> 
+              <a href="dashboard-absensi.php" style="text-decoration: none; color:black;">
+                <img class="float-start" src="img/absensi-icon.svg" alt="penugasan" height="100%">
+                <div class="d-flex flex-column justify-content-center p-3" style="height: 100%;">
+                  <h5>Absensi</h5>
+                  <p class="m-0">Anda dapat melihat kehadiran dan biodata setiap peserta disini</p>
+                </div>
+              </a>         
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- akhir table -->
 
     <!-- footer -->
     <footer class="text-center">
