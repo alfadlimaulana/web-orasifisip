@@ -47,11 +47,11 @@ function registrasi_panitia($data){
 	}
 
 	//enkripsi password
-	//$password_panitia_enkripsi = password_hash($password_panitia, PASSWORD_DEFAULT);
+	$password_panitia_enkripsi = password_hash($password_panitia, PASSWORD_DEFAULT);
 
 	//insert petugas ke database
 	mysqli_query($conn, "INSERT INTO panitia VALUES
-						 ('$username_panitia', '$nama_panitia', '$divisi', '$password_panitia')");
+						 ('$username_panitia', '$nama_panitia', '$divisi', '$password_panitia_enkripsi')");
 
 	return mysqli_affected_rows($conn);
 }
@@ -113,7 +113,7 @@ function upload($penugasan){
 	}
 
 	//cek yg diupload harus gambar
-	$ekstensi_valid = ['jpg', 'jpeg', 'png', 'pdf', 'doc', 'docx'];
+	$ekstensi_valid = ['jpg', 'jpeg', 'png', 'pdf', 'doc', 'docx', 'mp3', 'wav', 'wma', 'm4a'];
 	//split nama file
 	$ekstensi_file = explode('.', $nama_file);
 	//amnil ektensi
@@ -148,16 +148,18 @@ function submit($data, $penugasan){
 	global $conn;
 	//ambil data dari tiap elemen dalam form
 	$username_peserta = htmlspecialchars($data["username_peserta"]);
+	$nama_peserta = htmlspecialchars($data["nama_peserta"]);
+	$kelompok = htmlspecialchars($data["kelompok"]);
 	//upload gambar
 	$file = upload($penugasan);
 
-	$id_tugas = $username_peserta . '_' . $penugasan;
+	$id_tugas = $nama_peserta . '_' . $penugasan;
 
 	if(!$file){return false;}
 
 	//query insert data ke tabel penugasan
 	$query = "INSERT INTO $penugasan VALUES
-	('$id_tugas', '$file', NOW(),  NULL, '$username_peserta')";
+	('$id_tugas', '$nama_peserta', '$kelompok', '$file', NOW(),  NULL, '$username_peserta')";
 	mysqli_query($conn, $query);
 
 	return mysqli_affected_rows($conn);
@@ -170,6 +172,34 @@ function absensi($data, $absen){
 
 	//query insert data ke tabel penugasan
 	$query = "UPDATE peserta SET $absen = NOW() WHERE username_peserta = '$username_peserta'";
+	mysqli_query($conn, $query);
+
+	return mysqli_affected_rows($conn);
+}
+
+function cari_tugas($tabel, $kata_kunci){
+	$query = "SELECT * FROM $tabel
+			  WHERE id_tugas LIKE '%$kata_kunci%' 
+			  OR nama_peserta LIKE '%$kata_kunci%'
+			  OR kelompok LIKE '%$kata_kunci%'
+			  OR nama_file LIKE '%$kata_kunci%'
+			  OR nilai LIKE '%$kata_kunci%'
+			  OR username_peserta LIKE '%$kata_kunci%'
+			  ";
+	return query($query);
+}
+
+function input_nilai($tabel, $data){
+	global $conn;
+	//ambil data dari tiap elemen dalam form
+	$id_tugas = htmlspecialchars($data["id_tugas"]);
+	$nilai = htmlspecialchars($data["nilai"]);
+
+	//query update data
+	$query = "UPDATE $tabel SET 
+				nilai = '$nilai'
+			  WHERE id_tugas = '$id_tugas'
+			  ";
 	mysqli_query($conn, $query);
 
 	return mysqli_affected_rows($conn);

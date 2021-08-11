@@ -11,24 +11,23 @@ if(!isset($_SESSION["login_panitia"])){
   exit;
 }  
 
-$students = query("SELECT * FROM penugasan1");
+$id_tugas = $_GET["id_tugas"];
+$tabel = $_GET["penugasan"];
+//query data berdasar kode
 
-// tombol cari ditekan
-if(isset($_POST["cari"])){
-  $students = cari_tugas("penugasan1", $_POST["kata_kunci"]);
-}
+$student = query("SELECT * FROM $tabel WHERE id_tugas = '$id_tugas'")[0];
 
-if(isset($_POST["submit_nilai"])){
+if(isset($_POST["submit"])){
   //cek berhasil atau tidak
-  if(input_nilai("penugasan1", $_POST) > 0){
+  if(ubah($_POST) > 0){
     echo "<script>
             alert('Nilai berhasil diubah!');
-            document.location.href = 'dashboard-nilai1.php';
+            document.location.href = 'dashboard-penugasan.php';
           </script>";
   }else{
     echo "<script>
-            alert('Nilai gagal diubah!');
-            document.location.href = 'dashboard-nilai1.php';
+            alert('Bilai gagal diubah!');
+            document.location.href = 'dashboard-penugasan.php';
           </script>";
   }
 }
@@ -70,62 +69,51 @@ if(isset($_POST["submit_nilai"])){
     </nav>
     <!-- akhir navbar -->
 
-    <div class="container-fluid absensi-bg">
-      <div class="container">
-        <div class="row">
-        <form action="" method="post">
-          <div class="col-6 col-sm-4 col-lg-3 ms-auto">
-            <div class="input-group search-form mt-4 mb-1">
-              <span class="input-group-text" id="basic-addon1"><button class="fas fa-search" name="cari" type="submit"></button></span>
-              <input type="text" class="form-control" placeholder="Kata Kunci" aria-label="Username" aria-describedby="basic-addon1" name="kata_kunci"/>
+    <!-- penilaian container -->
+    <form action="" method="post">
+      <div class="sign-bg">
+        <div class="container">
+          <div class="row d-flex align-items-center justify-content-center pt-5 mx-2 g-3">
+            <div class="sign-form align-self-center col-md-8 col-lg-6 mb-4 p-5">
+              <h2 class="text-center">PENILAIAN</h2>
+              <div class="row">
+                <div class="col">
+                  <label for="nameInput" class="form-label">Nama Lengkap</label>
+                  <input type="text" class="form-control" id="nameInput" placeholder="Masukkan Nama Lengkap" name="nama_panitia" value="<?php if(isset($_POST["regist_panitia"])){ echo $_POST['nama_panitia']; }?>" required/>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col">
+                  <label for="prodiInput" class="form-label">Divisi</label>
+                  <input type="text" class="form-control" id="usernameInput" placeholder="Masukkan Divisi" name="divisi" value="<?php if(isset($_POST["regist_panitia"])){ echo $_POST['divisi']; }?>" required/>
+                </div>
+              </div>
+              <div class="row mt-2">
+                <div class="col">
+                  <label for="prodiInput" class="form-label">Username</label>
+                  <input type="text" class="form-control" id="usernameInput" placeholder="Masukkan Username" name="username_panitia" value="<?php if(isset($_POST["regist_panitia"])){ echo $_POST['username_panitia']; }?>" required/>
+                </div>
+              </div>
+              <div class="row mt-2 g-2 mb-1">
+                <div class="col-xs-12 col-md-6">
+                  <label for="usernameInput" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="usernameInput" placeholder="Masukkan Password" name="password_panitia" value="<?php if(isset($_POST["regist_panitia"])){ echo $_POST['password_panitia']; }?>" required/>
+                </div>
+                <div class="col-xs-12 col-md-6">
+                  <label for="passwordInput" class="form-label">Password</label>
+                  <input type="password" class="form-control" id="passwordInput" placeholder="Konfirmasi Password" name="password2_panitia" value="<?php if(isset($_POST["regist_panitia"])){ echo $_POST['password2_panitia']; }?>" required />
+                </div>
+              </div>
+              <div class="sign-button text-center">
+                <button class="btn btn-primary align-self-center mt-5" type="submit" name="regist_panitia" style="width: 50%">Registrasi</button>
+                <p class="mt-2 align-self-center">Sudah registrasi? <a href="login-panitia.php">Masuk Di sini</a></p>
+              </div>
             </div>
           </div>
-          </form>
-        </div>
-        <div class="row table-responsive">
-          <table class="table align-middle">
-            <thead>
-              <tr>
-                <th scope="col">Username</th>
-                <th scope="col">Nama Peserta</th>
-                <th scope="col">Kelompok</th>
-                <th scope="col">Nama File</th>
-                <th scope="col">Waktu Pengumpulan</th>
-                <th scope="col">Nilai</th>
-              </tr>
-            </thead>
-            <tbody>
-            <?php  foreach($students as $student): ?>
-              <?php $id_tugas = $student["id_tugas"]; ?>  
-              <tr>
-                <td><?= $student["username_peserta"]; ?></td>
-                <th scope="row"><?= $student["nama_peserta"]; ?></th>
-                <td><?= $student["kelompok"]; ?></td>
-                <td>
-                <audio controls>
-  <source src="file/penugasan1/<?= $student["nama_file"]; ?>" type="audio/mpeg">
-</audio>
-                  <!-- <embed src="file/penugasan1/<?= $student["nama_file1"]; ?>"/></td> -->
-                <td><?= $student["waktu_pengumpulan"]; ?></td>
-                <td><?= $student["nilai"]; ?></td>
-                <td>
-                  <form action="" method="post">
-                  <div class="input-group search-form mt-4 mb-1">
-                    <input type="hidden" name="id_tugas" value="<?= $id_tugas?>">
-                    <input type="text" class="form-control" placeholder="Input Nilai" aria-label="Username" aria-describedby="basic-addon1" name="nilai"/>
-                    <span class="input-group-text" id="basic-addon1"><button class="fas fa-check" name="submit_nilai" type="submit"></button></span>
-                   </div>
-                  </form>
-                </td>
-              </tr>
-              <?php  endforeach; ?>
-            </tbody>
-          </table>
         </div>
       </div>
-    </div>
-
-    
+    </form>
+    <!-- penilaian container -->
 
     <!-- footer -->
     <footer class="text-center">

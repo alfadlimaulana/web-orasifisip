@@ -9,15 +9,6 @@ if(!isset($_SESSION["login_panitia"])){
         </script>";
   exit;
 }  
-
-require 'functions.php';
-$students = query("SELECT * FROM peserta");
-
-//tombol cari ditekan
-if(isset($_POST["cari"])){
-  $students = cari($_POST["kata_kunci"]);
-}
-
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +39,7 @@ if(isset($_POST["cari"])){
     
     <!-- table -->
     <div class="container index-panitia text-center pt-5">
-      <h1>Selamat datang, Admin!</h1>
+      <h1>Selamat datang, <?= $_SESSION["login_panitia"] ?> </h1>
       <p>Apa yang ingin anda lakukan?</p>
       <div class="row justify-content-center">
         <div class="col-sm-8 mt-3 animate__animated animate__fadeInUp">

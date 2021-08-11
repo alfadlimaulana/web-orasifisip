@@ -128,7 +128,7 @@ if(isset($_POST["submit3"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 1</h5>
               <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary btn-1 mt-4" data-bs-toggle="modal" data-bs-target="#tugas1" disabled>Detail</button>
+              <button type="button" class="btn btn-primary btn-1 mt-4" data-bs-toggle="modal" data-bs-target="#tugas1">Detail</button>
             </div>
           </div>
         </div>
@@ -137,7 +137,7 @@ if(isset($_POST["submit3"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 2</h5>
               <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <button type="button" class="btn btn-primary btn-2 mt-4" data-bs-toggle="modal" data-bs-target="#tugas2" disabled>Detail</button>
+              <button type="button" class="btn btn-primary btn-2 mt-4" data-bs-toggle="modal" data-bs-target="#tugas2">Detail</button>
             </div>
           </div>
         </div>
@@ -195,6 +195,8 @@ if(isset($_POST["submit3"])){
                       inventore? Aut enim unde debitis dicta, est fugit recusandae consectetur nesciunt consequuntur eius!
                     </p>
                     <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
+                    <input type="hidden" name="nama_peserta" value="<?= $database["nama_peserta"] ?>">
+                    <input type="hidden" name="kelompok" value="<?= $database["kelompok"] ?>">
                     <div class="submit-form text-start mt-5">
                       <label for="file" class="form-label">Pengumpulan</label>
                       <input class="form-control" type="file" id="file" name="file" required />
@@ -375,7 +377,7 @@ if(isset($_POST["submit3"])){
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
     <script>
-      btntoggle();
+      //btntoggle();
     </script>
   </body>
 </html>
