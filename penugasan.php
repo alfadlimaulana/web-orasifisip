@@ -127,7 +127,7 @@ if(isset($_POST["submit3"])){
           <div class="card card-tugas">
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 1</h5>
-              <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
+              <p class="card-text mt-3">Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA</p>
               <button type="button" class="btn btn-primary btn-1 mt-4" data-bs-toggle="modal" data-bs-target="#tugas1">Detail</button>
             </div>
           </div>
@@ -136,7 +136,7 @@ if(isset($_POST["submit3"])){
           <div class="card card-tugas">
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 2</h5>
-              <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
+              <p class="card-text mt-3">Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA</p>
               <button type="button" class="btn btn-primary btn-2 mt-4" data-bs-toggle="modal" data-bs-target="#tugas2">Detail</button>
             </div>
           </div>
@@ -146,7 +146,7 @@ if(isset($_POST["submit3"])){
           <div class="card card-tugas">
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 3</h5>
-              <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
+              <p class="card-text mt-3">Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA</p>
               <button type="button" class="btn btn-primary btn-3 mt-4" data-bs-toggle="modal" data-bs-target="#tugas3">Detail</button>
             </div>
           </div>
@@ -156,7 +156,7 @@ if(isset($_POST["submit3"])){
           <div class="card card-tugas">
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 4</h5>
-              <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
+              <p class="card-text mt-3">Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA</p>
               <button type="button" class="btn btn-primary btn-4 mt-4" data-bs-toggle="modal" data-bs-target="#tugas4">Detail</button>
             </div>
           </div>
@@ -176,7 +176,7 @@ if(isset($_POST["submit3"])){
           <div class="modal-content">
             <!-- header modal -->
             <div class="modal-header border-0 d-flex align-items-start text-center">
-              <h2 class="align-midle"><strong>Tugas 1</strong></h2>
+              <h2 class="align-midle">Video 21st Century Skill</h2>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -191,9 +191,9 @@ if(isset($_POST["submit3"])){
                   </div>
                   <div class="col-md-7">
                     <p class="mt-3 px-4">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quidem quo quam iusto cumque! Dolores impedit totam repellendus ratione odio unde. Ducimus provident veritatis odio minus quisquam sint similique, illum odit
-                      inventore? Aut enim unde debitis dicta, est fugit recusandae consectetur nesciunt consequuntur eius!
+                      Merupakan penugasan kelompok berupa pembuatan video pengaplikasian Arkamuda terhadap 21st Century Skill dalam menjadi sosok pemimpin ideal di abad 21 dengan melibatkan seluruh anggota kelompok dan dibuat semenarik mungkin. 
                     </p>
+                    <p class="px-4">Deadline : 29 Agustus 2021</p>
                     <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
                     <input type="hidden" name="nama_peserta" value="<?= $database["nama_peserta"] ?>">
                     <input type="hidden" name="kelompok" value="<?= $database["kelompok"] ?>">
@@ -225,7 +225,7 @@ if(isset($_POST["submit3"])){
           <div class="modal-content">
             <!-- header modal -->
             <div class="modal-header border-0 d-flex align-items-start text-center">
-              <h2 class="align-midle"><strong>Tugas 2</strong></h2>
+              <h2 class="align-midle">Esai Kemahasiswaan</h2>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -240,9 +240,9 @@ if(isset($_POST["submit3"])){
                   </div>
                   <div class="col-md-7">
                     <p class="mt-3 px-4">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quidem quo quam iusto cumque! Dolores impedit totam repellendus ratione odio unde. Ducimus provident veritatis odio minus quisquam sint similique, illum odit
-                      inventore? Aut enim unde debitis dicta, est fugit recusandae consectetur nesciunt consequuntur eius!
+                      Merupakan penugasan individu berupa pembuatan esai mengenai peran Arkamuda sebagai mahasiswa serta keterkaitannya dengan Tri Dharma Perguruan Tinggi.
                     </p>
+                    <p class="px-4">27 Agustus 2021 (jam 23.59)</p>
                     <div class=" text-center m-3">
                       <a href="">Link Form</a>
                     </div>
@@ -270,7 +270,7 @@ if(isset($_POST["submit3"])){
           <div class="modal-content">
             <!-- header modal -->
             <div class="modal-header border-0 d-flex align-items-start text-center">
-              <h2 class="align-midle"><strong>Tugas 3</strong></h2>
+              <h2 class="align-midle">Penugasan Kefisipan & Keorganisasian</h2>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -285,9 +285,9 @@ if(isset($_POST["submit3"])){
                   </div>
                   <div class="col-md-7">
                     <p class="mt-3 px-4">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quidem quo quam iusto cumque! Dolores impedit totam repellendus ratione odio unde. Ducimus provident veritatis odio minus quisquam sint similique, illum odit
-                      inventore? Aut enim unde debitis dicta, est fugit recusandae consectetur nesciunt consequuntur eius!
+                      Merupakan penugasan individu berupa pertanyaan yang harus dijawab oleh Arkamuda mengenai pengetahuan Kefisipan yang disampaikan pada Talkshow dan Keorganisasian yang disampaikan pada podcast.
                     </p>
+                    <p class="px-4">28 Agustus 2021 (jam 23.59)</p>
                     <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
                     <div class="submit-form text-start mt-5">
                       <label for="file" class="form-label">Pengumpulan</label>
@@ -317,7 +317,7 @@ if(isset($_POST["submit3"])){
           <div class="modal-content">
             <!-- header modal -->
             <div class="modal-header border-0 d-flex align-items-start text-center">
-              <h2 class="align-midle"><strong>Tugas 4</strong></h2>
+              <h2 class="align-midle">Review Audio</h2>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -332,9 +332,9 @@ if(isset($_POST["submit3"])){
                   </div>
                   <div class="col-md-7">
                     <p class="mt-3 px-4">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea quidem quo quam iusto cumque! Dolores impedit totam repellendus ratione odio unde. Ducimus provident veritatis odio minus quisquam sint similique, illum odit
-                      inventore? Aut enim unde debitis dicta, est fugit recusandae consectetur nesciunt consequuntur eius!
+                      Merupakan penugasan individu berupa pertanyaan yang harus dijawab oleh Arkamuda mengenai pengetahuan Kefisipan yang disampaikan pada Talkshow dan Keorganisasian yang disampaikan pada podcast.
                     </p>
+                    <p class="px-4">Deadline : 28 Agustus 2021</p>
                     <div class=" text-center m-3">
                       <a href="youtube.com">Go To Youtube</a>
                     </div>
@@ -369,7 +369,7 @@ if(isset($_POST["submit3"])){
           ></a>
           <a href="https://open.spotify.com/user/yixdyb7cijndootfs7k72ncfm?si=ebaa1feb71fa4a7f&nd=1" target="_blank"><i class="fab fa-spotify"></i></a>
         </div>
-        <p class="mt-3">©2021. Fisip Unpad. All Rights Reserved.</p>
+        <p class="mt-3">©2021. Orasi FISIP Unpad. All Rights Reserved.</p>
       </div>
     </footer>
     <!-- akhir footer -->
