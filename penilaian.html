@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 require 'functions.php';
 
@@ -11,27 +11,26 @@ if(!isset($_SESSION["login_panitia"])){
   exit;
 }  
 
-$students = query("SELECT * FROM penugasan1");
+$id_tugas = $_GET["id_tugas"];
+$tabel = $_GET["penugasan"];
+//query data berdasar kode
 
-// tombol cari ditekan
-if(isset($_POST["cari"])){
-  $students = cari_tugas("penugasan1", $_POST["kata_kunci"]);
-}
+$student = query("SELECT * FROM $tabel WHERE id_tugas = '$id_tugas'")[0];
 
-if(isset($_POST["submit_nilai"])){
+if(isset($_POST["submit"])){
   //cek berhasil atau tidak
-  if(input_nilai("penugasan1", $_POST) > 0){
+  if(ubah($_POST) > 0){
     echo "<script>
             alert('Nilai berhasil diubah!');
-            document.location.href = 'dashboard-nilai1.php';
+            document.location.href = 'dashboard-penugasan.php';
           </script>";
   }else{
     echo "<script>
-            alert('Nilai gagal diubah!');
-            document.location.href = 'dashboard-nilai1.php';
+            alert('Bilai gagal diubah!');
+            document.location.href = 'dashboard-penugasan.php';
           </script>";
   }
-}
+} -->
 
 ?>
 
@@ -55,7 +54,7 @@ if(isset($_POST["submit_nilai"])){
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
-      <a class="navbar-brand" href="dashboard.php"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
+        <a class="navbar-brand" href="dashboard.php"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -70,62 +69,43 @@ if(isset($_POST["submit_nilai"])){
     </nav>
     <!-- akhir navbar -->
 
-    <div class="container-fluid absensi-bg">
-      <div class="container">
-        <div class="row">
-        <form action="" method="post">
-          <div class="col-6 col-sm-4 col-lg-3 ms-auto">
-            <div class="input-group search-form mt-4 mb-1">
-              <span class="input-group-text" id="basic-addon1"><button class="fas fa-search" name="cari" type="submit"></button></span>
-              <input type="text" class="form-control" placeholder="Kata Kunci" aria-label="Username" aria-describedby="basic-addon1" name="kata_kunci"/>
-            </div>
-          </div>
-          </form>
+    <form action="" method="post" enctype="multipart/form-data">
+      <input type="hidden" name="Gambar_Lama" value="<?= $book["Gambar"] ?>">
+      <div class="row">
+        <div class="form-group col-sm-2">
+          <label for="KodeBuku">Kode</label>
+          <input type="text" class="form-control" id="KodeBuku" name="Kode_Buku" required value="<?= $book["Kode_Buku"]?>"/>
         </div>
-        <div class="row table-responsive">
-          <table class="table align-middle">
-            <thead>
-              <tr>
-                <th scope="col">Username</th>
-                <th scope="col">Nama Peserta</th>
-                <th scope="col">Kelompok</th>
-                <th scope="col">Nama File</th>
-                <th scope="col">Waktu Pengumpulan</th>
-                <th scope="col">Nilai</th>
-              </tr>
-            </thead>
-            <tbody>
-            <?php  foreach($students as $student): ?>
-              <?php $id_tugas = $student["id_tugas"]; ?>  
-              <tr>
-                <td><?= $student["username_peserta"]; ?></td>
-                <th scope="row"><?= $student["nama_peserta"]; ?></th>
-                <td><?= $student["kelompok"]; ?></td>
-                <td>
-                <audio controls>
-  <source src="file/penugasan1/<?= $student["nama_file"]; ?>" type="audio/mpeg">
-</audio>
-                  <!-- <embed src="file/penugasan1/<?= $student["nama_file1"]; ?>"/></td> -->
-                <td><?= $student["waktu_pengumpulan"]; ?></td>
-                <td><?= $student["nilai"]; ?></td>
-                <td>
-                  <form action="" method="post">
-                  <div class="input-group search-form mt-4 mb-1">
-                    <input type="hidden" name="id_tugas" value="<?= $id_tugas?>">
-                    <input type="text" class="form-control" placeholder="Input Nilai" aria-label="Username" aria-describedby="basic-addon1" name="nilai"/>
-                    <span class="input-group-text" id="basic-addon1"><button class="fas fa-check" name="submit_nilai" type="submit"></button></span>
-                   </div>
-                  </form>
-                </td>
-              </tr>
-              <?php  endforeach; ?>
-            </tbody>
-          </table>
+        <div class="form-group col-sm-10">
+          <label for="JudulBuku">Judul</label>
+          <input type="text" class="form-control" id="JudulBuku" name="Judul" required value="<?= $book["Judul"]?>"/>
         </div>
       </div>
-    </div>
-
-    
+      <div class="row">
+        <div class="form-group col">
+          <label for="penulisBuku">Penulis</label>
+          <input type="text" class="form-control" id="penulisBuku" name="Penulis" required value="<?= $book["Penulis"]?>"/>
+        </div>
+      </div>
+      <div class="row">
+        <div class="form-group col-9">
+          <label for="gambar">Gambar</label>
+          <br />
+          <img src="img/Buku/<?= $book["Gambar"] ?>" width="108">
+          <br />
+          <input type="file" class="form-control" id="gambar" name="Gambar" />
+        </div>
+        <div class="form-group col-3">
+          <label for="tahunTerbit">Tahun Terbit</label>
+          <input type="text" class="form-control" id="tahunTerbit" placeholder="YYYY" name="Tahun_Terbit" required value="<?= $book["Tahun_Terbit"]?>"/>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="form-group col-3">
+          <button type="submit" class="btn btn-primary" style="width: 100%" name="submit" onclick="return confirm('Ubah Data Buku?')">Ubah Data</button>
+        </div>
+      </div>
+    </form>
 
     <!-- footer -->
     <footer class="text-center">
