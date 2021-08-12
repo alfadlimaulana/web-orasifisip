@@ -98,7 +98,7 @@ nav {
 .panitia-bg {
   min-height: calc(100vh - 180px);
   background-image: url(img/bg/Panitia\ Inti.svg);
-  background-size: cover;
+  background-size: contain;
   background-position: center top;
 }
 
