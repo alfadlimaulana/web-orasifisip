@@ -41,7 +41,7 @@ if(isset($_POST["cari"])){
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
-      <a class="navbar-brand mx-auto" href="dashboard.php"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
+        <a class="navbar-brand mx-auto" href="dashboard.php"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
       </div>
     </nav>
     <!-- akhir navbar -->
@@ -55,7 +55,7 @@ if(isset($_POST["cari"])){
           <div class="row">
             <div class="col-sm-12 kolom-direct col-lg-6 text-center p-4">  
               <a href="dashboard-penugasan.php" style="text-decoration: none; color:black;">
-                <img class="float-start" src="img/tugas-icon.svg" alt="penugasan" height="100%">
+                <img class="float-start" src="img/icon/tugas-icon.svg" alt="penugasan" height="100%">
                 <div class="d-flex flex-column justify-content-center p-3" style="height: 100%;">
                   <h5>Penugasan</h5>
                   <p class="m-0">Anda dapat melihat tugas dan nilai setiap peserta disini</p>
@@ -64,7 +64,7 @@ if(isset($_POST["cari"])){
             </div>
             <div class="col-sm-12 kolom-direct col-lg-6 text-center p-4"> 
               <a href="dashboard-absensi.php" style="text-decoration: none; color:black;">
-                <img class="float-start" src="img/absensi-icon.svg" alt="penugasan" height="100%">
+                <img class="float-start" src="img/icon/absensi-icon.svg" alt="penugasan" height="100%">
                 <div class="d-flex flex-column justify-content-center p-3" style="height: 100%;">
                   <h5>Absensi</h5>
                   <p class="m-0">Anda dapat melihat kehadiran dan biodata setiap peserta disini</p>

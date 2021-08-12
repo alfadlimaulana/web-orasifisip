@@ -35,7 +35,7 @@ nav {
 
 /* index */
 .index-container {
-  background-image: url(img/background\ yeay\ 1.svg);
+  background-image: url(img/bg/background\ yeay\ 1.svg);
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -62,7 +62,7 @@ nav {
 /* login signup*/
 .sign-bg {
   min-height: calc(100vh - 180px);
-  background-image: url(img/bg\ web\ -\ sign\ up\ log\ in\ 2\ 2.svg);
+  background-image: url(img/bg/bg\ web\ -\ sign\ up\ log\ in\ 2\ 2.svg);
   background-size: cover;
   background-position: center;
 }
@@ -80,7 +80,7 @@ nav {
 /* penugasan */
 .tugas-container {
   min-height: 100vh;
-  background-image: url(img/Web\ juga-01\ 2.svg);
+  background-image: url(img/bg/Web\ juga-01\ 2.svg);
   background-size: cover;
   background-position: center bottom;
 }
@@ -97,7 +97,7 @@ nav {
 /* panitia */
 .panitia-bg {
   min-height: calc(100vh - 180px);
-  background-image: url(img/Panitia\ Inti.svg);
+  background-image: url(img/bg/Panitia\ Inti.svg);
   background-size: cover;
   background-position: center top;
 }
@@ -106,24 +106,32 @@ nav {
   margin-top: 10px;
 }
 
-.supervisor-bg {
-  height: 100%;
-  width: 100%;
-  background-image: url(img/ntmt.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+.text-divisi {
+  display: inline-block;
+  background-color: #f7c42a;
+  text-decoration: none;
+  color: black;
+  padding: 10px 25px;
+  border-radius: 30px;
+  margin-top: 20px;
 }
 
-.text-divisi {
-  text-decoration: none !important;
-  color: black;
+.tulisan-panit {
+  background-color: rgba(247, 196, 42, 0.9);
+  border-radius: 8px;
+  padding: 1px;
+  margin-top: 10px;
+}
+
+a.text-divisi:hover {
+  color: white;
+  background-color: #395caa;
 }
 
 /* absensi */
 .absensi-bg {
   min-height: calc(100vh - 180px);
-  background-image: url(img/Absensicrop\ 1.svg);
+  background-image: url(img/bg/Absensicrop\ 1.svg);
   background-size: cover;
   background-position: center;
 }
@@ -189,4 +197,13 @@ footer {
 .index-panitia .row .col-sm-8 {
   background-color: white;
   border-radius: 30px;
+}
+
+.back-btn {
+  font-size: 30px;
+  color: white;
+}
+
+.back-btn:hover {
+  color: #395caa;
 }
