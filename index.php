@@ -28,11 +28,13 @@ if(!isset($_SESSION["login_peserta"])){
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- font -->
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
-    
+
+    <!-- AoS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <title>Orasi Fisip Unpad</title>
   </head>
   <body>
@@ -59,11 +61,15 @@ if(!isset($_SESSION["login_peserta"])){
       </div>
     </nav>
     <!-- akhir navbar -->
-
+    
     <!-- slider -->
-    <?php if(isset($_SESSION["login_peserta"])) : ?>
-      <p>Hallo, <?=  $student ["nama_peserta"] ?> </p>
-    <?php endif; ?> 
+    <div class="sambutan text-center">
+      <?php if(isset($_SESSION["login_peserta"])) : ?>
+        <p class="m-0">
+          Hallo, <?=  $student ["nama_peserta"] ?> 
+        </p>
+      <?php endif; ?> 
+    </div>
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -87,18 +93,18 @@ if(!isset($_SESSION["login_peserta"])){
       </button>
     </div>
     <!-- akhir slider -->
-
+    
     <!-- about us -->
     <div class="index-container container-fluid text-center p-4">
       <img class="img-fluid my-2" src="img/Logo.svg" alt="logo" />
       <div class="row mx-2">
         <div class="col">
-          <h2 class="animate__animated animate__bounce">ORASI 2021</h2>
+          <h2 data-aos="fade-up">ORASI 2021</h2>
         </div>
       </div>
       <div class="row mx-2">
         <div class="col">
-          <p>
+          <p data-aos="fade-up">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur ipsam harum consequuntur optio sint. Eaque amet odio qui obcaecati ex expedita! Vitae iusto minus natus amet at? Itaque cumque reprehenderit ipsum voluptates
             voluptatem ratione officiis est odio eius omnis excepturi totam libero hic eos atque, delectus modi minus corrupti. Dicta nihil suscipit sit magnam porro veritatis cupiditate pariatur, eos tenetur cum facere, at eius aut. Illo
             minus cumque harum iusto.
@@ -110,11 +116,11 @@ if(!isset($_SESSION["login_peserta"])){
 
       <!-- Gallery -->
       <section id="gallery" class="container-fluid text-center bg-transparent p-5" style="background-color: lightgrey">
-        <h2>CHECK THIS OUT</h2>
-        <div class="row justify-content-center pt-3 g-4 animate__animated animate__slideInUp">
+        <h2 data-aos="fade-up">CHECK THIS OUT</h2>
+        <div class="row justify-content-center pt-3 g-4">
           <div class="col-sm-6 col col-md-4 card-1">
-            <div class="card card-gallery">
-              <img src="img/YoutubeThumbnailSize-1-1280x720.jpg" class="card-img-top" alt="..." />
+            <div class="card card-gallery" data-aos="fade-up">
+              <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -123,8 +129,8 @@ if(!isset($_SESSION["login_peserta"])){
             </div>
           </div>
           <div class="col-sm-6 col-md-4">
-            <div class="card card-gallery">
-              <img src="img/YoutubeThumbnailSize-1-1280x720.jpg" class="card-img-top" alt="..." />
+            <div class="card card-gallery" data-aos="fade-up">
+              <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -133,8 +139,8 @@ if(!isset($_SESSION["login_peserta"])){
             </div>
           </div>
           <div class="col-sm-6 col-md-4">
-            <div class="card card-3 card-gallery">
-              <img src="img/YoutubeThumbnailSize-1-1280x720.jpg" class="card-img-top" alt="..." />
+            <div class="card card-3 card-gallery" data-aos="fade-up">
+              <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
               <div class="card-body">
                 <h5 class="card-title">Card title</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -146,7 +152,7 @@ if(!isset($_SESSION["login_peserta"])){
       </section>
     </div>
     <!-- akhir gallery -->
-    <img class="poro img-fluid" src="img/bluerabbit.svg" alt="" />
+    <img class="poro img-fluid" src="img/bluerabbit.svg" alt="poro" />
     <!-- footer -->
     <footer class="text-center">
       <div class="container d-flex flex-column justify-content-center" style="height: 100%">
@@ -168,5 +174,11 @@ if(!isset($_SESSION["login_peserta"])){
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+      });
+    </script>
   </body>
 </html>

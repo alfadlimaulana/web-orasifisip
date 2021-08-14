@@ -90,10 +90,12 @@ if(isset($_POST["submit3"])){
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
     <!-- font -->
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
+
+    <!-- AoS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <title>Orasi Fisip Unpad</title>
   </head>
@@ -122,9 +124,9 @@ if(isset($_POST["submit3"])){
 
     <!-- Grid Tugas -->
     <div class="container-fluid tugas-container py-5 px-5 d-flex flex-column align-items-center justify-content-center">
-      <div class="row g-3 animate__animated animate__fadeIn">
-        <div class="col-ms-12 col-md-6 col-lg-3">
-          <div class="card card-tugas">
+      <div class="row g-3 justify-content-center">
+        <div class="col-ms-12 col-md-6 col-lg-4">
+          <div class="card card-tugas" data-aos="fade-up">
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 1</h5>
               <p class="card-text mt-3">Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA</p>
@@ -132,8 +134,8 @@ if(isset($_POST["submit3"])){
             </div>
           </div>
         </div>
-        <div class="col-ms-12 col-md-6 col-lg-3">
-          <div class="card card-tugas">
+        <div class="col-ms-12 col-md-6 col-lg-4">
+          <div class="card card-tugas" data-aos="fade-up">
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 2</h5>
               <p class="card-text mt-3">Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA</p>
@@ -142,8 +144,8 @@ if(isset($_POST["submit3"])){
           </div>
         </div>
 
-        <div class="col-ms-12 col-md-6 col-lg-3">
-          <div class="card card-tugas">
+        <div class="col-ms-12 col-md-6 col-lg-4">
+          <div class="card card-tugas" data-aos="fade-up">
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 3</h5>
               <p class="card-text mt-3">Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA</p>
@@ -152,8 +154,8 @@ if(isset($_POST["submit3"])){
           </div>
         </div>
 
-        <div class="col-ms-12 col-md-6 col-lg-3">
-          <div class="card card-tugas">
+        <div class="col-ms-12 col-md-6 col-lg-4">
+          <div class="card card-tugas" data-aos="fade-up">
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas 4</h5>
               <p class="card-text mt-3">Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA</p>
@@ -161,10 +163,19 @@ if(isset($_POST["submit3"])){
             </div>
           </div>
         </div>
+        <div class="col-ms-12 col-md-6 col-lg-4">
+          <div class="card card-tugas" data-aos="fade-up">
+            <div class="card-body text-center p-5">
+              <h5 class="card-title">Tugas 5</h5>
+              <p class="card-text mt-3">Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA</p>
+              <button type="button" class="btn btn-primary btn-4 mt-4" data-bs-toggle="modal" data-bs-target="#tugas4">Detail</button>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="row animate__animated animate__fadeInUp">
-        <a href="nilai.html" role="button" class="btn btn-primary mt-5">Lihat Nilai</a>
+      <div class="row">
+        <a href="nilai.html" role="button" class="btn btn-primary mt-5" data-aos="zoom-in">Lihat Nilai</a>
       </div>
     </div>
     <!-- akhir grid tugas -->
@@ -378,6 +389,12 @@ if(isset($_POST["submit3"])){
     <script src="js/script.js"></script>
     <script>
       //btntoggle();
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+      });
     </script>
   </body>
 </html>

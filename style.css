@@ -55,8 +55,21 @@ nav {
   }
 }
 
-.animate__animated.animate__bounce {
-  --animate-duration: 2s;
+.sambutan {
+  position: absolute;
+  z-index: 3;
+  top: 100px;
+  left: 50%;
+  display: block;
+  width: 60%;
+  background-color: #f399bf;
+  border-radius: 10px;
+  padding: 10px;
+  transform: translateX(-50%);
+}
+
+.sambutan p {
+  font-size: 1minvw;
 }
 
 /* login signup*/
