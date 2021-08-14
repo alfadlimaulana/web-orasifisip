@@ -59,10 +59,10 @@ function registrasi_panitia($data){
 function registrasi_peserta($data){
 	global $conn;
 
-	$nama_peserta = strtolower(stripcslashes($data["nama_peserta"]));
-	$program_studi = strtolower(stripcslashes($data["program_studi"]));
-	$kelompok = strtolower(stripcslashes($data["kelompok"]));
-	$username_peserta = strtolower(stripcslashes($data["username_peserta"]));
+	$nama_peserta = htmlspecialchars(stripcslashes($data["nama_peserta"]));
+	$program_studi = htmlspecialchars(strtolower(stripcslashes($data["program_studi"])));
+	$kelompok = htmlspecialchars(strtolower(stripcslashes($data["kelompok"])));
+	$username_peserta = htmlspecialchars(strtolower(stripcslashes($data["username_peserta"])));
 	$password_peserta = mysqli_real_escape_string($conn, $data["password_peserta"]);
 	$password2_peserta = mysqli_real_escape_string($conn, $data["password2_peserta"]);
 
@@ -88,11 +88,11 @@ function registrasi_peserta($data){
 	}
 
 	//enkripsi password
-	//$password_panitia_enkripsi = password_hash($password_panitia, PASSWORD_DEFAULT);
+	$password_peserta_enkripsi = password_hash($password_peserta, PASSWORD_DEFAULT);
 
 	//insert petugas ke database
 	mysqli_query($conn, "INSERT INTO peserta VALUES
-						 ('$username_peserta', '$nama_peserta', '$program_studi', '$kelompok', NULL,  NULL,  NULL, '$password_peserta')");
+						 ('$username_peserta', '$nama_peserta', '$program_studi', '$kelompok', NULL,  NULL,  NULL, '$password_peserta_enkripsi')");
 
 	return mysqli_affected_rows($conn);
 }

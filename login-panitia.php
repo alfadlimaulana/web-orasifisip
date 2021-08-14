@@ -46,8 +46,8 @@ if(isset($_POST["login_panitia"])){
       //cek tetap masuk
       if(isset($_POST["keep_login"])){
         //buat cookie
-        setcookie('username', $database['username_panitia'], time()+300);
-        setcookie('key', hash('sha256', $database['username_panitia']), time()+300);
+        setcookie('username', $database['username_panitia'], time()+(60 * 60 * 24));
+        setcookie('key', hash('sha256', $database['username_panitia']), time()+(60 * 60 * 24));
       }
 
       header("Location: dashboard.php");

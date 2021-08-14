@@ -13,6 +13,8 @@ if(!isset($_SESSION["login_peserta"])){
           window.onload = function(){
             showNav()};
       </script>";
+  $username_peserta = $_SESSION["login_peserta"];
+  $student = query("SELECT nama_peserta FROM peserta WHERE username_peserta = '$username_peserta'")[0];
 }
 ?>
 
@@ -48,7 +50,9 @@ if(!isset($_SESSION["login_peserta"])){
             <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
             <a class="nav-link hide-link" href="absensi.php">Absensi</a>
             <a class="nav-link hide-link" href="kelompok.html">Kelompok</a>
+            <?php if(!isset($_SESSION["login_peserta"])) : ?>
             <a class="nav-link" href="login.php">Login</a>
+            <?php endif; ?> 
             <a class="nav-link hide-link" href="logout.php">Logout</a>
           </div>
         </div>
@@ -57,6 +61,9 @@ if(!isset($_SESSION["login_peserta"])){
     <!-- akhir navbar -->
 
     <!-- slider -->
+    <?php if(isset($_SESSION["login_peserta"])) : ?>
+      <p>Hallo, <?=  $student ["nama_peserta"] ?> </p>
+    <?php endif; ?> 
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>

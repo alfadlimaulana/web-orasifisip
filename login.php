@@ -39,28 +39,26 @@ if(isset($_POST["login_peserta"])){
   $password_peserta = $_POST["password_peserta"];
   
   $result = mysqli_query($conn, "SELECT * FROM peserta WHERE username_peserta = '$username_peserta'");
-  $result2 = mysqli_query($conn, "SELECT * FROM peserta WHERE password_peserta = '$password_peserta'");
 
   //cek username
-  //wap gimana kalo ini jadi if(mysqli_num_rows === 1 && $result['password'] === $password_peserta)? jadi si result2nya bisa dihapus
-  if(mysqli_num_rows($result) === 1 && mysqli_num_rows($result2) === 1){
+  if(mysqli_num_rows($result) === 1){
     //cek password
     $database = mysqli_fetch_assoc($result);
     //setcookie('username', $database['username_peserta'], time()+ (60 * 60 * 24 * 30));
-    //if(password_verify($password_peserta, $database["password_peserta"])){
+    if(password_verify($password_peserta, $database["password_peserta"])){
       //set session
       $_SESSION["login_peserta"] = $username_peserta;
 
       //cek tetap masuk
       if(isset($_POST["keep_login"])){
         //buat cookie
-        setcookie('username', $database['username_peserta'], time()+(60 * 60 * 24 * 30));
-        setcookie('key', hash('sha256', $database['username_peserta']), time()+(60 * 60 * 24 * 30));
+        setcookie('username', $database['username_peserta'], time()+(60 * 60 * 24));
+        setcookie('key', hash('sha256', $database['username_peserta']), time()+(60 * 60 * 24));
       }
 
       header("Location: index.php");
       exit;
-    //}
+    }
   }
   
   $error = true;
