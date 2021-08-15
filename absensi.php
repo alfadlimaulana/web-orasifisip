@@ -129,8 +129,6 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
                 <?php if($students['absen1'] === NULL) : ?>
                   <button type="submit" class="btn btn-primary btn-1" name="absensi1">Absen</button>
                 <?php endif;?>
-                
-                
               </form>
             </td>
           </tr>

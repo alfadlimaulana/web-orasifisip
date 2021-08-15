@@ -123,7 +123,7 @@ if(isset($_POST["submit3"])){
     <!-- akhir navbar -->
 
     <!-- Grid Tugas -->
-    <div class="container-fluid tugas-container py-5 px-5 d-flex flex-column align-items-center justify-content-center">
+    <div class="container-fluid tugas-container py-5 px-5 ">
       <div class="row g-3 justify-content-center">
         <div class="col-ms-12 col-md-6 col-lg-4">
           <div class="card card-tugas" data-aos="fade-up">
@@ -174,10 +174,13 @@ if(isset($_POST["submit3"])){
         </div>
       </div>
 
-      <div class="row">
+      <div class="row justify-content-center mt-3">
         <div class="col-ms-12 col-md-6 col-lg-4" >
-          Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA
-
+          <div class="card card-tugas" data-aos="fade-up">
+            <div class="card-body text-center p-5">
+              <p class="card-text">Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
