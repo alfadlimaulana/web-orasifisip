@@ -24,22 +24,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
-<<<<<<< HEAD
-=======
             <a class="nav-link" href="#gallery">Gallery</a>
             <!-- <a class="nav-link" href="#informasi">Informasi</a> -->
->>>>>>> 94dbb3319749e7e235bd02082e8d9b41fee30f0f
             <a class="nav-link" href="panitia.php">Panitia Inti</a>
             <!-- <a class="nav-link" href="livestream.php">Livestream</a> -->
             <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
             <a class="nav-link hide-link" href="absensi.php">Absensi</a>
-<<<<<<< HEAD
-            <a class="nav-link hide-link" href="kelompok.html">Kelompok</a>
-            <?php if(!isset($_SESSION["login_peserta"])) : ?>
-=======
->>>>>>> 94dbb3319749e7e235bd02082e8d9b41fee30f0f
             <a class="nav-link" href="login.php">Login</a>
-            <?php endif; ?> 
             <a class="nav-link hide-link" href="logout.php">Logout</a>
           </div>
         </div>

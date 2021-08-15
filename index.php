@@ -75,9 +75,6 @@ if(!isset($_SESSION["login_peserta"])){
         class="player"
         data-property="{ videoURL:'https://youtu.be/YbbqUjFwz-g', containment:'body', autoPlay:true, mute:true, startAt:0, opacity:1, optimizeDisplay:true, addRaster:true, abundance: 0 }"
       ></div>
-      <div id="info" class="flex">
-        <i id="volume" class="fas fa-volume-mute"></i>
-      </div>
     </section>
     <!-- akhir background video -->
     
@@ -92,9 +89,21 @@ if(!isset($_SESSION["login_peserta"])){
       <div class="row mx-2">
         <div class="col">
           <p data-aos="fade-up">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur ipsam harum consequuntur optio sint. Eaque amet odio qui obcaecati ex expedita! Vitae iusto minus natus amet at? Itaque cumque reprehenderit ipsum voluptates
-            voluptatem ratione officiis est odio eius omnis excepturi totam libero hic eos atque, delectus modi minus corrupti. Dicta nihil suscipit sit magnam porro veritatis cupiditate pariatur, eos tenetur cum facere, at eius aut. Illo
-            minus cumque harum iusto.
+          Mahasiswa merupakan salah satu tingkatan tertinggi dalam dunia pendidikan yang ada di Indonesia. Mahasiswa sebagai kaum intelektual muda yang memiliki fungsi kontrol sosial dalam masyarakat dituntut untuk dapat menjadi pribadi yang kritis, visioner, peduli, berkontribusi nyata, kreatif, dan mampu mengoptimalkan potensi mereka sehingga diharapkan mampu berperan sebagai agent of change di masyarakat sesuai dengan tuntutan Tri Dharma Perguruan Tinggi <br><br>
+
+Perpindahan mahasiswa baru dari lingkungan sekolah menjadi lingkungan kampus tertentu akan mengalamu perubahan pola pikir dan pola kehidupan. Proses adaptasi dan mengenal berbagai macam aspek, baik aspek fisik kampus, akademik, sosial, dan organisasi yang ada di lingkungan kampus tingkatan, khususnya tingkat fakultas sepertu melalui salah satu program kaderisasi berbasis orientasi yang disebut dengan kegiatan ORASI yang merupakan acara Penerimaan Mahasiswa Baru Fakultas Ilmu Sosial dan Ilmu Politik (PMBF)
+          </p>
+        </div>
+      </div>
+      <div class="row mx-2">
+        <div class="col">
+          <h2 data-aos="fade-up"><em>EMPOWERING COLLABORATION</em></h2>
+        </div>
+      </div>
+      <div class="row mx-2">
+        <div class="col">
+          <p data-aos="fade-up">
+          Memberdayakan potensi mahasiswa baru melalui penanaman nilai yang ideal sesuai dengan blueprint kaderisasi yang tertuang dalam nilai dan muatan ORASI yang dirancang oleh Dept. KPSDM BEM FISIP 2021. Serta memperlihatkan keberagaman kepada mahasiswa baru yang terdapat di FISIP Unpad melalui kolaborasi bersama 12 himpunan sehingga ORASI 2021 dapat menjadi perpanjangan tangan kepada ospek di masing-masing jurusan. Dan juga bermitra dengan berbagai pemangku kepentingan agar memperoleh kesuksesan dalam seluruh rangkaian acara ORASI 2021. Empowering Collaboration sendiri diangkat dengan background fakultas terbanyak yang berada di Unpad
           </p>
         </div>
       </div>
@@ -109,9 +118,9 @@ if(!isset($_SESSION["login_peserta"])){
             <div class="card card-gallery" data-aos="fade-up">
               <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#">Watch on Youtube</a>
+                <h5 class="card-title">COMING SOON</h5>
+                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#">Watch on Youtube</a> -->
               </div>
             </div>
           </div>
@@ -119,9 +128,9 @@ if(!isset($_SESSION["login_peserta"])){
             <div class="card card-gallery" data-aos="fade-up">
               <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#">Watch on Youtube</a>
+                <h5 class="card-title">COMING SOON</h5>
+                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#">Watch on Youtube</a> -->
               </div>
             </div>
           </div>
@@ -129,9 +138,9 @@ if(!isset($_SESSION["login_peserta"])){
             <div class="card card-3 card-gallery" data-aos="fade-up">
               <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#">Watch on Youtube</a>
+                <h5 class="card-title">COMING SOON</h5>
+                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#">Watch on Youtube</a> -->
               </div>
             </div>
           </div>
