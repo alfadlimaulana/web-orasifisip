@@ -11,24 +11,24 @@ if(!isset($_SESSION["login_panitia"])){
   exit;
 }  
 
-$students = query("SELECT * FROM penugasan1");
+$students = query("SELECT * FROM penugasan3");
 
 // tombol cari ditekan
 if(isset($_POST["cari"])){
-  $students = cari_tugas("penugasan1", $_POST["kata_kunci"]);
+  $students = cari_tugas("penugasan3", $_POST["kata_kunci"]);
 }
 
 if(isset($_POST["submit_nilai"])){
   //cek berhasil atau tidak
-  if(input_nilai("penugasan1", $_POST) > 0){
+  if(input_nilai("penugasan3", $_POST) > 0){
     echo "<script>
-            alert('Nilai berhasil diubah!');
-            document.location.href = 'dashboard-nilai1.php';
+            alert('Status Penilaian BERHASIL Diubah!');
+            document.location.href = 'dashboard-nilai-audio.php';
           </script>";
   }else{
     echo "<script>
-            alert('Nilai gagal diubah!');
-            document.location.href = 'dashboard-nilai1.php';
+            alert('Status Penilaian GAGAL Diubah!');
+            document.location.href = 'dashboard-nilai-audio.php';
           </script>";
   }
 }
@@ -63,7 +63,6 @@ if(isset($_POST["submit_nilai"])){
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="dashboard-penugasan.php">Penugasan</a>
             <a class="nav-link" href="dashboard-absensi.php">Absensi</a>
-            <a class="nav-link" href="login-panitia.php">Login</a>
           </div>
         </div>
       </div>
@@ -91,7 +90,7 @@ if(isset($_POST["submit_nilai"])){
                 <th scope="col">Kelompok</th>
                 <th scope="col">Nama File</th>
                 <th scope="col">Waktu Pengumpulan</th>
-                <th scope="col">Nilai</th>
+                <th scope="col">Penilaian</th>
               </tr>
             </thead>
             <tbody>
@@ -102,18 +101,16 @@ if(isset($_POST["submit_nilai"])){
                 <th scope="row"><?= $student["nama_peserta"]; ?></th>
                 <td><?= $student["kelompok"]; ?></td>
                 <td>
-                <audio controls>
-  <source src="file/penugasan1/<?= $student["nama_file"]; ?>" type="audio/mpeg">
-</audio>
-                  <!-- <embed src="file/penugasan1/<?= $student["nama_file1"]; ?>"/></td> -->
+                  <audio controls>
+                    <source src="file/penugasan3/<?= $student["nama_file"]; ?>" type="audio/mpeg">
+                  </audio>
                 <td><?= $student["waktu_pengumpulan"]; ?></td>
-                <td><?= $student["nilai"]; ?></td>
+                <td><?= $student["penilaian"]; ?></td>
                 <td>
                   <form action="" method="post">
                   <div class="input-group search-form mt-4 mb-1">
                     <input type="hidden" name="id_tugas" value="<?= $id_tugas?>">
-                    <input type="text" class="form-control" placeholder="Input Nilai" aria-label="Username" aria-describedby="basic-addon1" name="nilai"/>
-                    <span class="input-group-text" id="basic-addon1"><button class="fas fa-check" name="submit_nilai" type="submit"></button></span>
+                    <span class="input-group-text" id="basic-addon1"><button class="fas fa-check" name="submit_nilai" type="submit" onclick="return confirm('Ubah status penilaian menjadi \'Done\' ?')"></button></span>
                    </div>
                   </form>
                 </td>
