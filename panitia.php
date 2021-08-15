@@ -49,7 +49,7 @@ if(!isset($_SESSION["login_peserta"])){
             <a class="nav-link hide-link" href="kelompok.html">Kelompok</a>
             <?php if(!isset($_SESSION["login_peserta"])) : ?>
             <a class="nav-link" href="login.php">Login</a>
-            <?php endif; ?> 
+            <?php endif ?>
             <a class="nav-link hide-link" href="logout.php">Logout</a>
           </div>
         </div>
