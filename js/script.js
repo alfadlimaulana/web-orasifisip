@@ -49,3 +49,28 @@ function btntgltugas() {
     absenbtn.removeAttribute("disabled");
   }
 }
+
+function muteVideo() {
+  // Volume for teaser's video
+  const volume = document.getElementById("volume");
+  const teaserVideo = jQuery("#video-teaser");
+  let isMuted = true;
+  jQuery(function () {
+    teaserVideo.YTPlayer();
+    jQuery("#P1").YTPlayer();
+  });
+
+  volume.addEventListener("click", () => {
+    if (isMuted) {
+      teaserVideo.YTPUnmute();
+      isMuted = false;
+      volume.classList.remove("fa-volume-mute");
+      volume.classList.add("fa-volume-up");
+    } else {
+      teaserVideo.YTPMute();
+      isMuted = true;
+      volume.classList.remove("fa-volume-up");
+      volume.classList.add("fa-volume-mute");
+    }
+  });
+}
