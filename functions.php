@@ -113,7 +113,7 @@ function upload($penugasan){
 	}
 
 	//cek yg diupload harus gambar
-	$ekstensi_valid = ['png', 'pdf', 'mp3', 'wav', 'wma', 'm4a'];
+	$ekstensi_valid = ['pdf ', 'png', 'jpg', 'jpeg', 'png', 'pdf', 'mp3', 'wav', 'wma', 'm4a'];
 	//split nama file
 	$ekstensi_file = explode('.', $nama_file);
 	//amnil ektensi
