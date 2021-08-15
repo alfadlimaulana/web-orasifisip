@@ -127,7 +127,10 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
             <td>
               <form action="" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-                <button type="submit" class="btn btn-primary btn-1" name="absensi1" disabled>Absen</button>
+                <?php if($students['absen1'] === NULL) : ?>
+                  <button type="submit" class="btn btn-primary btn-1" name="absensi1">Absen</button>
+                <?php endif;?>
+                
                 
               </form>
             </td>
@@ -145,7 +148,7 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
             <td>
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-              <button type="submit" class="btn btn-primary btn-2" name="absensi2" disabled>Absen</button>
+              <button type="submit" class="btn btn-primary btn-2" name="absensi2">Absen</button>
             </form>
             </td>
           </tr>

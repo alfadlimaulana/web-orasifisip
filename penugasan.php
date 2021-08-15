@@ -22,12 +22,12 @@ if(isset($_POST["submit1"])){
   //cek berhasil atau tidak
   if(submit($_POST, "penugasan1") > 0){
     echo "<script>
-            alert('Tugas 1 BERHASIL dikumpulkan!');
+            alert('Tugas Life Mapping BERHASIL dikumpulkan!');
             document.location.href = '';
           </script>";
   }else{
     echo "<script>
-            alert('Tugas 1 GAGAL dikumpulkan!');
+            alert('Tugas Life Mapping GAGAL dikumpulkan!');
             document.location.href = '';
           </script>";
   }
@@ -35,14 +35,14 @@ if(isset($_POST["submit1"])){
 
 if(isset($_POST["submit2"])){
   //cek berhasil atau tidak
-  if(submit($_POST, "penugasan2") > 0){
+  if(submit_link($_POST, "penugasan2") > 0){
     echo "<script>
-            alert('Tugas 2 BERHASIL dikumpulkan!');
+            alert('Tugas Video BERHASIL dikumpulkan!');
             document.location.href = '';
           </script>";
   }else{
     echo "<script>
-            alert('Tugas 2 GAGAL dikumpulkan!');
+            alert('Tugas Video GAGAL dikumpulkan!');
             document.location.href = '';
           </script>";
   }
@@ -52,12 +52,12 @@ if(isset($_POST["submit3"])){
   //cek berhasil atau tidak
   if(submit($_POST, "penugasan3") > 0){
     echo "<script>
-            alert('Tugas 3 BERHASIL dikumpulkan!');
+            alert('Tugas Audio BERHASIL dikumpulkan!');
             document.location.href = '';
           </script>";
   }else{
     echo "<script>
-            alert('Tugas 3 GAGAL dikumpulkan!');
+            alert('Tugas Audio GAGAL dikumpulkan!');
             document.location.href = '';
           </script>";
   }
@@ -67,12 +67,12 @@ if(isset($_POST["submit3"])){
     //cek berhasil atau tidak
     if(submit($_POST, "penugasan4") > 0){
       echo "<script>
-              alert('Tugas 4 BERHASIL dikumpulkan!');
+              alert('Tugas Esai BERHASIL dikumpulkan!');
               document.location.href = '';
             </script>";
     }else{
       echo "<script>
-              alert('Tugas 4 GAGAL dikumpulkan!');
+              alert('Tugas Esai GAGAL dikumpulkan!');
               document.location.href = '';
             </script>";
     }
@@ -129,8 +129,8 @@ if(isset($_POST["submit3"])){
         <div class="col-ms-12 col-md-6 col-lg-4">
           <div class="card card-tugas" data-aos="fade-up">
             <div class="card-body text-center p-5">
-              <h5 class="card-title">Tugas 1</h5>
-              <p class="card-text mt-3">Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA</p>
+              <h5 class="card-title">Tugas Life Mapping</h5>
+              <p class="card-text mt-3">Deadline : 22 Agustus 2021</p>
               <button type="button" class="btn btn-primary btn-1 mt-4" data-bs-toggle="modal" data-bs-target="#tugas1">Detail</button>
             </div>
           </div>
@@ -138,8 +138,8 @@ if(isset($_POST["submit3"])){
         <div class="col-ms-12 col-md-6 col-lg-4">
           <div class="card card-tugas" data-aos="fade-up">
             <div class="card-body text-center p-5">
-              <h5 class="card-title">Tugas 2</h5>
-              <p class="card-text mt-3">Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA</p>
+              <h5 class="card-title">Tugas Video 21st Century Skill</h5>
+              <p class="card-text mt-3">Deadline : 29 Agustus 2021</p>
               <button type="button" class="btn btn-primary btn-2 mt-4" data-bs-toggle="modal" data-bs-target="#tugas2">Detail</button>
             </div>
           </div>
@@ -148,8 +148,8 @@ if(isset($_POST["submit3"])){
         <div class="col-ms-12 col-md-6 col-lg-4">
           <div class="card card-tugas" data-aos="fade-up">
             <div class="card-body text-center p-5">
-              <h5 class="card-title">Tugas 3</h5>
-              <p class="card-text mt-3">Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA</p>
+              <h5 class="card-title">Tugas Review Audio</h5>
+              <p class="card-text mt-3">Deadline : 28 Agustus 2021</p>
               <button type="button" class="btn btn-primary btn-3 mt-4" data-bs-toggle="modal" data-bs-target="#tugas3">Detail</button>
             </div>
           </div>
@@ -158,8 +158,8 @@ if(isset($_POST["submit3"])){
         <div class="col-ms-12 col-md-6 col-lg-4">
           <div class="card card-tugas" data-aos="fade-up">
             <div class="card-body text-center p-5">
-              <h5 class="card-title">Tugas 4</h5>
-              <p class="card-text mt-3">Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA</p>
+              <h5 class="card-title">Tugas Esai Kemahasiswaan</h5>
+              <p class="card-text mt-3">Deadline : 27 Agustus 2021</p>
               <button type="button" class="btn btn-primary btn-4 mt-4" data-bs-toggle="modal" data-bs-target="#tugas4">Detail</button>
             </div>
           </div>
@@ -167,16 +167,19 @@ if(isset($_POST["submit3"])){
         <div class="col-ms-12 col-md-6 col-lg-4">
           <div class="card card-tugas" data-aos="fade-up">
             <div class="card-body text-center p-5">
-              <h5 class="card-title">Tugas 5</h5>
-              <p class="card-text mt-3">Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA</p>
-              <button type="button" class="btn btn-primary btn-4 mt-4" data-bs-toggle="modal" data-bs-target="#tugas4">Detail</button>
+              <h5 class="card-title">Tugas Kefisipan & Keorganisasian</h5>
+              <p class="card-text mt-3">Deadline : 28 Agustus 2021 </p>
+              <button type="button" class="btn btn-primary btn-4 mt-4" data-bs-toggle="modal" data-bs-target="#tugas5">Detail</button>
             </div>
           </div>
         </div>
       </div>
 
       <div class="row">
-        <a href="nilai.html" role="button" class="btn btn-primary mt-5" data-aos="zoom-in">Lihat Nilai</a>
+        <div class="col-ms-12 col-md-6 col-lg-4" >
+          Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA
+
+        </div>
       </div>
     </div>
     <!-- akhir grid tugas -->
@@ -188,7 +191,7 @@ if(isset($_POST["submit3"])){
           <div class="modal-content">
             <!-- header modal -->
             <div class="modal-header border-0 d-flex align-items-start text-center">
-              <h2 class="align-midle">Video 21st Century Skill</h2>
+              <h2 class="align-midle">Life Mapping</h2>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -203,9 +206,9 @@ if(isset($_POST["submit3"])){
                   </div>
                   <div class="col-md-7">
                     <p class="mt-3 px-4">
-                      Merupakan penugasan kelompok berupa pembuatan video pengaplikasian Arkamuda terhadap 21st Century Skill dalam menjadi sosok pemimpin ideal di abad 21 dengan melibatkan seluruh anggota kelompok dan dibuat semenarik mungkin. 
+                    Penugasan individu berupa pembuatan skema life mapping diri arkamuda selama 5 tahun yang akan datang dengan dikemas sesuai kreatifitas arkamuda.
                     </p>
-                    <p class="px-4">Deadline : 29 Agustus 2021</p>
+                    <p class="px-4">Deadline : 22 Agustus 2021</p>
                     <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
                     <input type="hidden" name="nama_peserta" value="<?= $database["nama_peserta"] ?>">
                     <input type="hidden" name="kelompok" value="<?= $database["kelompok"] ?>">
@@ -237,7 +240,7 @@ if(isset($_POST["submit3"])){
           <div class="modal-content">
             <!-- header modal -->
             <div class="modal-header border-0 d-flex align-items-start text-center">
-              <h2 class="align-midle">Esai Kemahasiswaan</h2>
+              <h2 class="align-midle">Video 21st Century Skill </h2>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -252,11 +255,15 @@ if(isset($_POST["submit3"])){
                   </div>
                   <div class="col-md-7">
                     <p class="mt-3 px-4">
-                      Merupakan penugasan individu berupa pembuatan esai mengenai peran Arkamuda sebagai mahasiswa serta keterkaitannya dengan Tri Dharma Perguruan Tinggi.
-                    </p>
-                    <p class="px-4">27 Agustus 2021 (jam 23.59)</p>
-                    <div class=" text-center m-3">
-                      <a href="">Link Form</a>
+                    Penugasan kelompok berupa pembuatan video pengaplikasian Arkamuda terhadap 21st Century Skill dalam menjadi sosok pemimpin ideal di abad 21 dengan melibatkan seluruh anggota kelompok dan dibuat semenarik mungkin. 
+                  </p>
+                    <p class="px-4">Deadline : 29 Agustus 2021</p>
+                    <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
+                    <input type="hidden" name="nama_peserta" value="<?= $database["nama_peserta"] ?>">
+                    <input type="hidden" name="kelompok" value="<?= $database["kelompok"] ?>">
+                    <div class="submit-form text-start mt-5">
+                      <label for="file" class="form-label">Pengumpulan</label>
+                      <input type="text" class="form-control" id="usernameInput" placeholder="Masukkan link youtube" name="link_tugas_video" required />
                     </div>
                   </div>
                 </div>
@@ -267,7 +274,7 @@ if(isset($_POST["submit3"])){
             <div class="modal-footer border-0">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
               <button type="submit" class="btn btn-primary" name="submit2" onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan')">Selesai</button>
-              <!-- onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan') -->
+              <!--  -->
             </div>
           </div>
         </div>
@@ -278,53 +285,6 @@ if(isset($_POST["submit3"])){
     <!-- Modal 3-->
     <form action="" method="post" enctype="multipart/form-data">
       <div class="modal fade" id="tugas3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <!-- header modal -->
-            <div class="modal-header border-0 d-flex align-items-start text-center">
-              <h2 class="align-midle">Penugasan Kefisipan & Keorganisasian</h2>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-
-            <!-- body modal -->
-            <div class="rounded-bottom">
-              <div class="modal-body margin-left-20 margin-right-20 border-0">
-                <div class="row margin-bottom-30">
-                  <div class="col-md-5">
-                    <div class="border-grad">
-                      <img class="img" src="img/image-test.png" width="100%" />
-                    </div>
-                  </div>
-                  <div class="col-md-7">
-                    <p class="mt-3 px-4">
-                      Merupakan penugasan individu berupa pertanyaan yang harus dijawab oleh Arkamuda mengenai pengetahuan Kefisipan yang disampaikan pada Talkshow dan Keorganisasian yang disampaikan pada podcast.
-                    </p>
-                    <p class="px-4">28 Agustus 2021 (jam 23.59)</p>
-                    <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-                    <div class="submit-form text-start mt-5">
-                      <label for="file" class="form-label">Pengumpulan</label>
-                      <input class="form-control" type="file" id="file" name="file" required />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- modal footer -->
-            <div class="modal-footer border-0">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-              <button type="submit" class="btn btn-primary" name="submit3" onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan')">Selesai</button>
-              <!-- onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan') -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>
-    <!-- Akhir Modal 3-->
-
-    <!-- Modal 4-->
-    <form action="" method="post" enctype="multipart/form-data">
-      <div class="modal fade" id="tugas4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <!-- header modal -->
@@ -344,11 +304,63 @@ if(isset($_POST["submit3"])){
                   </div>
                   <div class="col-md-7">
                     <p class="mt-3 px-4">
-                      Merupakan penugasan individu berupa pertanyaan yang harus dijawab oleh Arkamuda mengenai pengetahuan Kefisipan yang disampaikan pada Talkshow dan Keorganisasian yang disampaikan pada podcast.
-                    </p>
+                    Penugasan individu berupa pengulasan secara lisan atas rangkaian Orasi 2021 pada hari pertama, kedua dan ketiga. 
+                  </p>
                     <p class="px-4">Deadline : 28 Agustus 2021</p>
-                    <div class=" text-center m-3">
-                      <a href="youtube.com">Go To Youtube</a>
+                    <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
+                    <input type="hidden" name="nama_peserta" value="<?= $database["nama_peserta"] ?>">
+                    <input type="hidden" name="kelompok" value="<?= $database["kelompok"] ?>">
+                    <div class="submit-form text-start mt-5">
+                      <label for="file" class="form-label">Pengumpulan</label>
+                      <input class="form-control" type="file" id="file" name="file" required />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- modal footer -->
+            <div class="modal-footer border-0">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+              <button type="submit" class="btn btn-primary" name="submit3" onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan')">Selesai</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <!-- Akhir Modal 3-->
+
+    <!-- Modal 4-->
+    <form action="" method="post" enctype="multipart/form-data">
+      <div class="modal fade" id="tugas4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <!-- header modal -->
+            <div class="modal-header border-0 d-flex align-items-start text-center">
+              <h2 class="align-midle">Esai Kemahasiswaan</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- body modal -->
+            <div class="rounded-bottom">
+              <div class="modal-body margin-left-20 margin-right-20 border-0">
+                <div class="row margin-bottom-30">
+                  <div class="col-md-5">
+                    <div class="border-grad">
+                      <img class="img" src="img/image-test.png" width="100%" />
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <p class="mt-3 px-4">
+                    Penugasan individu berupa pembuatan esai mengenai peran Arkamuda sebagai mahasiswa serta keterkaitannya dengan Tri Dharma Perguruan Tinggi. 
+                    </p>
+                    <p class="px-4">Deadline : 27 Agustus 2021</p>
+                    <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
+                    <input type="hidden" name="nama_peserta" value="<?= $database["nama_peserta"] ?>">
+                    <input type="hidden" name="kelompok" value="<?= $database["kelompok"] ?>">
+                    <div class="submit-form text-start mt-5">
+                      <label for="file" class="form-label">Pengumpulan</label>
+                      <input class="form-control" type="file" id="file" name="file" required />
                     </div>
                   </div>
                 </div>
@@ -359,13 +371,55 @@ if(isset($_POST["submit3"])){
             <div class="modal-footer border-0">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
               <button type="submit" class="btn btn-primary" name="submit4" onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan')">Selesai</button>
-              <!-- onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan') -->
             </div>
           </div>
         </div>
       </div>
     </form>
-    <!-- Akhir Modal 3-->
+    <!-- Akhir Modal 4-->
+
+    <!-- Modal 5-->
+    <form action="" method="post" enctype="multipart/form-data">
+      <div class="modal fade" id="tugas5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <!-- header modal -->
+            <div class="modal-header border-0 d-flex align-items-start text-center">
+              <h2 class="align-midle">Penugasan Kefisipan & Keorganisasian</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- body modal -->
+            <div class="rounded-bottom">
+              <div class="modal-body margin-left-20 margin-right-20 border-0">
+                <div class="row margin-bottom-30">
+                  <div class="col-md-5">
+                    <div class="border-grad">
+                      <img class="img" src="img/image-test.png" width="100%" />
+                    </div>
+                  </div>
+                  <div class="col-md-7">
+                    <p class="mt-3 px-4">
+                      Penugasan individu berupa pertanyaan yang harus dijawab oleh Arkamuda mengenai pengetahuan Kefisipan yang disampaikan pada Talkshow dan Keorganisasian yang disampaikan pada podcast.
+                    </p>
+                    <p class="px-4">Deadline : 28 Agustus 2021</p>
+                    <div class=" text-center m-3">
+                      <a href="youtube.com">Link Form</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- modal footer -->
+            <div class="modal-footer border-0">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <!-- Akhir Modal 5-->
 
     <!-- footer -->
     <footer class="text-center">
