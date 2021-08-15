@@ -43,7 +43,6 @@ if(isset($_POST["regist_peserta"])){
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
-            <a class="nav-link" href="#gallery">Gallery</a>
             <a class="nav-link" href="panitia.php">Panitia Inti</a>
             <a class="nav-link" href="login.php">Login</a>
           </div>
