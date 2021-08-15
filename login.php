@@ -92,7 +92,6 @@ if(isset($_POST["login_peserta"])){
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
-            <a class="nav-link" href="#gallery">Gallery</a>
             <a class="nav-link" href="panitia.php">Panitia Inti</a>
             <a class="nav-link" href="login.php">Login</a>
           </div>
@@ -123,7 +122,7 @@ if(isset($_POST["login_peserta"])){
               </div>
               <div class="sign-button text-center">
                 <button href="#" class="btn btn-primary mt-4" type="submit" name="login_peserta" style="width: 50%">LOG IN</button>
-                <p class="mt-2 align-self-center">Belum registrasi? <a href="registrasi.php">Registrasi Di Sini</a></p>
+                <p class="mt-2 align-self-center">Belum registrasi? <a href="registrasi.php">Registrasi di sini</a></p>
               </div>
             </div>
           </div>

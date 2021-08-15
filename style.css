@@ -272,3 +272,11 @@ footer {
 .back-btn:hover {
   color: #395caa;
 }
+
+/* sponsors */
+.sponsors {
+  background-color: #f399bf;
+  box-sizing: border-box;
+  border-radius: 20px;
+  padding: 20px;
+}
