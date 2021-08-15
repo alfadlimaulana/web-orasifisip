@@ -113,7 +113,7 @@ function upload($penugasan){
 	}
 
 	//cek yg diupload harus gambar
-	$ekstensi_valid = ['jpg', 'jpeg', 'png', 'pdf', 'doc', 'docx', 'mp3', 'wav', 'wma', 'm4a'];
+	$ekstensi_valid = ['png', 'pdf', 'mp3', 'wav', 'wma', 'm4a'];
 	//split nama file
 	$ekstensi_file = explode('.', $nama_file);
 	//amnil ektensi
@@ -165,6 +165,25 @@ function submit($data, $penugasan){
 	return mysqli_affected_rows($conn);
 }
 
+function submit_link($data, $penugasan){
+	global $conn;
+	//ambil data dari tiap elemen dalam form
+	$username_peserta = htmlspecialchars($data["username_peserta"]);
+	$nama_peserta = htmlspecialchars($data["nama_peserta"]);
+	$kelompok = htmlspecialchars($data["kelompok"]);
+	//upload gambar
+	$link_tugas_video = htmlspecialchars($data["link_tugas_video"]);
+
+	$id_tugas = $nama_peserta . '_' . $penugasan;
+
+	//query insert data ke tabel penugasan
+	$query = "INSERT INTO $penugasan VALUES
+	('$id_tugas', '$nama_peserta', '$kelompok', '$link_tugas_video', NOW(),  NULL, '$username_peserta')";
+	mysqli_query($conn, $query);
+
+	return mysqli_affected_rows($conn);
+}
+
 function absensi($data, $absen){
 	global $conn;
 	//ambil data dari tiap elemen dalam form
@@ -182,8 +201,6 @@ function cari_tugas($tabel, $kata_kunci){
 			  WHERE id_tugas LIKE '%$kata_kunci%' 
 			  OR nama_peserta LIKE '%$kata_kunci%'
 			  OR kelompok LIKE '%$kata_kunci%'
-			  OR nama_file LIKE '%$kata_kunci%'
-			  OR nilai LIKE '%$kata_kunci%'
 			  OR username_peserta LIKE '%$kata_kunci%'
 			  ";
 	return query($query);
@@ -193,11 +210,10 @@ function input_nilai($tabel, $data){
 	global $conn;
 	//ambil data dari tiap elemen dalam form
 	$id_tugas = htmlspecialchars($data["id_tugas"]);
-	$nilai = htmlspecialchars($data["nilai"]);
 
 	//query update data
 	$query = "UPDATE $tabel SET 
-				nilai = '$nilai'
+				penilaian = 'Done'
 			  WHERE id_tugas = '$id_tugas'
 			  ";
 	mysqli_query($conn, $query);

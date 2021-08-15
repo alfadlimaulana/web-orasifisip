@@ -1,21 +1,3 @@
-<?php
-session_start();
-require 'functions.php';
-
-//cek session
-if(!isset($_SESSION["login_peserta"])){
-  echo "<script>
-          window.onload = function(){
-          hideNav()};
-        </script>";
-}else{
-  echo "<script>
-          window.onload = function(){
-          showNav()};
-        </script>";
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,17 +18,18 @@ if(!isset($_SESSION["login_peserta"])){
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="index.php" style="font-weight: 490;"> <img src="img/Logo.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" />ORASI FISIP UNPAD</a>
+        <a class="navbar-brand" href="index.php"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="#gallery">Gallery</a>
+            <!-- <a class="nav-link" href="#informasi">Informasi</a> -->
             <a class="nav-link" href="panitia.php">Panitia Inti</a>
+            <!-- <a class="nav-link" href="livestream.php">Livestream</a> -->
             <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
             <a class="nav-link hide-link" href="absensi.php">Absensi</a>
-            <a class="nav-link hide-link" href="kelompok.html">Kelompok</a>
             <a class="nav-link" href="login.php">Login</a>
             <a class="nav-link hide-link" href="logout.php">Logout</a>
           </div>
@@ -57,171 +40,261 @@ if(!isset($_SESSION["login_peserta"])){
 
     <!-- grid panitia -->
     <div class="container-fluid panitia-bg">
-      <div class="container pt-3">
-        <div class="row justify-content-center">
-          <div class="col text-center">
-            <h1>PANITIA INTI</h1>
-          </div>
-        </div>
-        <div class="row g-5 mt-2 justify-content-center">
+      <div class="container p-5">
+        <div class="row g-3 justify-content-center">
           <div class="col-12 col-sm-12 col-md-12 col-lg-4 text-center align-self-center">
-            <h5>About Us</h5>
-            <h2>We scratch, build and play together</h2>
-            <p>Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te. Ex duo eripuit mentitum.</p>
+            <div class="container about-panit tulisan-panit m-0 p-4">
+              <h5>About Us</h5>
+              <h2>We scratch, build and play together</h2>
+              <p>Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te. Ex duo eripuit mentitum.</p>
+            </div>
           </div>
           <div class="col-8 col-md-6 col-lg-4 order-lg-first text-center align-self-center">
             <img class="img-fluid rounded-circle" src="img/panitia/incil/1-PS-Fikri-Fauzi 1.svg" alt="Supervisor 1" />
-            <p><strong>Fikri Fauzi</strong><br />Supervisor</p>
+            <div class="tulisan-panit">
+              <p>
+                <strong>Fikri Fauzi</strong><br />
+                Project Supervisor
+              </p>
+            </div>
           </div>
           <div class="col-8 col-md-6 col-lg-4 text-center align-self-center">
             <img class="img-fluid rounded-circle" src="img/panitia/incil/1-PS-Dimas-Dwi-F. 2.svg" alt="Supervisor" />
-            <p><strong>Dimas Dwi F</strong><br />Supervisor</p>
+            <div class="tulisan-panit">
+              <p>
+                <strong>Dimas Dwi F</strong><br />
+                Project Supervisor
+              </p>
+            </div>
           </div>
         </div>
         <div class="row g-2 mt-3 text-center justify-content-center">
           <div class="col-8 col-md-4">
             <img class="img-fluid rounded-circle" src="img/panitia/incil/1-PO-Putri-Adinda.svg" alt="PO" />
-            <p><strong>Putri Adinda</strong><br />PO</p>
+            <div class="tulisan-panit">
+              <p>
+                <strong>Putri Adinda</strong><br />
+                Project Officer
+              </p>
+            </div>
           </div>
           <div class="col-6 col-md-4">
             <img class="img-fluid rounded-circle" src="img/panitia/incil/1-VPO-Fadhil-Akmali 2.svg" alt="VPO" />
-            <p><strong>Fadhil Akmali</strong><br />VPO</p>
+            <div class="tulisan-panit">
+              <p>
+                <strong>Fadhil Akmali</strong><br />
+                Vice Project Officer
+              </p>
+            </div>
           </div>
           <div class="col-6 col-md-4">
             <img class="img-fluid rounded-circle" src="img/panitia/incil/1-VPO-Nizar-Firdaus 1.svg" alt="VPO" />
-            <p><strong>Nizar Firdaus</strong><br />VPO</p>
+            <div class="tulisan-panit">
+              <p>
+                <strong>Nizar Firdaus</strong><br />
+                Vice Project Officer
+              </p>
+            </div>
           </div>
         </div>
 
-        <div class="row mt-3 g-3">
-          <div class="col-sm-12 col-md-6">
-            <div class="row text-center g-2">
+        <div class="row mt-3 g-3 divisi">
+          <div class="col-sm-12 col-md-6 text-center">
+            <div class="text-divisi">
               <h3>Sekretaris</h3>
+            </div>
+            <div class="row text-center g-2">
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/incil/1-Sekretaris-Hasna 2.svg" alt="Sekretaris 1" />
-                <p><strong>Hasna</strong><br />Sekretaris</p>
+                <div class="tulisan-panit">
+                  <p>
+                    <strong>Hasna</strong><br />
+                    Sekretaris
+                  </p>
+                </div>
               </div>
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/incil/1-Sekretaris-Sayyidati-Farissa 1.svg" alt="Sekretaris 2" />
-                <p><strong>Sayyidati Farissa</strong><br />Sekretaris</p>
+                <div class="tulisan-panit">
+                  <p>
+                    <strong>Sayyidati Farissa</strong><br />
+                    Sekretaris
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-12 col-md-6">
-            <div class="row text-center g-2">
+          <div class="col-sm-12 col-md-6 text-center">
+            <div class="text-divisi">
               <h3>Bendahara</h3>
+            </div>
+            <div class="row text-center g-2">
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/incil/1-Bendahara-Hasya-Aiman-Nadhir 2.svg" alt="Bendahara 1" />
-                <p><strong>Hasya Aiman Nadhir</strong><br />Bendahara</p>
+                <div class="tulisan-panit">
+                  <p>
+                    <strong>Hasya Aiman N</strong><br />
+                    Bendahara
+                  </p>
+                </div>
               </div>
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/incil/1-Bendahara-Nanda-Eka-F. 1.svg" alt="Bendahara 2" />
-                <p><strong>Nanda Eka F</strong><br />Bendahara</p>
+                <div class="tulisan-panit">
+                  <p><strong>Nanda Eka F</strong><br />Bendahara</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-md-6 text-center">
+            <a class="text-divisi" href="acara.html">
+              <h3>Acara</h3>
+            </a>
             <div class="row text-center g-2">
-              <a class="text-divisi" href="acara.html">
-                <h3>Acara</h3>
-              </a>
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/acara/2-Kadiv-Kanaya-Avitadira.svg" alt="Kadiv Acara" />
-                <p><strong>Kanaya Avitadira</strong><br />Kadiv Acara</p>
+                <div class="tulisan-panit">
+                  <p><strong>Kanaya Avitadira</strong><br />Kadiv Acara</p>
+                </div>
               </div>
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/acara/2-Wakadiv-Alya-Namira.svg" alt="Wakadiv Acara" />
-                <p><strong>Alya Namira</strong><br />Wakadiv Acara</p>
+                <div class="tulisan-panit">
+                  <p><strong>Alya Namira</strong><br />Wakadiv Acara</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-md-6 text-center">
+            <a class="text-divisi" href="humas.html">
+              <h3>Humas</h3>
+            </a>
             <div class="row text-center g-2">
-              <a class="text-divisi" href="humas.html">
-                <h3>Humas</h3>
-              </a>
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/humas/6-Kadiv-Annisa-Rahmadhani-Angesti 1.svg" alt="Kadiv Humas" />
-                <p><strong>Annisa Rahmadhani Angesti</strong><br />Kadiv Humas</p>
+                <div class="tulisan-panit">
+                  <p><strong>Annisa R.A</strong><br />Kadiv Humas</p>
+                </div>
               </div>
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/humas/6-Wakadiv-Karina-Imelia-Irfani 1.svg" alt="Wakadiv Humas" />
-                <p><strong>Karina Imelia Irfani</strong><br />Wakadiv Humas</p>
+                <div class="tulisan-panit">
+                  <p><strong>Karina Imelia Irfani</strong><br />Wakadiv Humas</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-md-6 text-center">
+            <a class="text-divisi" href="fasil.html">
+              <h3>Fasilitator</h3>
+            </a>
             <div class="row text-center g-2">
-              <a class="text-divisi" href="fasil.html">
-                <h3>Fasilitator</h3>
-              </a>
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/fasil/5-Kadiv-Dina-Larasinta 1.svg" alt="Kadiv Fasil" />
-                <p><strong>Dina Larasinta</strong><br />Kadiv Fasil</p>
+                <div class="tulisan-panit">
+                  <p><strong>Dina Larasinta</strong><br />Kadiv Fasil</p>
+                </div>
               </div>
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/fasil/5-Wakadiv-Rifqo-Kavin-Viali 1.svg" alt="Wakadiv Fasil" />
-                <p><strong>Rifqo Kavin Viali</strong><br />Wakadiv Fasil</p>
+                <div class="tulisan-panit">
+                  <p><strong>Rifqo Kavin Viali</strong><br />Wakadiv Fasil</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-md-6 text-center">
+            <a class="text-divisi" href="materi.html">
+              <h3>Materi</h3>
+            </a>
             <div class="row text-center g-2">
-              <a class="text-divisi" href="materi.html">
-                <h3>Materi</h3>
-              </a>
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/materi/3-Kadiv-Annisa-Nur-Amalina 1.svg" alt="Kadiv Materi" />
-                <p><strong>Annisa Nur Amalina</strong><br />Kadiv Materi</p>
+                <div class="tulisan-panit">
+                  <p><strong>Annisa Nur A</strong><br />Kadiv Materi</p>
+                </div>
               </div>
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/materi/3-Wakadiv-Sarah-Naluriyah 1.svg" alt="Wakadiv Materi" />
-                <p><strong>Sarah Naluriyah</strong><br />Wakadiv Materi</p>
+                <div class="tulisan-panit">
+                  <p><strong>Sarah Naluriyah</strong><br />Wakadiv Materi</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-md-6 text-center">
+            <a class="text-divisi" href="operasional.html">
+              <h3>Operasional</h3>
+            </a>
             <div class="row text-center g-2">
-              <a class="text-divisi" href="operasional.html">
-                <h3>Operasional</h3>
-              </a>
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/op/9-Kadiv-Bagas-Aji-Prakoso.svg" alt="Kadiv Operasional" />
-                <p><strong>Bagas Aji Prakoso</strong><br />Kadiv Operasional</p>
+                <div class="tulisan-panit">
+                  <p><strong>Bagas Aji Prakoso</strong><br />Kadiv Operasional</p>
+                </div>
               </div>
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/op/9-Wakadiv-Raka-Putra.svg" alt="Wakadiv Operasional" />
-                <p><strong>Raka Putra</strong><br />Wakadiv Operasional</p>
+                <div class="tulisan-panit">
+                  <p><strong>Raka Putra</strong><br />Wakadiv Operasional</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-md-6 text-center">
+            <a class="text-divisi" href="pdd.html">
+              <h3>PDD</h3>
+            </a>
             <div class="row text-center g-2">
-              <a class="text-divisi" href="pdd.html">
-                <h3>Publikasi & Dokumentasi</h3>
-              </a>
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/pdd/7-Kadiv-Ken-Ratu-Annida 1.svg" alt="Kadiv Publikasi & Dokumentasi" />
-                <p><strong>Ken Ratu Annida</strong><br />Kadiv Publikasi & Dokumentasi</p>
+                <div class="tulisan-panit">
+                  <p><strong>Ken Ratu Annida</strong><br />Kadiv PDD</p>
+                </div>
               </div>
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/pdd/7-Wakadiv-Riska-Desfitha-Rachmadanty 1.svg" alt="Wakadiv Publikasi & Dokumentasi" />
-                <p><strong>Riska Desfitha Rachmadanty</strong><br />Wakadiv Publikasi & Dokumentasi</p>
+                <div class="tulisan-panit">
+                  <p><strong>Riska Desfitha R</strong><br />Wakadiv PDD</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-sm-12 col-md-6">
+          <div class="col-sm-12 col-md-6 text-center">
+            <a class="text-divisi" href="sponsor.html">
+              <h3>Sponsorship</h3>
+            </a>
             <div class="row text-center g-2">
-              <a class="text-divisi" href="sponsor.html">
-                <h3>Sponsor</h3>
-              </a>
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/sponsor/8-Kadiv-Fira-Julia 1.svg" alt="Kadiv Sponsor" />
-                <p><strong>Fira Julia</strong><br />Kadiv Sponsor</p>
+                <div class="tulisan-panit">
+                  <p><strong>Fira Julia</strong><br />Kadiv Sponsorship</p>
+                </div>
               </div>
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/sponsor/9-Wakadiv-M-Bintang-Ramadhan 1.svg" alt="Wakadiv Sponsor" />
-                <p><strong>M.Bintang Ramadhan</strong><br />Wakadiv Sponsor</p>
+                <div class="tulisan-panit">
+                  <p><strong>M.Bintang R</strong><br />Wakadiv Sponsorship</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6 text-center">
+            <a class="text-divisi" href="kotik.html">
+              <h3>Kode Etik</h3>
+            </a>
+            <div class="row text-center g-2">
+              <div class="col">
+                <img class="img-fluid rounded-circle" src="img/panitia/kotik/4-Kadiv-Nabila-Nurhaliza 1.svg" alt="Kadiv Kode Etik" />
+                <div class="tulisan-panit">
+                  <p><strong>Nabila Nurhaliza</strong><br />Kadiv Kode Etik</p>
+                </div>
+              </div>
+              <div class="col">
+                <img class="img-fluid rounded-circle" src="img/panitia/kotik/4-Wakadiv-Duta-Smaradana 1.svg" alt="Wakadiv Kode Etik" />
+                <div class="tulisan-panit">
+                  <p><strong>Duta Smaradana</strong><br />Wakadiv Kode Etik</p>
+                </div>
               </div>
             </div>
           </div>
@@ -229,7 +302,6 @@ if(!isset($_SESSION["login_peserta"])){
       </div>
     </div>
     <!-- akhir grid panitia -->
-
 
     <!-- footer -->
     <footer class="text-center">
@@ -250,7 +322,6 @@ if(!isset($_SESSION["login_peserta"])){
     </footer>
     <!-- akhir footer -->
 
-    <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

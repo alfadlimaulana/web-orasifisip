@@ -40,9 +40,9 @@
         <div class="col-ms-12 col-md-6 col-lg-3">
           <div class="card card-tugas">
             <div class="card-body text-center p-5">
-              <h5 class="card-title">Tugas 1</h5>
-              <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <a href="dashboard-nilai1.php" role="button" class="btn btn-primary mt-4">Lihat Nilai</a>
+              <h5 class="card-title">Tugas Life Mapping</h5>
+              <p class="card-text mt-3">Penugasan Life Mapping merupakan penugasan individu berupa pembuatan skema life mapping diri arkamuda selama 5 tahun yang akan datang dengan dikemas sesuai kreatifitas arkamuda.</p>
+              <a href="dashboard-nilai-kotik.php" role="button" class="btn btn-primary mt-4">Lihat Nilai</a>
             </div>
           </div>
         </div>
@@ -50,9 +50,9 @@
         <div class="col-ms-12 col-md-6 col-lg-3">
           <div class="card card-tugas">
             <div class="card-body text-center p-5">
-              <h5 class="card-title">Tugas 2</h5>
-              <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <a href="dashboard-nilai2.html" role="button" class="btn btn-primary mt-4">Lihat Nilai</a>
+              <h5 class="card-title">Tugas Video 21st Century Skill</h5>
+              <p class="card-text mt-3">Merupakan penugasan kelompok berupa pembuatan video pengaplikasian Arkamuda terhadap 21st Century Skill dalam menjadi sosok pemimpin ideal di abad 21 dengan melibatkan seluruh anggota kelompok dan dibuat semenarik mungkin. </p>
+              <a href="dashboard-nilai-video.php" role="button" class="btn btn-primary mt-4">Lihat Nilai</a>
             </div>
           </div>
         </div>
@@ -60,9 +60,9 @@
         <div class="col-ms-12 col-md-6 col-lg-3">
           <div class="card card-tugas">
             <div class="card-body text-center p-5">
-              <h5 class="card-title">Tugas 3</h5>
-              <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <a href="dashboard-nilai3.html" role="button" class="btn btn-primary mt-4">Lihat Nilai</a>
+              <h5 class="card-title">Tugas Review Audio</h5>
+              <p class="card-text mt-3">Merupakan penugasan individu berupa pengulasan secara lisan atas rangkaian Orasi 2021 pada hari pertama, kedua dan ketiga. </p>
+              <a href="dashboard-nilai-audio.php" role="button" class="btn btn-primary mt-4">Lihat Nilai</a>
             </div>
           </div>
         </div>
@@ -70,9 +70,9 @@
         <div class="col-ms-12 col-md-6 col-lg-3">
           <div class="card card-tugas">
             <div class="card-body text-center p-5">
-              <h5 class="card-title">Tugas 4</h5>
-              <p class="card-text mt-3">Some quick example text to build on the Tugas and make up the bulk of the card's content.</p>
-              <a href="dashboard-nilai4.html" role="button" class="btn btn-primary mt-4">Lihat Nilai</a>
+              <h5 class="card-title">Tugas Esai Kemahasiswaan</h5>
+              <p class="card-text mt-3">Merupakan penugasan individu berupa pembuatan esai mengenai peran Arkamuda sebagai mahasiswa serta keterkaitannya dengan Tri Dharma Perguruan Tinggi. </p>
+              <a href="dashboard-nilai-esai.php" role="button" class="btn btn-primary mt-4">Lihat Nilai</a>
             </div>
           </div>
         </div>
