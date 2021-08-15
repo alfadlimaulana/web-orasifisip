@@ -101,23 +101,6 @@ section#teaser::after {
   left: 0;
 }
 
-div#info {
-  flex-direction: column;
-  position: absolute;
-  bottom: 40px;
-  width: 100%;
-  z-index: 2;
-  gap: 20px;
-}
-
-div#info i {
-  font-size: 1.2rem;
-  padding: 0.5rem;
-  color: white;
-  border-radius: 50%;
-  border: 2px solid white;
-}
-
 .flex {
   display: flex;
   align-items: center;

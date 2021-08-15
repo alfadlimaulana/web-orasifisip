@@ -75,9 +75,6 @@ if(!isset($_SESSION["login_peserta"])){
         class="player"
         data-property="{ videoURL:'https://youtu.be/YbbqUjFwz-g', containment:'body', autoPlay:true, mute:true, startAt:0, opacity:1, optimizeDisplay:true, addRaster:true, abundance: 0 }"
       ></div>
-      <div id="info" class="flex">
-        <i id="volume" class="fas fa-volume-mute"></i>
-      </div>
     </section>
     <!-- akhir background video -->
     

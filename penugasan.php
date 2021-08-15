@@ -173,10 +173,6 @@ if(isset($_POST["submit3"])){
           </div>
         </div>
       </div>
-
-      <div class="row">
-        <a href="nilai.html" role="button" class="btn btn-primary mt-5" data-aos="zoom-in">Lihat Nilai</a>
-      </div>
     </div>
     <!-- akhir grid tugas -->
 
