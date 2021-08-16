@@ -1,36 +1,11 @@
 <?php
-session_start();
 require 'functions.php';
 
-if(!isset($_SESSION["login_panitia"])){
-
-  echo "<script>
-            alert('Login Terlebih Dahulu!');
-            document.location.href = 'login-catatan-hati.php';
-        </script>";
-  exit;
-}  
-
-$students = query("SELECT * FROM penugasan3");
+$students = query("SELECT * FROM fasil");
 
 // tombol cari ditekan
 if(isset($_POST["cari"])){
-  $students = cari_tugas("penugasan3", $_POST["kata_kunci"]);
-}
-
-if(isset($_POST["submit_nilai"])){
-  //cek berhasil atau tidak
-  if(input_nilai("penugasan3", $_POST) > 0){
-    echo "<script>
-            alert('Status Penilaian BERHASIL Diubah!');
-            document.location.href = 'dashboard-nilai-audio.php';
-          </script>";
-  }else{
-    echo "<script>
-            alert('Status Penilaian GAGAL Diubah!');
-            document.location.href = 'dashboard-nilai-audio.php';
-          </script>";
-  }
+  $students = cari_fasil("fasil", $_POST["kata_kunci"]);
 }
 
 ?>
@@ -49,21 +24,24 @@ if(isset($_POST["submit_nilai"])){
     <!-- font -->
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
 
+    <!-- icon -->
+    <link rel="shortcut icon" href="img/logo-favicon.ico" />
+
     <title>Orasi Fisip Unpad</title>
   </head>
   <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
-      <a class="navbar-brand" href="dashboard.php"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
+      <a class="navbar-brand d-flex align-items-center" href="index.php" style="font-weight: 490;"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
-            <a class="nav-link" href="dashboard-penugasan.php">Penugasan</a>
-            <a class="nav-link" href="dashboard-absensi.php">Absensi</a>
-            <a class="nav-link" href="logout.php">Logout</a>
+            <a class="nav-link" href="panitia.php">Panitia</a>
+            <a class="nav-link hide-link" href="kelompok.php">Informasi Kelompok</a>
+            <a class="nav-link" href="login.php">Login</a>
           </div>
         </div>
       </div>
@@ -73,48 +51,31 @@ if(isset($_POST["submit_nilai"])){
     <div class="container-fluid absensi-bg">
       <div class="container">
         <div class="row">
-        <form action="" method="post">
           <div class="col-6 col-sm-4 col-lg-3 ms-auto">
-            <div class="input-group search-form mt-4 mb-1">
+          <form action="" method="post">  
+            <div class="input-group search-form mt-4 mb-2">
               <span class="input-group-text" id="basic-addon1"><button class="fas fa-search" name="cari" type="submit"></button></span>
               <input type="text" class="form-control" placeholder="Kata Kunci" aria-label="Username" aria-describedby="basic-addon1" name="kata_kunci"/>
             </div>
+          </form>  
           </div>
-          </form>
         </div>
+
         <div class="row table-responsive">
           <table class="table align-middle">
             <thead>
               <tr>
-                <th scope="col">Username</th>
-                <th scope="col">Nama Peserta</th>
                 <th scope="col">Kelompok</th>
-                <th scope="col">Nama File</th>
-                <th scope="col">Waktu Pengumpulan</th>
-                <th scope="col">Penilaian</th>
+                <th scope="col">Nama Fasil</th>
+                <th scope="col">Id Line</th>
               </tr>
             </thead>
             <tbody>
-            <?php  foreach($students as $student): ?>
-              <?php $id_tugas = $student["id_tugas"]; ?>  
+            <?php  foreach($students as $student): ?> 
               <tr>
-                <td><?= $student["username_peserta"]; ?></td>
-                <th scope="row"><?= $student["nama_peserta"]; ?></th>
                 <td><?= $student["kelompok"]; ?></td>
-                <td>
-                  <audio controls>
-                    <source src="file/penugasan3/<?= $student["nama_file"]; ?>" type="audio/mpeg">
-                  </audio>
-                <td><?= $student["waktu_pengumpulan"]; ?></td>
-                <td><?= $student["penilaian"]; ?></td>
-                <td>
-                  <form action="" method="post">
-                  <div class="input-group search-form mt-4 mb-1">
-                    <input type="hidden" name="id_tugas" value="<?= $id_tugas?>">
-                    <span class="input-group-text" id="basic-addon1"><button class="fas fa-check" name="submit_nilai" type="submit" onclick="return confirm('Ubah status penilaian menjadi \'Done\' ?')"></button></span>
-                   </div>
-                  </form>
-                </td>
+                <th scope="row"><?= $student["nama_fasil"]; ?></th>
+                <td><?= $student["id_line"]; ?></td>
               </tr>
               <?php  endforeach; ?>
             </tbody>
@@ -122,8 +83,6 @@ if(isset($_POST["submit_nilai"])){
         </div>
       </div>
     </div>
-
-    
 
     <!-- footer -->
     <footer class="text-center">
@@ -142,8 +101,11 @@ if(isset($_POST["submit_nilai"])){
         <p class="mt-3">©2021. Orasi FISIP Unpad. All Rights Reserved.</p>
       </div>
     </footer>
-    <!-- akhir footer -->
 
+    <script src="js/script.js"></script>
+    <script>
+      btntoggle();
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>

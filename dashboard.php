@@ -1,14 +1,18 @@
 <?php
 session_start();
+require 'functions.php';
 
 if(!isset($_SESSION["login_panitia"])){
 
   echo "<script>
             alert('Login Terlebih Dahulu!');
-            document.location.href = 'login-panitia.php';
+            document.location.href = 'login-catatan-hati.php';
         </script>";
   exit;
-}  
+} else{
+  $username_panitia = $_SESSION["login_panitia"];
+  $student = query("SELECT nama_panitia FROM panitia WHERE username_panitia = '$username_panitia'")[0];
+} 
 ?>
 
 <!DOCTYPE html>
@@ -33,13 +37,14 @@ if(!isset($_SESSION["login_panitia"])){
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand mx-auto" href="dashboard.php"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
+        <a class="nav-link" href="logout.php">Logout</a>
       </div>
     </nav>
     <!-- akhir navbar -->
     
     <!-- table -->
     <div class="container index-panitia text-center pt-5">
-      <h1>Selamat datang, <?= $_SESSION["login_panitia"] ?> </h1>
+      <h1>Selamat datang, <?= $student["nama_panitia"] ?> </h1>
       <p>Apa yang ingin anda lakukan?</p>
       <div class="row justify-content-center">
         <div class="col-sm-8 mt-3 animate__animated animate__fadeInUp">

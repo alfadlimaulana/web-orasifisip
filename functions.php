@@ -206,6 +206,14 @@ function cari_tugas($tabel, $kata_kunci){
 	return query($query);
 }
 
+function cari_fasil($tabel, $kata_kunci){
+	$query = "SELECT * FROM $tabel
+			  WHERE nama_fasil LIKE '%$kata_kunci%' 
+			  OR kelompok LIKE '$kata_kunci'
+			  ";
+	return query($query);
+}
+
 function input_nilai($tabel, $data){
 	global $conn;
 	//ambil data dari tiap elemen dalam form

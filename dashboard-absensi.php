@@ -5,7 +5,7 @@ if(!isset($_SESSION["login_panitia"])){
 
   echo "<script>
             alert('Login Terlebih Dahulu!');
-            document.location.href = 'login-panitia.php';
+            document.location.href = 'login-catatan-hati.php';
         </script>";
   exit;
 }  
@@ -48,7 +48,7 @@ if(isset($_POST["cari"])){
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="dashboard-penugasan.php">Penugasan</a>
             <a class="nav-link" href="dashboard-absensi.php">Absensi</a>
-            <a class="nav-link" href="login-panitia.php">Login</a>
+            <a class="nav-link" href="logout.php">Logout</a>
           </div>
         </div>
       </div>

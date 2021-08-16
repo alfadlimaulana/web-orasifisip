@@ -34,6 +34,9 @@ if(!isset($_SESSION["login_peserta"])){
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
+    <!-- icon -->
+    <link rel="shortcut icon" href="img/logo-favicon.ico" />
+
     <!-- AoS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
@@ -57,7 +60,7 @@ if(!isset($_SESSION["login_peserta"])){
             <a class="nav-link" href="panitia.php">Panitia</a>
             <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
             <a class="nav-link hide-link" href="absensi.php">Absensi</a>
-            <a class="nav-link hide-link" href="kelompok.html">Kelompok</a>
+            <a class="nav-link hide-link" href="kelompok.php">Info Kelompok</a>
             <?php if(!isset($_SESSION["login_peserta"])) : ?>
             <a class="nav-link" href="login.php">Login</a>
             <?php endif; ?> 
@@ -79,7 +82,7 @@ if(!isset($_SESSION["login_peserta"])){
       <div
         id="video-teaser"
         class="player"
-        data-property="{ videoURL:'https://youtu.be/YbbqUjFwz-g', containment:'body', autoPlay:true, mute:true, startAt:0, opacity:1, optimizeDisplay:true, addRaster:true, abundance: 0 }"
+        data-property="{ videoURL:'https://youtu.be/RFDHKddj9w4', containment:'body', autoPlay:true, mute:true, startAt:0, opacity:1, optimizeDisplay:true, addRaster:true, abundance: 0 }"
       ></div>
     </section>
     <!-- akhir background video -->
@@ -90,29 +93,38 @@ if(!isset($_SESSION["login_peserta"])){
         <img class="img-fluid my-2" src="img/Logo.svg" alt="logo" />
         <div class="row">
           <div class="col">
-            <h2 data-aos="fade-up">ORASI 2021</h2>
+            <h2 data-aos="fade-up"><strong>ORASI 2021</strong></h2>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <p data-aos="fade-up">
-              Mahasiswa merupakan salah satu tingkatan tertinggi dalam dunia pendidikan yang ada di Indonesia. Mahasiswa sebagai kaum intelektual muda yang memiliki fungsi kontrol sosial dalam masyarakat dituntut untuk dapat menjadi pribadi yang kritis, visioner, peduli, berkontribusi nyata, kreatif, dan mampu mengoptimalkan potensi mereka sehingga diharapkan mampu berperan sebagai agent of change di masyarakat sesuai dengan tuntutan Tri Dharma Perguruan Tinggi
+              Mahasiswa merupakan salah satu tingkatan tertinggi dalam dunia pendidikan yang ada di Indonesia. Mahasiswa sebagai kaum intelektual muda yang memiliki fungsi kontrol sosial dalam masyarakat dituntut untuk dapat menjadi pribadi yang kritis, visioner, peduli, berkontribusi nyata, kreatif, dan mampu mengoptimalkan potensi mereka sehingga diharapkan mampu berperan sebagai <em>agent of change</em> di masyarakat sesuai dengan tuntutan Tri Dharma Perguruan Tinggi
             </p>
             <p data-aos="fade-up">
-              Perpindahan mahasiswa baru dari lingkungan sekolah menjadi lingkungan kampus tertentu akan mengalamu perubahan pola pikir dan pola kehidupan. Proses adaptasi dan mengenal berbagai macam aspek, baik aspek fisik kampus, akademik, sosial, dan organisasi yang ada di lingkungan kampus tingkatan, khususnya tingkat fakultas sepertu melalui salah satu program kaderisasi berbasis orientasi yang disebut dengan kegiatan ORASI yang merupakan acara Penerimaan Mahasiswa Baru Fakultas Ilmu Sosial dan Ilmu Politik (PMBF)
+              Perpindahan mahasiswa baru dari lingkungan sekolah menjadi lingkungan kampus tertentu akan mengalami perubahan pola pikir dan pola kehidupan. Proses adaptasi dan mengenal berbagai macam aspek, baik aspek fisik kampus, akademik, sosial, dan organisasi yang ada di lingkungan kampus tingkatan, khususnya tingkat fakultas seperti melalui salah satu program kaderisasi berbasis orientasi yang disebut dengan kegiatan ORASI yang merupakan acara Penerimaan Mahasiswa Baru Fakultas Ilmu Sosial dan Ilmu Politik (PMBF)
             </p>
           </div>
         </div>
         <div class="row mt-4">
           <div class="col">
-            <h2 data-aos="fade-up"><em>EMPOWERING COLLABORATION</em></h2>
+            <h2 data-aos="fade-up"><strong><em>EMPOWERING COLLABORATION</strong></em></h2>
           </div>
         </div>
         <div class="row">
           <div class="col">
             <p data-aos="fade-up">
-            Memberdayakan potensi mahasiswa baru melalui penanaman nilai yang ideal sesuai dengan blueprint kaderisasi yang tertuang dalam nilai dan muatan ORASI yang dirancang oleh Dept. KPSDM BEM FISIP 2021. Serta memperlihatkan keberagaman kepada mahasiswa baru yang terdapat di FISIP Unpad melalui kolaborasi bersama 12 himpunan sehingga ORASI 2021 dapat menjadi perpanjangan tangan kepada ospek di masing-masing jurusan. Dan juga bermitra dengan berbagai pemangku kepentingan agar memperoleh kesuksesan dalam seluruh rangkaian acara ORASI 2021. Empowering Collaboration sendiri diangkat dengan background fakultas terbanyak yang berada di Unpad
-            </p>
+            Memberdayakan potensi Mahasiswa Baru melalui penanaman nilai yang ideal sesuai
+dengan <em>Blueprint</em> Kaderisasi yang tertuang dalam nilai dan muatan ORASI yang
+dirancang oleh Dept. KPSDM BEM FISIP Unpad 2021. Serta memperlihatkan
+keberagaman kepada mahasiswa baru yang terdapat di FISIP UNPAD melalui
+kolaborasi bersama ORMAWA se-FISIP sehingga ORASI 2021 dapat memberikan <em>first
+impression</em> terkait banyaknya keberagaman yang bisa saling melengkapi. Serta
+sebagai perpanjangan tangan kepada ospek di masing-masing jurusan di FISIP Unpad.
+Bermitra dengan berbagai pemangku kepentingan agar memperoleh
+kesuksesan dalam seluruh rangkaian acara ORASI 2021. <strong><em>Empowering Collaboration</em></strong>
+sendiri diangkat dengan <em>background</em> jurusan terbanyak yang berada di Unpad.
+</p>
           </div>
         </div>
       </div>

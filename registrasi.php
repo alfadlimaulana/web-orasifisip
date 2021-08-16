@@ -103,13 +103,13 @@ if(isset($_POST["regist_peserta"])){
                   <input type="password" class="form-control" id="passInput" placeholder="Masukkan Password" name="password_peserta" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['password_peserta']; }?>" required/>
                 </div>
                 <div class="col-xs-12 col-md-6">
-                  <label for="pass2Input" class="form-label">Konfirmasi Pasword</label>
+                  <label for="pass2Input" class="form-label">Konfirmasi Password</label>
                   <input type="password" class="form-control" id="pass2Input" placeholder="Konfirmasi Password" name="password2_peserta" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['password2_peserta']; }?>" required />
                 </div>
               </div>
               <div class="sign-button text-center">
                 <button class="btn btn-primary align-self-center mt-5" type="submit" name="regist_peserta" style="width: 50%">Registrasi</button>
-                <p class="mt-2 align-self-center">Sudah registrasi? <a href="login.php">Masuk Di sini</a></p>
+                <p class="mt-2 align-self-center">Sudah registrasi? <a href="login.php">Masuk di sini</a></p>
               </div>
             </div>
           </div>

@@ -204,7 +204,7 @@ if(isset($_POST["submit3"])){
                 <div class="row margin-bottom-30">
                   <div class="col-md-5">
                     <div class="border-grad">
-                      <img class="img" src="img/image-test.png" width="100%" />
+                      <img class="img" src="img/penugasan/tugas-form.jpeg" width="100%" />
                     </div>
                   </div>
                   <div class="col-md-7">
@@ -253,7 +253,7 @@ if(isset($_POST["submit3"])){
                 <div class="row margin-bottom-30">
                   <div class="col-md-5">
                     <div class="border-grad">
-                      <img class="img" src="img/image-test.png" width="100%" />
+                      <img class="img" src="img/penugasan/tugas-video.jpeg" width="100%" />
                     </div>
                   </div>
                   <div class="col-md-7">
@@ -302,7 +302,7 @@ if(isset($_POST["submit3"])){
                 <div class="row margin-bottom-30">
                   <div class="col-md-5">
                     <div class="border-grad">
-                      <img class="img" src="img/image-test.png" width="100%" />
+                      <img class="img" src="img/penugasan/tugas-audio.jpeg" width="100%" />
                     </div>
                   </div>
                   <div class="col-md-7">
@@ -350,7 +350,7 @@ if(isset($_POST["submit3"])){
                 <div class="row margin-bottom-30">
                   <div class="col-md-5">
                     <div class="border-grad">
-                      <img class="img" src="img/image-test.png" width="100%" />
+                      <img class="img" src="img/penugasan/tugas-esai.jpeg" width="100%" />
                     </div>
                   </div>
                   <div class="col-md-7">
@@ -398,7 +398,7 @@ if(isset($_POST["submit3"])){
                 <div class="row margin-bottom-30">
                   <div class="col-md-5">
                     <div class="border-grad">
-                      <img class="img" src="img/image-test.png" width="100%" />
+                      <img class="img" src="img/penugasan/tugas-form.jpeg" width="100%" />
                     </div>
                   </div>
                   <div class="col-md-7">

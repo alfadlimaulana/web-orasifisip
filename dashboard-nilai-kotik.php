@@ -6,7 +6,7 @@ if(!isset($_SESSION["login_panitia"])){
 
   echo "<script>
             alert('Login Terlebih Dahulu!');
-            document.location.href = 'login-panitia.php';
+            document.location.href = 'login-catatan-hati.php';
         </script>";
   exit;
 }  
@@ -23,12 +23,12 @@ if(isset($_POST["submit_nilai"])){
   if(input_nilai("penugasan1", $_POST) > 0){
     echo "<script>
             alert('Status Penilaian BERHASIL Diubah!');
-            document.location.href = 'dashboard-nilai-video.php';
+            document.location.href = 'dashboard-nilai-kotik.php';
           </script>";
   }else{
     echo "<script>
             alert('Status Penilaian GAGAL Diubah!');
-            document.location.href = 'dashboard-nilai-video.php';
+            document.location.href = 'dashboard-nilai-kotik.php';
           </script>";
   }
 }
@@ -63,6 +63,7 @@ if(isset($_POST["submit_nilai"])){
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="dashboard-penugasan.php">Penugasan</a>
             <a class="nav-link" href="dashboard-absensi.php">Absensi</a>
+            <a class="nav-link" href="logout.php">Logout</a>
           </div>
         </div>
       </div>

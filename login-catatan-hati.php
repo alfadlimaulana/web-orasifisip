@@ -33,12 +33,13 @@ if(isset($_POST["login_panitia"])){
   $password_panitia = $_POST["password_panitia"];
   
   $result = mysqli_query($conn, "SELECT * FROM panitia WHERE username_panitia = '$username_panitia'");
+  $result2 = mysqli_query($conn, "SELECT * FROM panitia WHERE password_panitia = '$password_panitia'");
 
   //cek username
-  if(mysqli_num_rows($result) === 1){
+  if(mysqli_num_rows($result) === 1 && mysqli_num_rows($result2) === 1){
     //cek password
     $database = mysqli_fetch_assoc($result);
-    if(password_verify($password_panitia, $database["password_panitia"])){
+    //if(password_verify($password_panitia, $database["password_panitia"])){
       
       //set session
       $_SESSION["login_panitia"] = $username_panitia;
@@ -46,13 +47,13 @@ if(isset($_POST["login_panitia"])){
       //cek tetap masuk
       if(isset($_POST["keep_login"])){
         //buat cookie
-        setcookie('username', $database['username_panitia'], time()+(60 * 60 * 24));
-        setcookie('key', hash('sha256', $database['username_panitia']), time()+(60 * 60 * 24));
+        setcookie('username', $database['username_panitia'], time()+300);
+        setcookie('key', hash('sha256', $database['username_panitia']), time()+300);
       }
 
       header("Location: dashboard.php");
       exit;
-    }
+    //}
   }
   
   $error = true;

@@ -146,7 +146,9 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
             <td>
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-              <button type="submit" class="btn btn-primary btn-2" name="absensi2" disabled>Absen</button>
+              <?php if($students['absen2'] === NULL) : ?>
+                  <button type="submit" class="btn btn-primary btn-2" name="absensi2" disabled>Absen</button>
+              <?php endif;?>
             </form>
             </td>
           </tr>
@@ -155,15 +157,17 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
             <td>Sabtu, 28-08-2021</td>
             <td>
               <?php if($students['absen3'] != NULL) : ?>
-                hadir
+                Hadir
               <?php else :?>
-                tidak hadir
+                Tidak Hadir
               <?php endif;?>
             </td>
             <td>
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-              <button type="submit" class="btn btn-primary btn-3" name="absensi3" disabled>Absen</button>
+              <?php if($students['absen3'] === NULL) : ?>
+                  <button type="submit" class="btn btn-primary btn-3" name="absensi3" disabled>Absen</button>
+              <?php endif;?>
             </form>
             </td>
           </tr>

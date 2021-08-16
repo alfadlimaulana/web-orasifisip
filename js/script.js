@@ -14,10 +14,10 @@ function showNav() {
 
 function btntglabsen() {
   const now = new Date();
-  const day1 = new Date("2021-08-15T16:21:00");
-  const day2 = new Date("2021-08-16T16:28:00");
-  const day3 = new Date("2021-08-17T17:40:00");
-  const end = new Date("2021-08-18T17:40:00");
+  const day1 = new Date("2021-08-26T06:00:00");
+  const day2 = new Date("2021-08-27T06:00:00");
+  const day3 = new Date("2021-08-28T06:00:00");
+  const end = new Date("2021-08-29T06:00:00");
 
   if (now.getTime() >= day1.getTime() && now.getTime() <= day2.getTime()) {
     var absenbtn = document.querySelector(".btn-1");
