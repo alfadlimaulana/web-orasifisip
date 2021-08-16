@@ -70,11 +70,17 @@ if(!isset($_SESSION["login_peserta"])){
     
     <!-- background video -->
     <section id="teaser">
+    <?php if(isset($_SESSION["login_peserta"])) : ?>
       <div class="sambutan">
         <h2>Selamat Datang,</h2>
-        <h2>Wafi Fahruzzaman</h2>
+        <h2><?= $student["nama_peserta"]; ?></h2>
       </div>
-      <div id="video-teaser" class="player" data-property="{ videoURL:'https://youtu.be/YbbqUjFwz-g', containment:'body', autoPlay:true, mute:true, startAt:0, opacity:1, optimizeDisplay:true, addRaster:true, abundance: 0 }"></div>
+    <?php endif; ?> 
+      <div
+        id="video-teaser"
+        class="player"
+        data-property="{ videoURL:'https://youtu.be/YbbqUjFwz-g', containment:'body', autoPlay:true, mute:true, startAt:0, opacity:1, optimizeDisplay:true, addRaster:true, abundance: 0 }"
+      ></div>
     </section>
     <!-- akhir background video -->
     
