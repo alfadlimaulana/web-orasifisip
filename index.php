@@ -70,6 +70,12 @@ if(!isset($_SESSION["login_peserta"])){
     
     <!-- background video -->
     <section id="teaser">
+    <?php if(isset($_SESSION["login_peserta"])) : ?>
+      <div class="sambutan">
+        <h2>Selamat Datang,</h2>
+        <h2><?= $student["nama_peserta"]; ?></h2>
+      </div>
+    <?php endif; ?> 
       <div
         id="video-teaser"
         class="player"

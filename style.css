@@ -56,20 +56,19 @@ nav {
 }
 
 .sambutan {
+  color: white;
   position: absolute;
   z-index: 3;
-  top: 100px;
-  left: 50%;
-  display: block;
-  width: 60%;
-  background-color: #f399bf;
+  top: 50%;
+  left: 70px;
   border-radius: 10px;
   padding: 10px;
-  transform: translateX(-50%);
+  transform: translateY(-50%);
 }
 
-.sambutan p {
-  font-size: 1minvw;
+.sambutan h2 {
+  font-size: 50px;
+  text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.6);
 }
 
 /*--- Fixed Video Background iOS/Mobile Style--*/
