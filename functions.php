@@ -228,3 +228,28 @@ function input_nilai($tabel, $data){
 
 	return mysqli_affected_rows($conn);
 }
+
+//pagination
+function pagination($tabel){
+	$jumlah_data_per_halaman = 5;
+	$jumlah_data = count(query("SELECT * FROM $tabel"));
+	$jumlah_halaman = ceil($jumlah_data / $jumlah_data_per_halaman);
+	$halaman_aktif = ( isset($_GET["halaman"]) ) ? $_GET["halaman"] : 1;
+
+	$data_awal = ($jumlah_data_per_halaman * $halaman_aktif) - $jumlah_data_per_halaman;
+
+	$students = query("SELECT * FROM $tabel LIMIT $data_awal, $jumlah_data_per_halaman");
+
+	return $students;
+	
+}
+
+function wajib_login($page){
+	if(!isset($_SESSION["login_peserta"])){
+		echo "<script>
+				alert('Mohon Login terlebih dahulu.');
+				document.location.href = '$page';
+			</script>";
+	  exit;
+	}
+}

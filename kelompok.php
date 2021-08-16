@@ -1,6 +1,9 @@
 <?php
+session_start();
 require 'functions.php';
 
+wajib_login("login.php");
+$username_peserta = $_SESSION["login_peserta"];
 $students = query("SELECT * FROM fasil");
 
 // tombol cari ditekan
@@ -52,7 +55,8 @@ if(isset($_POST["cari"])){
       </div>
     </nav>
     <!-- akhir navbar -->
-
+    
+    <!-- tabel -->
     <div class="container-fluid absensi-bg">
       <div class="container">
         <div class="row">
@@ -88,6 +92,7 @@ if(isset($_POST["cari"])){
         </div>
       </div>
     </div>
+    <!-- akhir tabel -->
 
     <!-- footer -->
     <footer class="text-center">

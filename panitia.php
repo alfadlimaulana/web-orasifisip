@@ -44,13 +44,18 @@ if(!isset($_SESSION["login_peserta"])){
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="panitia.php">Panitia</a>
-            <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
-            <a class="nav-link hide-link" href="absensi.php">Absensi</a>
-            <a class="nav-link hide-link" href="kelompok.php">Info Kelompok</a>
-            <?php if(!isset($_SESSION["login_peserta"])) : ?>
-            <a class="nav-link" href="login.php">Login</a>
+            <?php if(isset($_SESSION["login_peserta"])) : ?>
+              <a class="nav-link" href="penugasan.php">Penugasan</a>
+              <a class="nav-link" href="absensi.php">Absensi</a>
+              <a class="nav-link" href="kelompok.php">Info Kelompok</a>
             <?php endif; ?> 
+            <?php if(!isset($_SESSION["login_peserta"])) : ?>
+              <a class="nav-link" href="index.php">Home</a>
+              <a class="nav-link" href="login.php">Login</a>
+            <?php endif; ?> 
+            <?php if(isset($_SESSION["login_peserta"])) : ?>
             <a class="nav-link hide-link" href="logout.php">Logout</a>
+            <?php endif; ?> 
           </div>
         </div>
       </div>
