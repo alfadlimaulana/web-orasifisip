@@ -79,41 +79,44 @@ if(!isset($_SESSION["login_peserta"])){
     <!-- akhir background video -->
     
     <!-- about us -->
-    <div class="index-container container-fluid text-center p-4">
-      <img class="img-fluid my-2" src="img/Logo.svg" alt="logo" />
-      <div class="row mx-2">
-        <div class="col">
-          <h2 data-aos="fade-up">ORASI 2021</h2>
+    <div class="index-container container-fluid text-center">
+      <div class="container about-us py-4 px-5 mt-5">
+        <img class="img-fluid my-2" src="img/Logo.svg" alt="logo" />
+        <div class="row">
+          <div class="col">
+            <h2 data-aos="fade-up">ORASI 2021</h2>
+          </div>
         </div>
-      </div>
-      <div class="row mx-2">
-        <div class="col">
-          <p data-aos="fade-up">
-          Mahasiswa merupakan salah satu tingkatan tertinggi dalam dunia pendidikan yang ada di Indonesia. Mahasiswa sebagai kaum intelektual muda yang memiliki fungsi kontrol sosial dalam masyarakat dituntut untuk dapat menjadi pribadi yang kritis, visioner, peduli, berkontribusi nyata, kreatif, dan mampu mengoptimalkan potensi mereka sehingga diharapkan mampu berperan sebagai agent of change di masyarakat sesuai dengan tuntutan Tri Dharma Perguruan Tinggi
-          </p>
-          <p data-aos="fade-up">
-          Perpindahan mahasiswa baru dari lingkungan sekolah menjadi lingkungan kampus tertentu akan mengalamu perubahan pola pikir dan pola kehidupan. Proses adaptasi dan mengenal berbagai macam aspek, baik aspek fisik kampus, akademik, sosial, dan organisasi yang ada di lingkungan kampus tingkatan, khususnya tingkat fakultas sepertu melalui salah satu program kaderisasi berbasis orientasi yang disebut dengan kegiatan ORASI yang merupakan acara Penerimaan Mahasiswa Baru Fakultas Ilmu Sosial dan Ilmu Politik (PMBF)          </p>
+        <div class="row">
+          <div class="col">
+            <p data-aos="fade-up">
+              Mahasiswa merupakan salah satu tingkatan tertinggi dalam dunia pendidikan yang ada di Indonesia. Mahasiswa sebagai kaum intelektual muda yang memiliki fungsi kontrol sosial dalam masyarakat dituntut untuk dapat menjadi pribadi yang kritis, visioner, peduli, berkontribusi nyata, kreatif, dan mampu mengoptimalkan potensi mereka sehingga diharapkan mampu berperan sebagai agent of change di masyarakat sesuai dengan tuntutan Tri Dharma Perguruan Tinggi
+            </p>
+            <p data-aos="fade-up">
+              Perpindahan mahasiswa baru dari lingkungan sekolah menjadi lingkungan kampus tertentu akan mengalamu perubahan pola pikir dan pola kehidupan. Proses adaptasi dan mengenal berbagai macam aspek, baik aspek fisik kampus, akademik, sosial, dan organisasi yang ada di lingkungan kampus tingkatan, khususnya tingkat fakultas sepertu melalui salah satu program kaderisasi berbasis orientasi yang disebut dengan kegiatan ORASI yang merupakan acara Penerimaan Mahasiswa Baru Fakultas Ilmu Sosial dan Ilmu Politik (PMBF)
+            </p>
+          </div>
         </div>
-      </div>
-      <div class="row mx-2">
-        <div class="col">
-          <h2 data-aos="fade-up"><em>EMPOWERING COLLABORATION</em></h2>
+        <div class="row mt-4">
+          <div class="col">
+            <h2 data-aos="fade-up"><em>EMPOWERING COLLABORATION</em></h2>
+          </div>
         </div>
-      </div>
-      <div class="row mx-2">
-        <div class="col">
-          <p data-aos="fade-up">
-          Memberdayakan potensi mahasiswa baru melalui penanaman nilai yang ideal sesuai dengan blueprint kaderisasi yang tertuang dalam nilai dan muatan ORASI yang dirancang oleh Dept. KPSDM BEM FISIP 2021. Serta memperlihatkan keberagaman kepada mahasiswa baru yang terdapat di FISIP Unpad melalui kolaborasi bersama 12 himpunan sehingga ORASI 2021 dapat menjadi perpanjangan tangan kepada ospek di masing-masing jurusan. Dan juga bermitra dengan berbagai pemangku kepentingan agar memperoleh kesuksesan dalam seluruh rangkaian acara ORASI 2021. Empowering Collaboration sendiri diangkat dengan background fakultas terbanyak yang berada di Unpad
-          </p>
+        <div class="row">
+          <div class="col">
+            <p data-aos="fade-up">
+            Memberdayakan potensi mahasiswa baru melalui penanaman nilai yang ideal sesuai dengan blueprint kaderisasi yang tertuang dalam nilai dan muatan ORASI yang dirancang oleh Dept. KPSDM BEM FISIP 2021. Serta memperlihatkan keberagaman kepada mahasiswa baru yang terdapat di FISIP Unpad melalui kolaborasi bersama 12 himpunan sehingga ORASI 2021 dapat menjadi perpanjangan tangan kepada ospek di masing-masing jurusan. Dan juga bermitra dengan berbagai pemangku kepentingan agar memperoleh kesuksesan dalam seluruh rangkaian acara ORASI 2021. Empowering Collaboration sendiri diangkat dengan background fakultas terbanyak yang berada di Unpad
+            </p>
+          </div>
         </div>
       </div>
 
       <!-- akhir about us -->
 
       <!-- Gallery -->
-      <section id="gallery" class="container-fluid text-center bg-transparent p-5" style="background-color: lightgrey">
+      <section id="gallery" class="container text-center bg-transparent p-4 mb-5" style="background-color: lightgrey">
         <h2 data-aos="fade-up">CHECK THIS OUT</h2>
-        <div class="row justify-content-center pt-3 g-4">
+        <div class="row justify-content-center pt-2 g-4">
           <div class="col-sm-6 col col-md-4 card-1">
             <div class="card card-gallery" data-aos="fade-up">
               <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
