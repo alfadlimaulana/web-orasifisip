@@ -47,14 +47,14 @@ if(!isset($_SESSION["login_peserta"])){
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="index.php" style="font-weight: 600;"> <img src="img/Logo.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" />ORASI FISIP UNPAD</a>
+        <a class="navbar-brand d-flex align-items-center" href="index.php" style="font-weight: 490;"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="#gallery">Gallery</a>
-            <a class="nav-link" href="panitia.php">Panitia Inti</a>
+            <a class="nav-link" href="panitia.php">Panitia</a>
             <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
             <a class="nav-link hide-link" href="absensi.php">Absensi</a>
             <a class="nav-link hide-link" href="kelompok.html">Kelompok</a>
@@ -95,10 +95,10 @@ if(!isset($_SESSION["login_peserta"])){
       <div class="row mx-2">
         <div class="col">
           <p data-aos="fade-up">
-          Mahasiswa merupakan salah satu tingkatan tertinggi dalam dunia pendidikan yang ada di Indonesia. Mahasiswa sebagai kaum intelektual muda yang memiliki fungsi kontrol sosial dalam masyarakat dituntut untuk dapat menjadi pribadi yang kritis, visioner, peduli, berkontribusi nyata, kreatif, dan mampu mengoptimalkan potensi mereka sehingga diharapkan mampu berperan sebagai agent of change di masyarakat sesuai dengan tuntutan Tri Dharma Perguruan Tinggi <br><br>
-
-Perpindahan mahasiswa baru dari lingkungan sekolah menjadi lingkungan kampus tertentu akan mengalamu perubahan pola pikir dan pola kehidupan. Proses adaptasi dan mengenal berbagai macam aspek, baik aspek fisik kampus, akademik, sosial, dan organisasi yang ada di lingkungan kampus tingkatan, khususnya tingkat fakultas sepertu melalui salah satu program kaderisasi berbasis orientasi yang disebut dengan kegiatan ORASI yang merupakan acara Penerimaan Mahasiswa Baru Fakultas Ilmu Sosial dan Ilmu Politik (PMBF)
+          Mahasiswa merupakan salah satu tingkatan tertinggi dalam dunia pendidikan yang ada di Indonesia. Mahasiswa sebagai kaum intelektual muda yang memiliki fungsi kontrol sosial dalam masyarakat dituntut untuk dapat menjadi pribadi yang kritis, visioner, peduli, berkontribusi nyata, kreatif, dan mampu mengoptimalkan potensi mereka sehingga diharapkan mampu berperan sebagai agent of change di masyarakat sesuai dengan tuntutan Tri Dharma Perguruan Tinggi
           </p>
+          <p data-aos="fade-up">
+          Perpindahan mahasiswa baru dari lingkungan sekolah menjadi lingkungan kampus tertentu akan mengalamu perubahan pola pikir dan pola kehidupan. Proses adaptasi dan mengenal berbagai macam aspek, baik aspek fisik kampus, akademik, sosial, dan organisasi yang ada di lingkungan kampus tingkatan, khususnya tingkat fakultas sepertu melalui salah satu program kaderisasi berbasis orientasi yang disebut dengan kegiatan ORASI yang merupakan acara Penerimaan Mahasiswa Baru Fakultas Ilmu Sosial dan Ilmu Politik (PMBF)          </p>
         </div>
       </div>
       <div class="row mx-2">
@@ -178,7 +178,11 @@ Perpindahan mahasiswa baru dari lingkungan sekolah menjadi lingkungan kampus ter
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      muteVideo();
+      const teaserVideo = jQuery("#video-teaser");
+      jQuery(function () {
+        teaserVideo.YTPlayer();
+        jQuery("#P1").YTPlayer();
+      });
     </script>
     <script>
       AOS.init({

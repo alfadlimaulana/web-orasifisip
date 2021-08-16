@@ -1,3 +1,22 @@
+<?php
+session_start();
+require 'functions.php';
+
+//cek session
+if(!isset($_SESSION["login_peserta"])){
+  echo "<script>
+          window.onload = function(){
+            hideNav()};
+      </script>";
+}else{
+  echo "<script>
+          window.onload = function(){
+            showNav()};
+      </script>";
+  $username_peserta = $_SESSION["login_peserta"];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -18,19 +37,19 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.php"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
+        <a class="navbar-brand d-flex align-items-center" href="index.php" style="font-weight: 490;"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
-            <a class="nav-link" href="#gallery">Gallery</a>
-            <!-- <a class="nav-link" href="#informasi">Informasi</a> -->
-            <a class="nav-link" href="panitia.php">Panitia Inti</a>
-            <!-- <a class="nav-link" href="livestream.php">Livestream</a> -->
+            <a class="nav-link" href="panitia.php">Panitia</a>
             <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
             <a class="nav-link hide-link" href="absensi.php">Absensi</a>
+            <a class="nav-link hide-link" href="kelompok.html">Kelompok</a>
+            <?php if(!isset($_SESSION["login_peserta"])) : ?>
             <a class="nav-link" href="login.php">Login</a>
+            <?php endif ?>
             <a class="nav-link hide-link" href="logout.php">Logout</a>
           </div>
         </div>
@@ -42,14 +61,7 @@
     <div class="container-fluid panitia-bg">
       <div class="container p-5">
         <div class="row g-3 justify-content-center">
-          <div class="col-12 col-sm-12 col-md-12 col-lg-4 text-center align-self-center">
-            <div class="container about-panit tulisan-panit m-0 p-4">
-              <h5>About Us</h5>
-              <h2>We scratch, build and play together</h2>
-              <p>Et has minim elitr intellegat. Mea aeterno eleifend antiopam ad, nam no suscipit quaerendum. At nam minimum ponderum. Est audiam animal molestiae te. Ex duo eripuit mentitum.</p>
-            </div>
-          </div>
-          <div class="col-8 col-md-6 col-lg-4 order-lg-first text-center align-self-center">
+          <div class="col-8 col-md-6 col-lg-4 text-center">
             <img class="img-fluid rounded-circle" src="img/panitia/incil/1-PS-Fikri-Fauzi 1.svg" alt="Supervisor 1" />
             <div class="tulisan-panit">
               <p>
@@ -58,7 +70,7 @@
               </p>
             </div>
           </div>
-          <div class="col-8 col-md-6 col-lg-4 text-center align-self-center">
+          <div class="col-8 col-md-6 col-lg-4 text-center">
             <img class="img-fluid rounded-circle" src="img/panitia/incil/1-PS-Dimas-Dwi-F. 2.svg" alt="Supervisor" />
             <div class="tulisan-panit">
               <p>
@@ -78,7 +90,7 @@
               </p>
             </div>
           </div>
-          <div class="col-6 col-md-4">
+          <div class="col-6 col-md-4 order-md-first">
             <img class="img-fluid rounded-circle" src="img/panitia/incil/1-VPO-Fadhil-Akmali 2.svg" alt="VPO" />
             <div class="tulisan-panit">
               <p>
@@ -91,7 +103,7 @@
             <img class="img-fluid rounded-circle" src="img/panitia/incil/1-VPO-Nizar-Firdaus 1.svg" alt="VPO" />
             <div class="tulisan-panit">
               <p>
-                <strong>Nizar Firdaus</strong><br />
+                <strong>M. Nizar Firdaus</strong><br />
                 Vice Project Officer
               </p>
             </div>
@@ -261,7 +273,7 @@
             </div>
           </div>
           <div class="col-sm-12 col-md-6 text-center">
-            <a class="text-divisi" href="sponsor.html">
+            <a class="text-divisi" href="sponsorship.html">
               <h3>Sponsorship</h3>
             </a>
             <div class="row text-center g-2">
@@ -274,7 +286,7 @@
               <div class="col">
                 <img class="img-fluid rounded-circle" src="img/panitia/sponsor/9-Wakadiv-M-Bintang-Ramadhan 1.svg" alt="Wakadiv Sponsor" />
                 <div class="tulisan-panit">
-                  <p><strong>M.Bintang R</strong><br />Wakadiv Sponsorship</p>
+                  <p><strong>M. Bintang R</strong><br />Wakadiv Sponsorship</p>
                 </div>
               </div>
             </div>
