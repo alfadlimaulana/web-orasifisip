@@ -14,10 +14,10 @@ function showNav() {
 
 function btntglabsen() {
   const now = new Date();
-  const day1 = new Date("2021-08-26T06:00:00");
-  const day2 = new Date("2021-08-27T06:00:00");
-  const day3 = new Date("2021-08-28T06:00:00");
-  const end = new Date("2021-08-29T06:00:00");
+  const day1 = new Date("2021-08-26T00:00:01");
+  const day2 = new Date("2021-08-27T00:00:01");
+  const day3 = new Date("2021-08-28T00:00:01");
+  const end = new Date("2021-08-29T00:00:01");
 
   if (now.getTime() >= day1.getTime() && now.getTime() <= day2.getTime()) {
     var absenbtn = document.querySelector(".btn-1");
@@ -33,10 +33,10 @@ function btntglabsen() {
 
 function btntgltugas() {
   const now = new Date();
-  const day1 = new Date("2021-08-09T08:21:00");
-  const day2 = new Date("2021-08-09T16:28:00");
-  const day3 = new Date("2021-08-10T17:40:00");
-  const end = new Date("2021-08-11T17:40:00");
+  const day1 = new Date("2021-08-26T00:00:01");
+  const day2 = new Date("2021-08-27T00:00:01");
+  const day3 = new Date("2021-08-28T00:00:01");
+  const end = new Date("2021-08-29T00:00:01");
 
   if (now.getTime() >= day1.getTime() && now.getTime() <= day2.getTime()) {
     var absenbtn = document.querySelector(".btn-1");
