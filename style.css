@@ -39,6 +39,11 @@ nav {
   display: none;
 }
 
+.collapse-bg {
+  background-color: #f7c42a;
+  transition: 1ms;
+}
+
 /* index */
 .index-container {
   background-image: url(img/bg/background\ yeay\ 1.svg);

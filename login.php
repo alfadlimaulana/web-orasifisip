@@ -80,6 +80,9 @@ if(isset($_POST["login_peserta"])){
     <!-- font -->
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
 
+    <!-- icon -->
+    <link rel="shortcut icon" href="img/logo-favicon.ico" />
+
     <title>Orasi Fisip Unpad</title>
   </head>
   <body>

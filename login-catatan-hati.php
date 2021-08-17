@@ -75,6 +75,9 @@ if(isset($_POST["login_panitia"])){
     <!-- font -->
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
 
+    <!-- icon -->
+    <link rel="shortcut icon" href="img/logo-favicon-panitia.ico" />
+
     <title>Orasi Fisip Unpad</title>
   </head>
   <body>

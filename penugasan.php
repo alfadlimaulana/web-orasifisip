@@ -90,6 +90,9 @@ if(isset($_POST["submit3"])){
     <!-- AoS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    <!-- icon -->
+    <link rel="shortcut icon" href="img/logo-favicon.ico" />
+
     <title>Orasi Fisip Unpad</title>
   </head>
   <body>
@@ -446,6 +449,7 @@ if(isset($_POST["submit3"])){
       AOS.init({
         duration: 800,
       });
+      navbarcollapse();
     </script>
   </body>
 </html>
