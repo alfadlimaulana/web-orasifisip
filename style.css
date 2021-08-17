@@ -30,6 +30,11 @@ nav {
   height: 66px;
 }
 
+.collapse-bg {
+  background-color: #f7c42a;
+  transition: 1ms;
+}
+
 .hidden {
   display: none;
 }

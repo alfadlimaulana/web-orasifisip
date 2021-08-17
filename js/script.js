@@ -12,6 +12,15 @@ function showNav() {
   }
 }
 
+function navbarcollapse() {
+  var button = document.querySelector(".navbar-toggler");
+  var nav = document.querySelector("nav .container-fluid");
+
+  button.addEventListener("click", function () {
+    nav.classList.toggle("collapse-bg");
+  });
+}
+
 function btntglabsen() {
   const now = new Date();
   const day1 = new Date("2021-08-26T00:00:01");
