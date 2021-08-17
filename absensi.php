@@ -3,14 +3,7 @@
 session_start();
 require 'functions.php';
 
-if(!isset($_SESSION["login_peserta"])){
-    echo "<script>
-            alert('Mohon Login terlebih dahulu.');
-            document.location.href = 'login.php';
-        </script>";
-  exit;
-}
-
+wajib_login("login.php");
 $username_peserta = $_SESSION["login_peserta"];
 
 //die;
@@ -92,7 +85,7 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
             <a class="nav-link" href="panitia.php">Panitia</a>
             <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
             <a class="nav-link hide-link" href="absensi.php">Absensi</a>
-            <a class="nav-link hide-link" href="kelompok.html">Kelompok</a>
+            <a class="nav-link hide-link" href="kelompok.php">Info Kelompok</a>
             <?php if(!isset($_SESSION["login_peserta"])) : ?>
             <a class="nav-link" href="login.php">Login</a>
             <?php endif; ?> 

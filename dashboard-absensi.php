@@ -1,16 +1,8 @@
 <?php
 session_start();
-
-if(!isset($_SESSION["login_panitia"])){
-
-  echo "<script>
-            alert('Login Terlebih Dahulu!');
-            document.location.href = 'login-catatan-hati.php';
-        </script>";
-  exit;
-}  
-
 require 'functions.php';
+
+wajib_login("login-catatan-hati.php");
 $students = query("SELECT * FROM peserta");
 
 //tombol cari ditekan

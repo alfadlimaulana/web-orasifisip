@@ -102,7 +102,7 @@ if(isset($_POST["login_panitia"])){
           <!-- akhir apabila error -->
           <div class="row d-flex align-items-center justify-content-center pt-5 mx-2 g-3">
             <div class="sign-form align-self-center col-md-8 col-lg-6 mb-4 p-5">
-              <h2 class="text-center">LOG IN</h2>
+              <h2 class="text-center">LOG IN PANITIA</h2>
               <label for="usernameInput" class="form-label mt-3 mb-1">Username</label>
               <input type="text" class="form-control" id="usernameInput" placeholder="Masukkan Usename" name="username_panitia" value="<?php if(isset($_POST["login_panitia"])){ echo $_POST['username_panitia']; }?>" required/>
               <label for="passwordInput" class="form-label mt-2 mb-1">Password</label>

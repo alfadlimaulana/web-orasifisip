@@ -3,14 +3,7 @@
 session_start();
 require 'functions.php';
 
-//aing nambahin ini bener kan wap??
-if(!isset($_SESSION["login_peserta"])){
-    echo "<script>
-            alert('Mohon Login terlebih dahulu.');
-            document.location.href = 'login.php';
-        </script>";
-  exit;
-}
+wajib_login("login.php");
 
 $username_peserta = $_SESSION["login_peserta"];
 
@@ -112,7 +105,7 @@ if(isset($_POST["submit3"])){
             <a class="nav-link" href="panitia.php">Panitia</a>
             <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
             <a class="nav-link hide-link" href="absensi.php">Absensi</a>
-            <a class="nav-link hide-link" href="kelompok.html">Kelompok</a>
+            <a class="nav-link hide-link" href="kelompok.php">Info Kelompok</a>
             <?php if(!isset($_SESSION["login_peserta"])) : ?>
             <a class="nav-link" href="login.php">Login</a>
             <?php endif; ?> 
@@ -407,7 +400,7 @@ if(isset($_POST["submit3"])){
                     </p>
                     <p class="px-4">Deadline : 28 Agustus 2021</p>
                     <div class=" text-center m-3">
-                      <a href="youtube.com">Link Form</a>
+                      <a href="https://docs.google.com/forms/d/e/1FAIpQLScWJjgO6C93cHZD3QRJIEvuw7xOm4iKjF47PemAk_z3EQPCqg/viewform">Link Form</a>
                     </div>
                   </div>
                 </div>

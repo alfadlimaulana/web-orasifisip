@@ -2,14 +2,7 @@
 session_start();
 require 'functions.php';
 
-if(!isset($_SESSION["login_panitia"])){
-
-  echo "<script>
-            alert('Login Terlebih Dahulu!');
-            document.location.href = 'login-catatan-hati.php';
-        </script>";
-  exit;
-}  
+wajib_login("login-catatan-hati.php");
 
 $students = query("SELECT * FROM penugasan2");
 
