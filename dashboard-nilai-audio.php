@@ -60,6 +60,7 @@ if(isset($_POST["submit_nilai"])){
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="dashboard-penugasan.php">Penugasan</a>
             <a class="nav-link" href="dashboard-absensi.php">Absensi</a>
+            <a class="nav-link" href="dashboard-settings.php">Settings</a>
             <a class="nav-link" href="logout.php">Logout</a>
           </div>
         </div>

@@ -37,6 +37,7 @@ wajib_login("login-catatan-hati.php");
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="dashboard-penugasan.php">Penugasan</a>
             <a class="nav-link" href="dashboard-absensi.php">Absensi</a>
+            <a class="nav-link" href="dashboard-settings.php">Settings</a>
             <a class="nav-link" href="logout.php">Logout</a>
           </div>
         </div>
@@ -51,7 +52,7 @@ wajib_login("login-catatan-hati.php");
           <div class="card card-tugas">
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas Life Mapping</h5>
-              <p class="card-text mt-3">Penugasan Life Mapping merupakan penugasan individu berupa pembuatan skema life mapping diri arkamuda selama 5 tahun yang akan datang dengan dikemas sesuai kreatifitas arkamuda.</p>
+              <p class="card-text mt-3">Penugasan Life Mapping merupakan penugasan individu berupa pembuatan skema life mapping diri Arkamuda selama 5 tahun yang akan datang dengan dikemas sesuai kreatifitas Arkamuda.</p>
               <a href="dashboard-nilai-kotik.php" role="button" class="btn btn-primary mt-4">Lihat Nilai</a>
             </div>
           </div>
@@ -71,7 +72,7 @@ wajib_login("login-catatan-hati.php");
           <div class="card card-tugas">
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas Review Audio</h5>
-              <p class="card-text mt-3">Merupakan penugasan individu berupa pengulasan secara lisan atas rangkaian Orasi 2021 pada hari pertama, kedua dan ketiga. </p>
+              <p class="card-text mt-3">Merupakan penugasan individu berupa pengulasan secara lisan atas rangkaian Orasi 2021 pada hari pertama, kedua, dan ketiga. </p>
               <a href="dashboard-nilai-audio.php" role="button" class="btn btn-primary mt-4">Lihat Nilai</a>
             </div>
           </div>

@@ -75,8 +75,8 @@ if(isset($_POST["cari"])){
             <thead>
               <tr>
                 <th scope="col">Kelompok</th>
-                <th scope="col">Nama Fasil</th>
-                <th scope="col">Id Line</th>
+                <th scope="col">Nama Fasilitator</th>
+                <th scope="col">ID Line</th>
               </tr>
             </thead>
             <tbody>

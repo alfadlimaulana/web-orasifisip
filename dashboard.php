@@ -40,6 +40,7 @@ if(!isset($_SESSION["login_panitia"])){
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand mx-auto" href="dashboard.php"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
+        <a class="nav-link" href="dashboard-settings.html">Settings</a>
         <a class="nav-link" href="logout.php">Logout</a>
       </div>
     </nav>

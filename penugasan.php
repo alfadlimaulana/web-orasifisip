@@ -163,7 +163,7 @@ if(isset($_POST["submit3"])){
         <div class="col-ms-12 col-md-6 col-lg-4">
           <div class="card card-tugas" data-aos="fade-up">
             <div class="card-body text-center p-5">
-              <h5 class="card-title">Tugas Kefisipan & Keorganisasian</h5>
+              <h5 class="card-title">Tugas Ke-FISIP-an & Keorganisasian</h5>
               <p class="card-text mt-3">Deadline : 28 Agustus 2021 </p>
               <button type="button" class="btn btn-primary btn-4 mt-4" data-bs-toggle="modal" data-bs-target="#tugas5">Detail</button>
             </div>
@@ -175,7 +175,7 @@ if(isset($_POST["submit3"])){
         <div class="col-ms-12 col-md-6 col-lg-4" >
           <div class="card card-tugas" data-aos="fade-up">
             <div class="card-body text-center p-5">
-              <p class="card-text">Stay tuned informasi penugasan di instagram @orasi2021 yaa! #SATUFISIPBANGGA</p>
+              <p class="card-text">Stay tuned informasi penugasan di instagram @orasifisipunpad yaa! #SATUFISIPBANGGA</p>
             </div>
           </div>
         </div>
@@ -205,7 +205,7 @@ if(isset($_POST["submit3"])){
                   </div>
                   <div class="col-md-7">
                     <p class="mt-3 px-4">
-                    Penugasan individu berupa pembuatan skema life mapping diri arkamuda selama 5 tahun yang akan datang dengan dikemas sesuai kreatifitas arkamuda.
+                    Penugasan individu berupa pembuatan skema life mapping diri Arkamuda selama 5 tahun yang akan datang dengan dikemas sesuai kreatifitas Arkamuda.
                     </p>
                     <p class="px-4">Deadline : 22 Agustus 2021</p>
                     <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
@@ -303,7 +303,7 @@ if(isset($_POST["submit3"])){
                   </div>
                   <div class="col-md-7">
                     <p class="mt-3 px-4">
-                    Penugasan individu berupa pengulasan secara lisan atas rangkaian Orasi 2021 pada hari pertama, kedua dan ketiga. 
+                    Penugasan individu berupa pengulasan secara lisan atas rangkaian Orasi 2021 pada hari pertama, kedua, dan ketiga. 
                   </p>
                     <p class="px-4">Deadline : 28 Agustus 2021</p>
                     <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
