@@ -1,7 +1,9 @@
 <?php 
 // Koneksi ke database
 
-$conn = mysqli_connect("localhost", "root", "", "orasi_fisip");
+// $conn = mysqli_connect("localhost", "root", "", "orasi_fisip");
+$conn = mysqli_connect("localhost", "u263889387_wafifz", "AdminWafiFadli8", "u263889387_orasi_fisip
+");
 
 // Koneksi ke database
 function query($query){
@@ -245,11 +247,12 @@ function pagination($tabel){
 }
 
 function wajib_login($page){
-	if(!isset($_SESSION["login_peserta"])){
+	if(isset($_SESSION["login_peserta"]) or isset($_SESSION["login_panitia"])){
+	}else{
 		echo "<script>
-				alert('Mohon Login terlebih dahulu.');
-				document.location.href = '$page';
+			alert('Mohon Login terlebih dahulu.');
+			document.location.href = '$page';
 			</script>";
-	  exit;
+		exit;
 	}
 }

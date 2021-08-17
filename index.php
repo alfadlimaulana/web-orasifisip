@@ -203,6 +203,7 @@ sendiri diangkat dengan <em>background</em> jurusan terbanyak yang berada di Unp
       AOS.init({
         duration: 800,
       });
+      navbarcollapse();
     </script>
   </body>
 </html>
