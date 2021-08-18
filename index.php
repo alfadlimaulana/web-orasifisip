@@ -30,7 +30,6 @@ if(!isset($_SESSION["login_peserta"])){
     <link rel="stylesheet" href="style.css" />
 
     <!-- font -->
-    <link rel="shortcut icon" href="img/favicon.ico" />
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
@@ -60,7 +59,7 @@ if(!isset($_SESSION["login_peserta"])){
             <a class="nav-link" href="panitia.php">Panitia</a>
             <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
             <a class="nav-link hide-link" href="absensi.php">Absensi</a>
-            <a class="nav-link hide-link" href="kelompok.php">Info Kelompok</a>
+            <a class="nav-link" href="kelompok.php">Info Kelompok</a>
             <?php if(!isset($_SESSION["login_peserta"])) : ?>
             <a class="nav-link" href="login.php">Login</a>
             <?php endif; ?> 
@@ -82,8 +81,11 @@ if(!isset($_SESSION["login_peserta"])){
       <div
         id="video-teaser"
         class="player"
-        data-property="{ videoURL:'https://youtu.be/RFDHKddj9w4', containment:'body', autoPlay:true, mute:true, startAt:0, opacity:1, optimizeDisplay:true, addRaster:true, abundance: 0 }"
+        data-property="{ videoURL:'https://youtu.be/IcnE5QBus6c', containment:'body', autoPlay:true, mute:true, startAt:0, opacity:1, optimizeDisplay:true, addRaster:true, abundance: 0 }"
       ></div>
+      <div id="info" class="flex">
+        <i id="volume" class="fas fa-volume-mute"></i>
+      </div>
     </section>
     <!-- akhir background video -->
     
@@ -165,6 +167,16 @@ sendiri diangkat dengan <em>background</em> jurusan terbanyak yang berada di Unp
               </div>
             </div>
           </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="card card-3 card-gallery" data-aos="fade-up">
+              <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
+              <div class="card-body">
+                <h5 class="card-title">COMING SOON</h5>
+                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="#">Watch on Youtube</a> -->
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </div>
@@ -193,17 +205,14 @@ sendiri diangkat dengan <em>background</em> jurusan terbanyak yang berada di Unp
     <script src="js/script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      const teaserVideo = jQuery("#video-teaser");
-      jQuery(function () {
-        teaserVideo.YTPlayer();
-        jQuery("#P1").YTPlayer();
-      });
+      muteVideo();
     </script>
     <script>
       AOS.init({
         duration: 800,
       });
       navbarcollapse();
+      
     </script>
   </body>
 </html>

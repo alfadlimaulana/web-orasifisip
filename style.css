@@ -110,6 +110,24 @@ section#teaser::after {
   top: 0;
   left: 0;
 }
+
+div#info {
+  flex-direction: column;
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+  z-index: 2;
+  gap: 20px;
+}
+
+div#info i {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  color: white;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
 .flex {
   display: flex;
   align-items: center;
@@ -185,6 +203,14 @@ a.text-divisi:hover {
   background-color: #395caa;
 }
 
+/*kelompok*/
+.kelompok-bg {
+  min-height: calc(100vh - 180px);
+  background-image: url(img/bg/Absensicrop\ 1.svg);
+  background-size: contain;
+  background-position: center;
+}
+
 /* absensi */
 .absensi-bg {
   min-height: calc(100vh - 180px);
@@ -195,6 +221,14 @@ a.text-divisi:hover {
 
 .table {
   background-color: #f399bf;
+}
+
+/* background panitia*/
+.bg-admin {
+  min-height: calc(100vh - 180px);
+  background-color: #79a686;
+  background-size: cover;
+  background-position: center;
 }
 
 /* footer */

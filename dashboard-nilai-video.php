@@ -45,7 +45,7 @@ if(isset($_POST["submit_nilai"])){
     <!-- font -->
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
 
-    <title>Orasi Fisip Unpad</title>
+    <title>Admin - Orasi Fisip Unpad</title>
   </head>
   <body>
     <!-- navbar -->
@@ -68,7 +68,7 @@ if(isset($_POST["submit_nilai"])){
     </nav>
     <!-- akhir navbar -->
 
-    <div class="container-fluid absensi-bg">
+    <div class="container-fluid bg-admin">
       <div class="container">
         <div class="row">
         <form action="" method="post">

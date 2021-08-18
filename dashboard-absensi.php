@@ -29,7 +29,7 @@ if(isset($_POST["cari"])){
     <!-- icon -->
     <link rel="shortcut icon" href="img/logo-favicon-panitia.ico" />
 
-    <title>Orasi Fisip Unpad</title>
+    <title>Admin - Orasi Fisip Unpad</title>
   </head>
   <body>
     <!-- navbar -->
@@ -51,7 +51,8 @@ if(isset($_POST["cari"])){
     </nav>
     <!-- akhir navbar -->
 
-    <div class="container">
+    <div class="container-fluid bg-admin">
+      <div class="container">
       <div class="row">
         <div class="col-6 col-sm-4 col-lg-3 ms-auto">
           <div class="input-group search-form mt-4 mb-1">
@@ -92,6 +93,7 @@ if(isset($_POST["cari"])){
             <?php  endforeach; ?>
           </tbody>
         </table>
+      </div>
       </div>
     </div>
 

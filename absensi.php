@@ -2,55 +2,24 @@
 
 session_start();
 require 'functions.php';
+require 'func_absensi.php';
 
 wajib_login("login.php");
 $username_peserta = $_SESSION["login_peserta"];
 
-//die;
-
 $database = query("SELECT * FROM peserta WHERE username_peserta = '$username_peserta'")[0];
+$settings = query("SELECT * FROM settings");
 
 if(isset($_POST["absensi1"])){
-  //cek berhasil atau tidak
-  if(absensi($_POST, "absen1") > 0){
-    echo "<script>
-            alert('Absensi BERHASIL!');
-            document.location.href = '';
-          </script>";
-  }else{
-    echo "<script>
-            alert('Absensi GAGAL!');
-          </script>";
-  }
+  verivikasi_absen($settings, 0, "absen1", "Absen Hari Pertama");
 }
 
 if(isset($_POST["absensi2"])){
-  //cek berhasil atau tidak
-  if(absensi($_POST, "absen2") > 0){
-    echo "<script>
-            alert('Absensi BERHASIL!');
-            document.location.href = '';
-
-          </script>";
-  }else{
-    echo "<script>
-            alert('Absensi GAGAL!');
-          </script>";
-  }
+  verivikasi_absen($settings, 1, "absen2", "Absen Hari Kedua");
 }
 
 if(isset($_POST["absensi3"])){
-  //cek berhasil atau tidak
-  if(absensi($_POST, "absen3") > 0){
-    echo "<script>
-            alert('Absensi BERHASIL!');
-            document.location.href = '';
-          </script>";
-  }else{
-    echo "<script>
-            alert('Absensi GAGAL!');
-          </script>";
-  }
+  verivikasi_absen($settings, 2, "absen3", "Absen Hari Ketiga");
 }
 
 $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_peserta = '$username_peserta'")[0];
@@ -115,18 +84,12 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
             <th scope="row">1</th>
             <td>Kamis, 26 Agustus 2021</td>
             <td>
-              <?php if($students['absen1'] != NULL) : ?>
-                Hadir
-              <?php else :?>
-                Tidak Hadir
-              <?php endif;?>
+              <?php cek_hadir($students, "absen1") ?>
             </td>
             <td>
               <form action="" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-                <?php if($students['absen1'] === NULL) : ?>
-                  <button type="submit" class="btn btn-primary btn-1" name="absensi1" disabled>Absen</button>
-                <?php endif;?>
+                <?php setting_absensi($students, "absen1", $settings, "absensi1", 0) ?>
               </form>
             </td>
           </tr>
@@ -134,18 +97,12 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
             <th scope="row">2</th>
             <td>Jumat, 27 Agustus 2021</td>
             <td>
-              <?php if($students['absen2'] != NULL) : ?>
-                Hadir
-              <?php else :?>
-                Tidak Hadir
-              <?php endif;?>
+              <?php cek_hadir($students, "absen2") ?>
             </td>
             <td>
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-              <?php if($students['absen2'] === NULL) : ?>
-                  <button type="submit" class="btn btn-primary btn-2" name="absensi2" disabled>Absen</button>
-              <?php endif;?>
+              <?php setting_absensi($students, "absen2", $settings, "absensi2", 1) ?>
             </form>
             </td>
           </tr>
@@ -153,18 +110,12 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
             <th scope="row">3</th>
             <td>Sabtu, 28 Agustus 2021</td>
             <td>
-              <?php if($students['absen3'] != NULL) : ?>
-                Hadir
-              <?php else :?>
-                Tidak Hadir
-              <?php endif;?>
+              <?php cek_hadir($students, "absen3") ?>
             </td>
             <td>
             <form action="" method="post" enctype="multipart/form-data">
               <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
-              <?php if($students['absen3'] === NULL) : ?>
-                  <button type="submit" class="btn btn-primary btn-3" name="absensi3" disabled>Absen</button>
-              <?php endif;?>
+              <?php setting_absensi($students, "absen3", $settings, "absensi3", 2) ?>
             </form>
             </td>
           </tr>
@@ -193,7 +144,6 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
 
     <script src="js/script.js"></script>
     <script>
-      btntglabsen();
       navbarcollapse();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

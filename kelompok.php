@@ -2,13 +2,24 @@
 session_start();
 require 'functions.php';
 
-wajib_login("login.php");
-$username_peserta = $_SESSION["login_peserta"];
 $students = query("SELECT * FROM fasil");
 
 // tombol cari ditekan
 if(isset($_POST["cari"])){
   $students = cari_fasil("fasil", $_POST["kata_kunci"]);
+}
+
+//cek session
+if(!isset($_SESSION["login_peserta"])){
+  echo "<script>
+          window.onload = function(){
+            hideNav()};
+      </script>";
+}else{
+  echo "<script>
+          window.onload = function(){
+            showNav()};
+      </script>";
 }
 
 ?>
@@ -45,7 +56,7 @@ if(isset($_POST["cari"])){
             <a class="nav-link" href="panitia.php">Panitia</a>
             <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
             <a class="nav-link hide-link" href="absensi.php">Absensi</a>
-            <a class="nav-link hide-link" href="kelompok.php">Info Kelompok</a>
+            <a class="nav-link" href="kelompok.php">Info Kelompok</a>
             <?php if(!isset($_SESSION["login_peserta"])) : ?>
             <a class="nav-link" href="login.php">Login</a>
             <?php endif; ?> 
@@ -57,7 +68,7 @@ if(isset($_POST["cari"])){
     <!-- akhir navbar -->
     
     <!-- tabel -->
-    <div class="container-fluid absensi-bg">
+    <div class="container-fluid kelompok-bg">
       <div class="container">
         <div class="row">
           <div class="col-6 col-sm-4 col-lg-3 ms-auto">

@@ -50,8 +50,8 @@ if(!isset($_SESSION["login_peserta"])){
             <?php if(isset($_SESSION["login_peserta"])) : ?>
               <a class="nav-link" href="penugasan.php">Penugasan</a>
               <a class="nav-link" href="absensi.php">Absensi</a>
-              <a class="nav-link" href="kelompok.php">Info Kelompok</a>
             <?php endif; ?> 
+            <a class="nav-link" href="kelompok.php">Info Kelompok</a>
             <?php if(!isset($_SESSION["login_peserta"])) : ?>
               <a class="nav-link" href="index.php">Home</a>
               <a class="nav-link" href="login.php">Login</a>
@@ -128,7 +128,7 @@ if(!isset($_SESSION["login_peserta"])){
                 <img class="img-fluid rounded-circle" src="img/panitia/incil/1-Sekretaris-Hasna 2.svg" alt="Sekretaris 1" />
                 <div class="tulisan-panit">
                   <p>
-                    <strong>Hasna</strong><br />
+                    <strong>Hasna Kamila</strong><br />
                     Sekretaris
                   </p>
                 </div>

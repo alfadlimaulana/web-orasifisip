@@ -17,46 +17,6 @@ function query($query){
 	return $rows;
 }
 
-function registrasi_panitia($data){
-	global $conn;
-
-	$nama_panitia = strtolower(stripcslashes($data["nama_panitia"]));
-	$divisi = strtolower(stripcslashes($data["divisi"]));
-	$username_panitia = strtolower(stripcslashes($data["username_panitia"]));
-	$password_panitia = mysqli_real_escape_string($conn, $data["password_panitia"]);
-	$password2_panitia = mysqli_real_escape_string($conn, $data["password2_panitia"]);
-
-	//username harus unik
-	$result = mysqli_query($conn, "SELECT username_panitia FROM panitia
-								   WHERE username_panitia = '$username_panitia'");
-
-	if(mysqli_fetch_assoc($result)){
-		echo "<script>
-            	alert('Username telah terdaftar!');
-          	  </script>";
-
-        return false;
-	}
-
-	//validasi password
-	if($password_panitia !== $password2_panitia){
-		echo "<script>
-            	alert('Konfirmasi password tidak sesuai!');
-          	  </script>";
-
-        return false;
-	}
-
-	//enkripsi password
-	$password_panitia_enkripsi = password_hash($password_panitia, PASSWORD_DEFAULT);
-
-	//insert petugas ke database
-	mysqli_query($conn, "INSERT INTO panitia VALUES
-						 ('$username_panitia', '$nama_panitia', '$divisi', '$password_panitia_enkripsi')");
-
-	return mysqli_affected_rows($conn);
-}
-
 function registrasi_peserta($data){
 	global $conn;
 
@@ -255,3 +215,20 @@ function wajib_login($page){
 		exit;
 	}
 }
+
+function ubah_setting($status, $data){
+	global $conn;
+	//ambil data dari tiap elemen dalam form
+	$id_setting = htmlspecialchars($data["id_setting"]);
+
+	//query update data
+	$query = "UPDATE settings SET 
+				status_setting = '$status'
+			  WHERE id_setting = '$id_setting'
+			  ";
+	mysqli_query($conn, $query);
+
+	return mysqli_affected_rows($conn);
+}
+?>
+

@@ -2,74 +2,40 @@
 
 session_start();
 require 'functions.php';
+require 'func_tugas.php';
 
 wajib_login("login.php");
 
 $username_peserta = $_SESSION["login_peserta"];
 
-//die;
-
 $database = query("SELECT * FROM peserta WHERE username_peserta = '$username_peserta'")[0];
+$settings = query("SELECT * FROM settings");
 
 if(isset($_POST["submit1"])){
-  //cek berhasil atau tidak
-  if(submit($_POST, "penugasan1") > 0){
-    echo "<script>
-            alert('Tugas Life Mapping BERHASIL dikumpulkan!');
-            document.location.href = '';
-          </script>";
-  }else{
-    echo "<script>
-            alert('Tugas Life Mapping GAGAL dikumpulkan!');
-            document.location.href = '';
-          </script>";
-  }
+  verivikasi_tugas($settings, 3, "penugasan1", "Life Mapping");
 }
 
 if(isset($_POST["submit2"])){
   //cek berhasil atau tidak
-  if(submit_link($_POST, "penugasan2") > 0){
-    echo "<script>
-            alert('Tugas Video BERHASIL dikumpulkan!');
-            document.location.href = '';
-          </script>";
+  if($settings[4]['status_setting'] == "buka"){
+    if(submit_link($_POST, "penugasan2") > 0){
+      berhasil_mengumpulkan("Video 21st Century Skill");
+    }else{
+      gagal_mengumpulkan("Video 21st Century Skill");
+    }
   }else{
-    echo "<script>
-            alert('Tugas Video GAGAL dikumpulkan!');
-            document.location.href = '';
-          </script>";
+    gagal_mengumpulkan("Video 21st Century Skill");
   }
 }
+
 
 if(isset($_POST["submit3"])){
-  //cek berhasil atau tidak
-  if(submit($_POST, "penugasan3") > 0){
-    echo "<script>
-            alert('Tugas Audio BERHASIL dikumpulkan!');
-            document.location.href = '';
-          </script>";
-  }else{
-    echo "<script>
-            alert('Tugas Audio GAGAL dikumpulkan!');
-            document.location.href = '';
-          </script>";
-  }
+  verivikasi_tugas($settings, 5, "penugasan3", "Review Audio");
 }
 
-  if(isset($_POST["submit4"])){
-    //cek berhasil atau tidak
-    if(submit($_POST, "penugasan4") > 0){
-      echo "<script>
-              alert('Tugas Esai BERHASIL dikumpulkan!');
-              document.location.href = '';
-            </script>";
-    }else{
-      echo "<script>
-              alert('Tugas Esai GAGAL dikumpulkan!');
-              document.location.href = '';
-            </script>";
-    }
-  }
+if(isset($_POST["submit4"])){
+  verivikasi_tugas($settings, 6, "penugasan4", "Esai Kemahasiswaan");
+}
 
 ?>
 
@@ -127,16 +93,17 @@ if(isset($_POST["submit3"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas Life Mapping</h5>
               <p class="card-text mt-3">Deadline : 22 Agustus 2021</p>
-              <button type="button" class="btn btn-primary btn-1 mt-4" data-bs-toggle="modal" data-bs-target="#tugas1">Detail</button>
+              <?php setting_tugas($settings, "#tugas1", 3); ?>
             </div>
           </div>
         </div>
+        
         <div class="col-ms-12 col-md-6 col-lg-4">
           <div class="card card-tugas" data-aos="fade-up">
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas Video 21st Century Skill</h5>
               <p class="card-text mt-3">Deadline : 29 Agustus 2021</p>
-              <button type="button" class="btn btn-primary btn-2 mt-4" data-bs-toggle="modal" data-bs-target="#tugas2">Detail</button>
+              <?php setting_tugas($settings, "#tugas2", 4); ?>
             </div>
           </div>
         </div>
@@ -146,7 +113,7 @@ if(isset($_POST["submit3"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas Review Audio</h5>
               <p class="card-text mt-3">Deadline : 28 Agustus 2021</p>
-              <button type="button" class="btn btn-primary btn-3 mt-4" data-bs-toggle="modal" data-bs-target="#tugas3">Detail</button>
+              <?php setting_tugas($settings, "#tugas3", 5); ?>
             </div>
           </div>
         </div>
@@ -156,7 +123,7 @@ if(isset($_POST["submit3"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas Esai Kemahasiswaan</h5>
               <p class="card-text mt-3">Deadline : 27 Agustus 2021</p>
-              <button type="button" class="btn btn-primary btn-4 mt-4" data-bs-toggle="modal" data-bs-target="#tugas4">Detail</button>
+              <?php setting_tugas($settings, "#tugas4", 6); ?>
             </div>
           </div>
         </div>
@@ -165,7 +132,7 @@ if(isset($_POST["submit3"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas Ke-FISIP-an & Keorganisasian</h5>
               <p class="card-text mt-3">Deadline : 28 Agustus 2021 </p>
-              <button type="button" class="btn btn-primary btn-4 mt-4" data-bs-toggle="modal" data-bs-target="#tugas5">Detail</button>
+              <?php setting_tugas($settings, "#tugas5", 7); ?>
             </div>
           </div>
         </div>

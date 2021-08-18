@@ -23,7 +23,7 @@ wajib_login("login-catatan-hati.php");
     <!-- icon -->
     <link rel="shortcut icon" href="img/logo-favicon-panitia.ico" />
 
-    <title>Orasi Fisip Unpad</title>
+    <title>Admin - Orasi Fisip Unpad</title>
   </head>
   <body>
     <!-- navbar -->
@@ -46,7 +46,7 @@ wajib_login("login-catatan-hati.php");
     <!-- akhir navbar -->
 
     <!-- Grid Tugas -->
-    <div class="container-fluid tugas-container py-5 px-5 d-flex align-items-center justify-content-center">
+    <div class="container-fluid bg-admin py-5 px-5 d-flex align-items-center justify-content-center">
       <div class="row g-3 animate__animated animate__fadeIn">
         <div class="col-ms-12 col-md-6 col-lg-3">
           <div class="card card-tugas">

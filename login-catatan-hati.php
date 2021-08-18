@@ -116,7 +116,6 @@ if(isset($_POST["login_panitia"])){
               </div>
               <div class="sign-button text-center">
                 <button href="#" class="btn btn-primary mt-4" type="submit" name="login_panitia" style="width: 50%">LOG IN</button>
-                <p class="mt-2 align-self-center">Belum registrasi? <a href="registrasi-panitia.php">Registrasi di sini</a></p>
               </div>
             </div>
           </div>

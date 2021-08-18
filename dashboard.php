@@ -33,21 +33,21 @@ if(!isset($_SESSION["login_panitia"])){
     <!-- icon -->
     <link rel="shortcut icon" href="img/logo-favicon-panitia.ico" />
 
-    <title>Orasi Fisip Unpad</title>
+    <title>Admin - Orasi Fisip Unpad</title>
   </head>
   <body>
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand mx-auto" href="dashboard.php"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
-        <a class="nav-link" href="dashboard-settings.html">Settings</a>
+        <a class="nav-link" href="dashboard-settings.php">Settings</a>
         <a class="nav-link" href="logout.php">Logout</a>
       </div>
     </nav>
     <!-- akhir navbar -->
     
     <!-- table -->
-    <div class="container index-panitia text-center pt-5">
+    <div class="container-fluid bg-admin index-panitia text-center pt-5">
       <h1>Selamat datang, <?= $student["nama_panitia"] ?> </h1>
       <p>Apa yang ingin anda lakukan?</p>
       <div class="row justify-content-center">
