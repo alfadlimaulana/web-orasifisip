@@ -90,7 +90,7 @@ if(isset($_POST["regist_peserta"])){
             </div>
               <div class="row mt-2">
                 <div class="col">
-                  <label for="kelInput" class="form-label">Kelompok Orasi</label>
+                  <label for="kelInput" class="form-label">Kelompok Orasi | <a href="https://drive.google.com/file/d/1XZ4hG4X4JDthThqErK4rCOhZPMWMagpI/view" target="_blank">Cek Kelompok</a></label>
                   <select class="form-select" name="kelompok" id="inputGroupSelect01">
                     <option selected>Pilih Kelompok Orasi</option>
                     <option value="1">1</option>
