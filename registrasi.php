@@ -90,8 +90,46 @@ if(isset($_POST["regist_peserta"])){
             </div>
               <div class="row mt-2">
                 <div class="col">
-                  <label for="kelInput" class="form-label">Kelompok</label>
-                  <input type="text" class="form-control" id="kelInput" placeholder="Masukkan Kelompok" name="kelompok" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['kelompok']; }?>" required/>
+                  <label for="kelInput" class="form-label">Kelompok Orasi</label>
+                  <select class="form-select" name="kelompok" id="inputGroupSelect01">
+                    <option selected>Pilih Kelompok Orasi</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                    <option value="32">32</option>
+                    <option value="33">33</option>
+                    <option value="34">34</option>
+                    <option value="35">35</option>
+                    <option value="36">36</option>
+                  </select>
                 </div>
               </div>
               <div class="row mt-2">
@@ -141,5 +179,7 @@ if(isset($_POST["regist_peserta"])){
     <!-- akhir footer -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script>navbarcollapse();</script>
   </body>
 </html>
