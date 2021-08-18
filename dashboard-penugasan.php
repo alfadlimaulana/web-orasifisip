@@ -46,44 +46,46 @@ wajib_login("login-catatan-hati.php");
     <!-- akhir navbar -->
 
     <!-- Grid Tugas -->
-    <div class="container-fluid bg-admin py-5 px-5 d-flex align-items-center justify-content-center">
-      <div class="row g-3 animate__animated animate__fadeIn">
-        <div class="col-ms-12 col-md-6 col-lg-3">
-          <div class="card card-tugas">
-            <div class="card-body text-center p-5">
-              <h5 class="card-title">Tugas Life Mapping</h5>
-              <p class="card-text mt-3">Penugasan Life Mapping merupakan penugasan individu berupa pembuatan skema life mapping diri Arkamuda selama 5 tahun yang akan datang dengan dikemas sesuai kreatifitas Arkamuda.</p>
-              <a href="dashboard-nilai-kotik.php" role="button" class="btn btn-primary mt-4">Lihat Nilai</a>
+    <div class="container-fluid bg-admin d-flex align-items-center justify-content-center">
+      <div class="container p-5">
+        <div class="row g-3 animate__animated animate__fadeIn align-items-stretch">
+          <div class="col-ms-12 col-md-6 col-lg-3">
+            <div class="card card-tugas">
+              <div class="card-body text-center px-4 py-5">
+                <h5 class="card-title">Tugas Life Mapping</h5>
+                <p class="card-text mt-3">Penugasan Life Mapping merupakan penugasan individu berupa pembuatan skema life mapping diri Arkamuda selama 5 tahun yang akan datang dengan dikemas sesuai kreatifitas Arkamuda.</p>
+                <a href="dashboard-nilai-kotik.php" role="button" class="btn btn-primary mt-2">Lihat Nilai</a>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="col-ms-12 col-md-6 col-lg-3">
-          <div class="card card-tugas">
-            <div class="card-body text-center p-5">
-              <h5 class="card-title">Tugas Video 21st Century Skill</h5>
-              <p class="card-text mt-3">Merupakan penugasan kelompok berupa pembuatan video pengaplikasian Arkamuda terhadap 21st Century Skill dalam menjadi sosok pemimpin ideal di abad 21 dengan melibatkan seluruh anggota kelompok dan dibuat semenarik mungkin. </p>
-              <a href="dashboard-nilai-video.php" role="button" class="btn btn-primary mt-4">Lihat Nilai</a>
+  
+          <div class="col-ms-12 col-md-6 col-lg-3">
+            <div class="card card-tugas">
+              <div class="card-body text-center px-4 py-5">
+                <h5 class="card-title">Tugas Video 21st Century Skill</h5>
+                <p class="card-text mt-3">Merupakan penugasan kelompok berupa pembuatan video pengaplikasian Arkamuda terhadap 21st Century Skill dalam menjadi sosok pemimpin ideal di abad 21 dengan melibatkan seluruh anggota kelompok dan dibuat semenarik mungkin. </p>
+                <a href="dashboard-nilai-video.php" role="button" class="btn btn-primary mt-2">Lihat Nilai</a>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="col-ms-12 col-md-6 col-lg-3">
-          <div class="card card-tugas">
-            <div class="card-body text-center p-5">
-              <h5 class="card-title">Tugas Review Audio</h5>
-              <p class="card-text mt-3">Merupakan penugasan individu berupa pengulasan secara lisan atas rangkaian Orasi 2021 pada hari pertama, kedua, dan ketiga. </p>
-              <a href="dashboard-nilai-audio.php" role="button" class="btn btn-primary mt-4">Lihat Nilai</a>
+  
+          <div class="col-ms-12 col-md-6 col-lg-3">
+            <div class="card card-tugas">
+              <div class="card-body text-center px-4 py-5">
+                <h5 class="card-title">Tugas Review Audio</h5>
+                <p class="card-text mt-3">Merupakan penugasan individu berupa pengulasan secara lisan atas rangkaian Orasi 2021 pada hari pertama, kedua, dan ketiga. </p>
+                <a href="dashboard-nilai-audio.php" role="button" class="btn btn-primary mt-2">Lihat Nilai</a>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div class="col-ms-12 col-md-6 col-lg-3">
-          <div class="card card-tugas">
-            <div class="card-body text-center p-5">
-              <h5 class="card-title">Tugas Esai Kemahasiswaan</h5>
-              <p class="card-text mt-3">Merupakan penugasan individu berupa pembuatan esai mengenai peran Arkamuda sebagai mahasiswa serta keterkaitannya dengan Tri Dharma Perguruan Tinggi. </p>
-              <a href="dashboard-nilai-esai.php" role="button" class="btn btn-primary mt-4">Lihat Nilai</a>
+  
+          <div class="col-ms-12 col-md-6 col-lg-3">
+            <div class="card card-tugas">
+              <div class="card-body text-center px-4 py-5">
+                <h5 class="card-title">Tugas Esai Kemahasiswaan</h5>
+                <p class="card-text mt-3">Merupakan penugasan individu berupa pembuatan esai mengenai peran Arkamuda sebagai mahasiswa serta keterkaitannya dengan Tri Dharma Perguruan Tinggi. </p>
+                <a href="dashboard-nilai-esai.php" role="button" class="btn btn-primary mt-2">Lihat Nilai</a>
+              </div>
             </div>
           </div>
         </div>

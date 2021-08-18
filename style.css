@@ -160,13 +160,8 @@ div#info i {
   background-position: center bottom;
 }
 
-.animate__animated.animate__fadeIn {
-  --animate-duration: 2s;
-}
-
-.animate__animated.animate__fadeInUp {
-  --animate-duration: 2s;
-  --animate-delay: 1s;
+.card-tugas {
+  height: 100%;
 }
 
 /* panitia */

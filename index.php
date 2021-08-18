@@ -95,7 +95,7 @@ if(!isset($_SESSION["login_peserta"])){
         <img class="img-fluid my-2" src="img/Logo.svg" alt="logo" />
         <div class="row">
           <div class="col">
-            <h2 data-aos="fade-up"><strong>ORASI 2021</strong></h2>
+            <h2 data-aos="fade-up"><strong>ORASI FISIP 2021</strong></h2>
           </div>
         </div>
         <div class="row">
@@ -136,8 +136,8 @@ sendiri diangkat dengan <em>background</em> jurusan terbanyak yang berada di Unp
       <!-- Gallery -->
       <section id="gallery" class="container text-center bg-transparent p-4 mb-5" style="background-color: lightgrey">
         <h2 data-aos="fade-up">CHECK THIS OUT</h2>
-        <div class="row justify-content-center pt-2 g-4">
-          <div class="col-sm-6 col col-md-4 card-1">
+        <div class="row justify-content-center pt-3 g-4">
+          <div class="col-sm-6 col-lg-3 card-1">
             <div class="card card-gallery" data-aos="fade-up">
               <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
               <div class="card-body">
@@ -147,7 +147,7 @@ sendiri diangkat dengan <em>background</em> jurusan terbanyak yang berada di Unp
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-4">
+          <div class="col-sm-6 col-lg-3">
             <div class="card card-gallery" data-aos="fade-up">
               <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
               <div class="card-body">
@@ -157,7 +157,7 @@ sendiri diangkat dengan <em>background</em> jurusan terbanyak yang berada di Unp
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-4">
+          <div class="col-sm-6 col-lg-3">
             <div class="card card-3 card-gallery" data-aos="fade-up">
               <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
               <div class="card-body">
@@ -167,7 +167,7 @@ sendiri diangkat dengan <em>background</em> jurusan terbanyak yang berada di Unp
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-4">
+          <div class="col-sm-6 col-lg-3">
             <div class="card card-3 card-gallery" data-aos="fade-up">
               <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
               <div class="card-body">
@@ -203,16 +203,15 @@ sendiri diangkat dengan <em>background</em> jurusan terbanyak yang berada di Unp
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       muteVideo();
+      navbarcollapse();
     </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({
         duration: 800,
       });
-      navbarcollapse();
-      
     </script>
   </body>
 </html>

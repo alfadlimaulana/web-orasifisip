@@ -140,7 +140,7 @@ if(isset($_POST["submit4"])){
 
       <div class="row justify-content-center mt-3">
         <div class="col-ms-12 col-md-6 col-lg-4" >
-          <div class="card card-tugas" data-aos="fade-up">
+          <div class="card card-tugas align-items-center" data-aos="fade-up">
             <div class="card-body text-center p-5">
               <p class="card-text">Stay tuned informasi penugasan di instagram @orasifisipunpad yaa! #SATUFISIPBANGGA</p>
             </div>
