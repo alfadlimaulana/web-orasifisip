@@ -1,7 +1,7 @@
 <?php 
 // Koneksi ke database
 
-// $conn = mysqli_connect("localhost", "root", "", "orasi_fisip");
+//$conn = mysqli_connect("localhost", "root", "", "orasi_fisip");
 $conn = mysqli_connect("localhost", "u263889387_wafifz", "AdminWafiFadli8", "u263889387_orasi_fisip");
 
 // Koneksi ke database
@@ -88,7 +88,7 @@ function upload($penugasan){
 	}
 
 	//cek ukuran
-	if($ukuran_file > 5000000){
+	if($ukuran_file > 10000000){
 		echo "<script>
 				alert('Ukuran file terlalu besar!');
 			  </script>";
@@ -107,6 +107,8 @@ function upload($penugasan){
 
 function submit($data, $penugasan){
 	global $conn;
+	date_default_timezone_set("Asia/Jakarta");
+	$waktu_sekarang = date("d/m/Y H:i:s");
 	//ambil data dari tiap elemen dalam form
 	$username_peserta = htmlspecialchars($data["username_peserta"]);
 	$nama_peserta = htmlspecialchars($data["nama_peserta"]);
@@ -120,7 +122,7 @@ function submit($data, $penugasan){
 
 	//query insert data ke tabel penugasan
 	$query = "INSERT INTO $penugasan VALUES
-	('$id_tugas', '$nama_peserta', '$kelompok', '$file', NOW(),  NULL, '$username_peserta')";
+	('$id_tugas', '$nama_peserta', '$kelompok', '$file', '$waktu_sekarang',  NULL, '$username_peserta')";
 	mysqli_query($conn, $query);
 
 	return mysqli_affected_rows($conn);
@@ -128,6 +130,8 @@ function submit($data, $penugasan){
 
 function submit_link($data, $penugasan){
 	global $conn;
+	date_default_timezone_set("Asia/Jakarta");
+	$waktu_sekarang = date("d/m/Y H:i:s");
 	//ambil data dari tiap elemen dalam form
 	$username_peserta = htmlspecialchars($data["username_peserta"]);
 	$nama_peserta = htmlspecialchars($data["nama_peserta"]);
@@ -139,7 +143,7 @@ function submit_link($data, $penugasan){
 
 	//query insert data ke tabel penugasan
 	$query = "INSERT INTO $penugasan VALUES
-	('$id_tugas', '$nama_peserta', '$kelompok', '$link_tugas_video', NOW(),  NULL, '$username_peserta')";
+	('$id_tugas', '$nama_peserta', '$kelompok', '$link_tugas_video', '$waktu_sekarang',  NULL, '$username_peserta')";
 	mysqli_query($conn, $query);
 
 	return mysqli_affected_rows($conn);
@@ -147,11 +151,13 @@ function submit_link($data, $penugasan){
 
 function absensi($data, $absen){
 	global $conn;
+	date_default_timezone_set("Asia/Jakarta");
+	$waktu_sekarang = date("d/m/Y H:i:s");
 	//ambil data dari tiap elemen dalam form
 	$username_peserta = htmlspecialchars($data["username_peserta"]);
 
 	//query insert data ke tabel penugasan
-	$query = "UPDATE peserta SET $absen = NOW() WHERE username_peserta = '$username_peserta'";
+	$query = "UPDATE peserta SET $absen = '$waktu_sekarang' WHERE username_peserta = '$username_peserta'";
 	mysqli_query($conn, $query);
 
 	return mysqli_affected_rows($conn);
