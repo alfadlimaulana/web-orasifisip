@@ -7,7 +7,7 @@ $students = query("SELECT * FROM peserta");
 
 //tombol cari ditekan
 if(isset($_POST["cari"])){
-  $students = cari($_POST["kata_kunci"]);
+  $students = cari_absen("peserta", $_POST["kata_kunci"]);
 }
 
 ?>
@@ -21,7 +21,7 @@ if(isset($_POST["cari"])){
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css" />
+    <?php style_orasi(); ?>
 
     <!-- font -->
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
@@ -54,12 +54,14 @@ if(isset($_POST["cari"])){
     <div class="container-fluid bg-admin">
       <div class="container">
       <div class="row">
-        <div class="col-6 col-sm-4 col-lg-3 ms-auto">
-          <div class="input-group search-form mt-4 mb-1">
-            <span class="input-group-text" id="basic-addon1"><i class="fas fa-search"></i></span>
-            <input type="text" class="form-control" placeholder="Kata Kunci" aria-label="Username" aria-describedby="basic-addon1" />
+      <form action="" method="post">
+          <div class="col-6 col-sm-4 col-lg-3 ms-auto">
+            <div class="input-group search-form mt-4 mb-1">
+              <span class="input-group-text" id="basic-addon1"><button class="fas fa-search" name="cari" type="submit"></button></span>
+              <input type="text" class="form-control" placeholder="Kata Kunci" aria-label="Username" aria-describedby="basic-addon1" name="kata_kunci"/>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
       <div class="row table-responsive">
         <table class="table align-middle mt-4">
@@ -85,10 +87,6 @@ if(isset($_POST["cari"])){
               <td><?= $student["absen1"]; ?></td>
               <td><?= $student["absen2"]; ?></td>
               <td><?= $student["absen3"]; ?></td>
-              <!-- <td>
-                <a href="ubah.php?Kode_Buku=<?= $student["Kode_Buku"]; ?>" onclick="return confirm('Ubah Buku dengan Kode <?= $kode ?> ?')">Ubah</a> | 
-                <a href="hapus.php?Kode_Buku=<?= $student["Kode_Buku"]; ?>" onclick="return confirm('Hapus Buku dengan Kode <?= $kode ?> ?')">Hapus</a>
-              </td> -->
             </tr>
             <?php  endforeach; ?>
           </tbody>

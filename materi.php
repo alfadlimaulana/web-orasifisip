@@ -1,3 +1,5 @@
+<?php require 'functions.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +9,7 @@
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css" />
+    <?php style_orasi(); ?>
 
     <!-- font -->
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
@@ -29,121 +31,79 @@
 
     <!-- grid panitia -->
     <div class="container-fluid panitia-bg">
-      <div class="container p-5">
+      <div class="container p-4">
         <div class="row justify-content-center">
           <div class="col text-center">
-            <h1 class="text-divisi">Operasional</h2>
+            <h1 class="text-divisi">Materi</h1>
           </div>
         </div>
-        <div class="row g-3 mt-2 justify-content-center">
+        <div class="row g-3 justify-content-center">
           <div class="col-8 col-md-4 text-center">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Kadiv-Bagas-Aji-Prakoso.svg" alt="Kadiv-Bagas" />
+            <img class="img-fluid rounded-circle" src="img/panitia/materi/3-Kadiv-Annisa-Nur-Amalina 1.svg" alt="Kadiv-Annisa" />
             <div class="tulisan-panit">
-              <p><strong>Bagas Aji Prakoso</strong><br />Kadiv</p>
+              <p><strong>Annisa Nur Amalina</strong><br />Kadiv</p>
             </div>
           </div>
           <div class="col-8 col-md-4 text-center">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Wakadiv-Raka-Putra.svg" alt="Wakadiv-Raka" />
+            <img class="img-fluid rounded-circle" src="img/panitia/materi/3-Wakadiv-Sarah-Naluriyah 1.svg" alt="Wakadiv-Sarah" />
             <div class="tulisan-panit">
-              <p><strong>Raka Putra</strong><br />Wakadiv</p>
+              <p><strong>Sarah Naluriyah</strong><br />Wakadiv</p>
             </div>
           </div>
         </div>
         <div class="row g-2 mt-3 text-center justify-content-center">
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Abdul-Aziz.svg" alt="OP-Abdul" />
+            <img class="img-fluid rounded-circle" src="img/panitia/materi/3-Agung-Cahyo-W 1.svg" alt="materi-Agung" />
             <div class="tulisan-panit">
-              <p>Abdul Aziz</p>
+              <p>Agung Cahyo W</p>
             </div>
           </div>
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Anisya-Eka.svg" alt="OP-Anisya" />
+            <img class="img-fluid rounded-circle" src="img/panitia/materi/3-Ahmad-Nizar -Fatur-Rohman 1.svg" alt="Materi-Ahmads" />
             <div class="tulisan-panit">
-              <p>Anisya Eka</p>
+              <p>Ahmad Nizar Fatur Rohman</p>
             </div>
           </div>
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Arneta-Wijayanti.svg" alt="OP-Arneta" />
+            <img class="img-fluid rounded-circle" src="img/panitia/materi/3-Ajeng-Nofita 1.svg" alt="Materi-Ajeng" />
             <div class="tulisan-panit">
-              <p>Arneta Wijayanti</p>
+              <p>Ajeng Nofita</p>
             </div>
           </div>
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Berry-Natanael-Montana.svg" alt="OP-Berry" />
+            <img class="img-fluid rounded-circle" src="img/panitia/materi/3-Alliya-Dian-Permata 1.svg" alt="Materi-Alliya" />
             <div class="tulisan-panit">
-              <p>Berry Natanael Montana</p>
+              <p>Alliya Dian Permata</p>
             </div>
           </div>
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Immanuel-Gok-Asiniroha.svg" alt="OP-Immanuel" />
+            <img class="img-fluid rounded-circle" src="img/panitia/materi/3-Fera-Febriana 1.svg" alt="Materi-Fera" />
             <div class="tulisan-panit">
-              <p>Immanuel Gok Asiniroha</p>
+              <p>Fera Febriana</p>
             </div>
           </div>
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Krisna-Yuliana.svg" alt="OP-Krisna" />
+            <img class="img-fluid rounded-circle" src="img/panitia/materi/3-Laras-Oktaviani 1.svg" alt="Materi-Laras" />
             <div class="tulisan-panit">
-              <p>Krisna Yuliana</p>
+              <p>Laras Oktaviani</p>
             </div>
           </div>
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Muhamad-Rafi.svg" alt="OP-M.Rafi" />
+            <img class="img-fluid rounded-circle" src="img/panitia/materi/3-Muhamad-Ali 1.svg" alt="Materi Muhamad" />
             <div class="tulisan-panit">
-              <p>Muhamad Rafi</p>
+              <p>Muhamad Ali</p>
             </div>
           </div>
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Muhammad-Daffa-Azhari.svg" alt="OP-M.Daffa" />
+            <img class="img-fluid rounded-circle" src="img/panitia/materi/3-Nanda-Novian 1.svg" alt="Materi-Nanda" />
             <div class="tulisan-panit">
-              <p>M. Daffa Azhari</p>
+              <p>Nanda Novian</p>
             </div>
           </div>
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Naufal-Rizky-Albarkah.svg" alt="OP-Naufal Rizky" />
+            <img class="img-fluid rounded-circle" src="img/panitia/materi/3-Reza-Armada-2 1.svg" alt="Materi-Reza" />
             <div class="tulisan-panit">
-              <p>Naufal Rizky Albarkah</p>
-            </div>
-          </div>
-          <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Petra-Imanuel-Ginting.svg" alt="OP-Petra Imanuel" />
-            <div class="tulisan-panit">
-              <p>Petra Imanuel Ginting</p>
-            </div>
-          </div>
-          <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Rahadean.svg" alt="OP-Rahadean" />
-            <div class="tulisan-panit">
-              <p>Rahadean K</p>
-            </div>
-          </div>
-          <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Rasya-Syafa.svg" alt="OP-Rasya" />
-            <div class="tulisan-panit">
-              <p>Rasya Syafa</p>
-            </div>
-          </div>
-          <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Reyki-Fadillah.svg" alt="OP-Reyki" />
-            <div class="tulisan-panit">
-              <p>Reyki Fadillah</p>
-            </div>
-          </div>
-          <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Rifki-Nur-Achmad-Sidiq.svg" alt="OP-Rifki" />
-            <div class="tulisan-panit">
-              <p>Rifki Nur Achmad Sidiq</p>
-            </div>
-          </div>
-          <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Yosia-Viera-Martua-Sianturi.svg" alt="OP-Yosia" />
-            <div class="tulisan-panit">
-              <p>Yosia Viera Martua Sianturi</p>
-            </div>
-          </div>
-          <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/op/9-Zahra-Fairus.svg" alt="OP-Zahra" />
-            <div class="tulisan-panit">
-              <p>Zahra Fairus</p>
+              <p>Reza Armada</p>
             </div>
           </div>
         </div>

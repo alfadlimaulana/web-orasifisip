@@ -1,3 +1,7 @@
+<?php
+require 'functions.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,7 +11,7 @@
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style.css" />
+    <?php style_orasi(); ?>
 
     <!-- font -->
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
@@ -32,82 +36,70 @@
       <div class="container p-5">
         <div class="row justify-content-center">
           <div class="col text-center">
-            <h2 class="text-divisi">Sponsorship</h2>
+            <h1 class="text-divisi">ACARA</h1>
           </div>
         </div>
-        <div class="row g-3 mt-1 justify-content-center">
+        <div class="row g-3 mt-2 justify-content-center">
           <div class="col-8 col-md-4 text-center">
-            <img class="img-fluid rounded-circle" src="img/panitia/sponsor/8-Kadiv-Fira-Julia 1.svg" alt="Kadiv-Fira" />
+            <img class="img-fluid rounded-circle" src="img/panitia/acara/2-Kadiv-Kanaya-Avitadira.svg" alt="Kadiv-Kanaya" />
             <div class="tulisan-panit">
-              <p><strong>Fira Julia</strong><br />Kadiv</p>
+              <p><strong>Kanaya Avitadira</strong><br />Kadiv</p>
             </div>
           </div>
           <div class="col-8 col-md-4 text-center">
-            <img class="img-fluid rounded-circle" src="img/panitia/sponsor/9-Wakadiv-M-Bintang-Ramadhan 1.svg" alt="Wakadiv-M.Bintang" />
+            <img class="img-fluid rounded-circle" src="img/panitia/acara/2-Wakadiv-Alya-Namira.svg" alt="Wakadiv-Alya" />
             <div class="tulisan-panit">
-              <p><strong>M. Bintang Ramadhan</strong><br />Wakadiv</p>
+              <p><strong>Alya Namira</strong><br />Wakadiv</p>
             </div>
           </div>
         </div>
         <div class="row g-2 mt-3 text-center justify-content-center">
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/sponsor/8-Ahmad-Pratama 1.svg" alt="Sponsor-Ahmad" />
+            <img class="img-fluid rounded-circle" src="img/panitia/acara/2-Anisa-Putri-Tambun.svg" alt="Acara-Anisa" />
             <div class="tulisan-panit">
-              <p>Ahmad Pratama</p>
+              <p>Anisa Putri Tambun</p>
             </div>
           </div>
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/sponsor/8-Dara Maharani 1.svg" alt="Sponsor-Dara" />
+            <img class="img-fluid rounded-circle" src="img/panitia/acara/2-Anneke-Zehan.svg" alt="Acara-Anneke" />
             <div class="tulisan-panit">
-              <p>Dara Maharani</p>
+              <p>Anneke Zehan</p>
             </div>
           </div>
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/sponsor/8-Dinda Tiara S 1.svg" alt="Sponsor-Dinda" />
+            <img class="img-fluid rounded-circle" src="img/panitia/acara/2-Dhita-Amelia-Kurnia.svg" alt="Acara-Dhita" />
             <div class="tulisan-panit">
-              <p>Dinda Tiara S</p>
+              <p>Dhita Amelia Kurnia</p>
             </div>
           </div>
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/sponsor/8-Marshanda-Syafira-Devina 1.svg" alt="Sponsor-Marshanda" />
+            <img class="img-fluid rounded-circle" src="img/panitia/acara/2-Farsya-Calosa-Setiadi.svg" alt="Acara-Farsya" />
             <div class="tulisan-panit">
-              <p>Marshanda Syafira Devina</p>
+              <p>Farsya Calosa Setiadi</p>
             </div>
           </div>
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/sponsor/8-Muhammad-Subhan-F-A 1.svg" alt="Sponsor-M.Subhan" />
+            <img class="img-fluid rounded-circle" src="img/panitia/acara/2-Nazla-Rafilah-Wudianto.svg" alt="Acara-Nazla" />
             <div class="tulisan-panit">
-              <p>Muhammad Subhan F.A</p>
+              <p>Nazla Rafilah Wudianto</p>
             </div>
           </div>
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/sponsor/8-Nissa-Alya 1.svg" alt="Sponsor-Nissa" />
+            <img class="img-fluid rounded-circle" src="img/panitia/acara/2-Raihan-Budiman.svg" alt="Acara-Raihan" />
             <div class="tulisan-panit">
-              <p>Nissa Alya</p>
+              <p>Raihan Budiman</p>
             </div>
           </div>
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/sponsor/8-Novelia-Damayanti 1.svg" alt="Sponsor-Novelia" />
+            <img class="img-fluid rounded-circle" src="img/panitia/acara/2-Susanti.svg" alt="Acara-Raihan" />
             <div class="tulisan-panit">
-              <p>Novelia Damayanti</p>
+              <p>Susanti</p>
             </div>
           </div>
           <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/sponsor/8-Rabbani-Saragih 1.svg" alt="Sponsor-Rabbani" />
+            <img class="img-fluid rounded-circle" src="img/panitia/acara/2-Vandita-Kusumawardaya.svg" alt="Acara-Vandita" />
             <div class="tulisan-panit">
-              <p>Rabbani Saragih</p>
-            </div>
-          </div>
-          <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/sponsor/8-Rafly 1.svg" alt="Sponsor-Rafly" />
-            <div class="tulisan-panit">
-              <p>Rafly</p>
-            </div>
-          </div>
-          <div class="col-6 col-md-4">
-            <img class="img-fluid rounded-circle" src="img/panitia/sponsor/8-Zalfa-Amira 1.svg" alt="Sponsor-Zalfa" />
-            <div class="tulisan-panit">
-              <p>Zalfa Amira</p>
+              <p>Vandita Kusumawardaya</p>
             </div>
           </div>
         </div>

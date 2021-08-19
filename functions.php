@@ -1,8 +1,8 @@
 <?php 
 // Koneksi ke database
 
-$conn = mysqli_connect("localhost", "root", "", "orasi_fisip");
-// $conn = mysqli_connect("localhost", "u263889387_wafifz", "AdminWafiFadli8", "u263889387_orasi_fisip");
+//$conn = mysqli_connect("localhost", "root", "", "orasi_fisip");
+$conn = mysqli_connect("localhost", "u263889387_wafifz", "AdminWafiFadli8", "u263889387_orasi_fisip");
 
 // Koneksi ke database
 function query($query){
@@ -15,6 +15,11 @@ function query($query){
 		$rows[] = $row;
 	}
 	return $rows;
+}
+
+//style
+function style_orasi(){
+	echo '<link rel="stylesheet" href="style2.css" />'; 
 }
 
 function registrasi_peserta($data){
@@ -167,7 +172,7 @@ function cari_tugas($tabel, $kata_kunci){
 	$query = "SELECT * FROM $tabel
 			  WHERE id_tugas LIKE '%$kata_kunci%' 
 			  OR nama_peserta LIKE '%$kata_kunci%'
-			  OR kelompok LIKE '%$kata_kunci%'
+			  OR kelompok LIKE '$kata_kunci'
 			  OR username_peserta LIKE '%$kata_kunci%'
 			  ";
 	return query($query);
@@ -177,6 +182,15 @@ function cari_fasil($tabel, $kata_kunci){
 	$query = "SELECT * FROM $tabel
 			  WHERE nama_fasil LIKE '%$kata_kunci%' 
 			  OR kelompok LIKE '$kata_kunci'
+			  ";
+	return query($query);
+}
+
+function cari_absen($tabel, $kata_kunci){
+	$query = "SELECT * FROM $tabel
+			  WHERE nama_peserta LIKE '%$kata_kunci%' 
+			  OR kelompok LIKE '$kata_kunci'
+			  OR username_peserta LIKE '%$kata_kunci%'
 			  ";
 	return query($query);
 }
