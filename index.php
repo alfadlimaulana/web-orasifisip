@@ -92,10 +92,10 @@ if(!isset($_SESSION["login_peserta"])){
     <!-- about us -->
     <div class="index-container container-fluid text-center">
       <div class="container about-us py-4 px-5 mt-5">
-        <img class="img-fluid my-2" src="img/Logo.svg" alt="logo" />
-        <div class="row">
-          <div class="col">
-            <h2 data-aos="fade-up"><strong>ORASI FISIP 2021</strong></h2>
+        <img class="img-fluid my-4" src="img/Logo.svg" alt="logo" />
+        <div class="row mb-2 justify-content-center">
+          <div class="col-8 col-md-6 col-lg-4">
+            <img class="img-fluid" src="img/Website-Orasi-2021 1.svg" alt="Orasi 2021" data-aos="fade-up">
           </div>
         </div>
         <div class="row">
@@ -108,25 +108,25 @@ if(!isset($_SESSION["login_peserta"])){
             </p>
           </div>
         </div>
-        <div class="row mt-4">
-          <div class="col">
-            <h2 data-aos="fade-up"><strong><em>EMPOWERING COLLABORATION</strong></em></h2>
+        <div class="row justify-content-center mt-4 mb-2">
+          <div class="col-12 col-md-10 col-lg-8 p-0">
+            <img class="img-fluid" src="img/Website-Empowering-Collaboration 1.svg" alt="EMPOWERING COLLABORATION" data-aos="fade-up">
           </div>
         </div>
         <div class="row">
           <div class="col">
             <p data-aos="fade-up">
-            Memberdayakan potensi Mahasiswa Baru melalui penanaman nilai yang ideal sesuai
-dengan <em>Blueprint</em> Kaderisasi yang tertuang dalam nilai dan muatan ORASI yang
-dirancang oleh Dept. KPSDM BEM FISIP Unpad 2021. Serta memperlihatkan
-keberagaman kepada mahasiswa baru yang terdapat di FISIP UNPAD melalui
-kolaborasi bersama ORMAWA se-FISIP sehingga ORASI 2021 dapat memberikan <em>first
-impression</em> terkait banyaknya keberagaman yang bisa saling melengkapi. Serta
-sebagai perpanjangan tangan kepada ospek di masing-masing jurusan di FISIP Unpad.
-Bermitra dengan berbagai pemangku kepentingan agar memperoleh
-kesuksesan dalam seluruh rangkaian acara ORASI 2021. <strong><em>Empowering Collaboration</em></strong>
-sendiri diangkat dengan <em>background</em> jurusan terbanyak yang berada di Unpad.
-</p>
+              Memberdayakan potensi Mahasiswa Baru melalui penanaman nilai yang ideal sesuai
+              dengan <em>Blueprint</em> Kaderisasi yang tertuang dalam nilai dan muatan ORASI yang
+              dirancang oleh Dept. KPSDM BEM FISIP Unpad 2021. Serta memperlihatkan
+              keberagaman kepada mahasiswa baru yang terdapat di FISIP UNPAD melalui
+              kolaborasi bersama ORMAWA se-FISIP sehingga ORASI 2021 dapat memberikan <em>first
+              impression</em> terkait banyaknya keberagaman yang bisa saling melengkapi. Serta
+              sebagai perpanjangan tangan kepada ospek di masing-masing jurusan di FISIP Unpad.
+              Bermitra dengan berbagai pemangku kepentingan agar memperoleh
+              kesuksesan dalam seluruh rangkaian acara ORASI 2021. <strong><em>Empowering Collaboration</em></strong>
+              sendiri diangkat dengan <em>background</em> jurusan terbanyak yang berada di Unpad.
+            </p>
           </div>
         </div>
       </div>
@@ -135,7 +135,11 @@ sendiri diangkat dengan <em>background</em> jurusan terbanyak yang berada di Unp
 
       <!-- Gallery -->
       <section id="gallery" class="container text-center bg-transparent p-4 mb-5" style="background-color: lightgrey">
-        <h2 data-aos="fade-up">CHECK THIS OUT</h2>
+        <div class="row justify-content-center">
+          <div class="col-10 col-md-8 col-lg-6">
+            <img class="img-fluid" src="img/Website-Check-This-Out-2 1.svg" alt="Check This Out" data-aos="fade-up">
+          </div>
+        </div>
         <div class="row justify-content-center pt-3 g-4">
           <div class="col-sm-6 col-lg-3 card-1">
             <div class="card card-gallery" data-aos="fade-up">
