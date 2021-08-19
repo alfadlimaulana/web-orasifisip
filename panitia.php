@@ -167,7 +167,7 @@ if(!isset($_SESSION["login_peserta"])){
             </div>
           </div>
           <div class="col-sm-12 col-md-6 text-center">
-            <a class="text-divisi" href="acara.html">
+            <a class="text-divisi" href="acara.php">
               <h3>Acara</h3>
             </a>
             <div class="row text-center g-2">
@@ -186,7 +186,7 @@ if(!isset($_SESSION["login_peserta"])){
             </div>
           </div>
           <div class="col-sm-12 col-md-6 text-center">
-            <a class="text-divisi" href="humas.html">
+            <a class="text-divisi" href="humas.php">
               <h3>Humas</h3>
             </a>
             <div class="row text-center g-2">
@@ -205,7 +205,7 @@ if(!isset($_SESSION["login_peserta"])){
             </div>
           </div>
           <div class="col-sm-12 col-md-6 text-center">
-            <a class="text-divisi" href="fasil.html">
+            <a class="text-divisi" href="fasil.php">
               <h3>Fasilitator</h3>
             </a>
             <div class="row text-center g-2">
@@ -224,7 +224,7 @@ if(!isset($_SESSION["login_peserta"])){
             </div>
           </div>
           <div class="col-sm-12 col-md-6 text-center">
-            <a class="text-divisi" href="materi.html">
+            <a class="text-divisi" href="materi.php">
               <h3>Materi</h3>
             </a>
             <div class="row text-center g-2">
@@ -243,7 +243,7 @@ if(!isset($_SESSION["login_peserta"])){
             </div>
           </div>
           <div class="col-sm-12 col-md-6 text-center">
-            <a class="text-divisi" href="operasional.html">
+            <a class="text-divisi" href="operasional.php">
               <h3>Operasional</h3>
             </a>
             <div class="row text-center g-2">
@@ -262,7 +262,7 @@ if(!isset($_SESSION["login_peserta"])){
             </div>
           </div>
           <div class="col-sm-12 col-md-6 text-center">
-            <a class="text-divisi" href="pdd.html">
+            <a class="text-divisi" href="pdd.php">
               <h3>PDD</h3>
             </a>
             <div class="row text-center g-2">
@@ -281,7 +281,7 @@ if(!isset($_SESSION["login_peserta"])){
             </div>
           </div>
           <div class="col-sm-12 col-md-6 text-center">
-            <a class="text-divisi" href="sponsorship.html">
+            <a class="text-divisi" href="sponsorship.php">
               <h3>Sponsorship</h3>
             </a>
             <div class="row text-center g-2">
@@ -300,7 +300,7 @@ if(!isset($_SESSION["login_peserta"])){
             </div>
           </div>
           <div class="col-sm-12 col-md-6 text-center">
-            <a class="text-divisi" href="kotik.html">
+            <a class="text-divisi" href="kotik.php">
               <h3>Kode Etik</h3>
             </a>
             <div class="row text-center g-2">
@@ -347,3 +347,4 @@ if(!isset($_SESSION["login_peserta"])){
     <script>navbarcollapse();</script>
   </body>
 </html>
+
