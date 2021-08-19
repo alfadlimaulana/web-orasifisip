@@ -63,7 +63,7 @@ function registrasi_peserta($data){
 	return mysqli_affected_rows($conn);
 }
 
-function upload($penugasan){
+function upload($penugasan, $username_peserta){
 	$nama_file = $_FILES["file"]["name"];
 	$ukuran_file = $_FILES["file"]["size"];
 	$error = $_FILES["file"]["error"];
@@ -102,6 +102,7 @@ function upload($penugasan){
 
 	//lolos cek, file diupload
 
+	$nama_file = $username_peserta . '_' . $nama_file;
 	
 	//upload ke directory
 	move_uploaded_file($temp, 'file/' . $penugasan . '/' . $nama_file);
@@ -119,7 +120,7 @@ function submit($data, $penugasan){
 	$nama_peserta = htmlspecialchars($data["nama_peserta"]);
 	$kelompok = htmlspecialchars($data["kelompok"]);
 	//upload gambar
-	$file = upload($penugasan);
+	$file = upload($penugasan, $username_peserta);
 
 	$id_tugas = $nama_peserta . '_' . $penugasan;
 
