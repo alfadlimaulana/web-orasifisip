@@ -1,8 +1,8 @@
 <?php 
 // Koneksi ke database
 
-//$conn = mysqli_connect("localhost", "root", "", "orasi_fisip");
-$conn = mysqli_connect("localhost", "u263889387_wafifz", "AdminWafiFadli8", "u263889387_orasi_fisip");
+$conn = mysqli_connect("localhost", "root", "", "orasi_fisip");
+//$conn = mysqli_connect("localhost", "u263889387_wafifz", "AdminWafiFadli8", "u263889387_orasi_fisip");
 
 // Koneksi ke database
 function query($query){
@@ -71,7 +71,7 @@ function get_jumlah_baris($tabel){
 	return $jumlah_baris;
 }
 
-function upload($penugasan, $username_peserta){
+function upload($penugasan, $kelompok, $nama_peserta){
 	$nama_file = $_FILES["file"]["name"];
 	$ukuran_file = $_FILES["file"]["size"];
 	$error = $_FILES["file"]["error"];
@@ -110,7 +110,7 @@ function upload($penugasan, $username_peserta){
 
 	//lolos cek, file diupload
 
-	$nama_file = $username_peserta . '_' . $nama_file;
+	$nama_file = $kelompok . '_' . $nama_peserta . '_' . $penugasan . '.' . $ekstensi_file;
 	
 	//upload ke directory
 	move_uploaded_file($temp, 'file/' . $penugasan . '/' . $nama_file);
@@ -128,7 +128,7 @@ function submit($data, $penugasan){
 	$nama_peserta = htmlspecialchars($data["nama_peserta"]);
 	$kelompok = htmlspecialchars($data["kelompok"]);
 	//upload gambar
-	$file = upload($penugasan, $username_peserta);
+	$file = upload($penugasan, $kelompok, $nama_peserta);
 
 	$id_tugas = $username_peserta . '_' . $penugasan;
 

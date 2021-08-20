@@ -135,7 +135,7 @@ if(isset($_POST["regist_peserta"])){
               <div class="row mt-2">
                 <div class="col">
                   <label for="usernameInput" class="form-label">Username</label>
-                  <input type="text" class="form-control" id="usernameInput" placeholder="Contoh : nagita.slavina123" name="username_peserta" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['username_peserta']; }?>" required/>
+                  <input type="text" class="form-control" id="usernameInput" placeholder="Contoh : nagitaslavina123" name="username_peserta" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['username_peserta']; }?>" required/>
                 </div>
               </div>
               <div class="row mt-2 g-2 mb-1">
