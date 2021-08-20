@@ -79,7 +79,7 @@ function upload($penugasan, $username_peserta){
 	}
 
 	//cek yg diupload harus gambar
-	$ekstensi_valid = ['pdf ', 'png', 'jpg', 'jpeg', 'png', 'pdf', 'mp3', 'wav', 'wma', 'm4a'];
+	$ekstensi_valid = ['pdf ', 'png', 'jpg', 'jpeg', 'jfif', 'png', 'pdf', 'mp3', 'wav', 'wma', 'm4a'];
 	//split nama file
 	$ekstensi_file = explode('.', $nama_file);
 	//amnil ektensi
@@ -122,7 +122,7 @@ function submit($data, $penugasan){
 	//upload gambar
 	$file = upload($penugasan, $username_peserta);
 
-	$id_tugas = $nama_peserta . '_' . $penugasan;
+	$id_tugas = $username_peserta . '_' . $penugasan;
 
 	if(!$file){return false;}
 
