@@ -63,6 +63,14 @@ function registrasi_peserta($data){
 	return mysqli_affected_rows($conn);
 }
 
+function get_jumlah_baris($tabel){
+	global $conn;
+	mysqli_query($conn, "SELECT * FROM $tabel");
+	$jumlah_baris = mysqli_affected_rows($conn);
+
+	return $jumlah_baris;
+}
+
 function upload($penugasan, $username_peserta){
 	$nama_file = $_FILES["file"]["name"];
 	$ukuran_file = $_FILES["file"]["size"];

@@ -11,6 +11,39 @@ $username_peserta = $_SESSION["login_peserta"];
 $database = query("SELECT * FROM peserta WHERE username_peserta = '$username_peserta'")[0];
 $settings = query("SELECT * FROM settings");
 
+$penugasan1 = query("SELECT * FROM penugasan1 WHERE username_peserta = '$username_peserta'");
+if ($penugasan1 == []){
+  $tugas1 = 'Belum';
+}else{
+  $penugasan1 = query("SELECT nama_file FROM penugasan1 WHERE username_peserta = '$username_peserta'")[0];
+  $tugas1 = 'Sudah';
+}
+
+$penugasan2 = query("SELECT * FROM penugasan2 WHERE username_peserta = '$username_peserta'");
+if ($penugasan2 == []){
+  $tugas2 = 'Belum';
+}else{
+  $penugasan2 = query("SELECT nama_file FROM penugasan2 WHERE username_peserta = '$username_peserta'")[0];
+  $tugas2 = 'Sudah';
+}
+
+$penugasan3 = query("SELECT * FROM penugasan3 WHERE username_peserta = '$username_peserta'");
+if ($penugasan3 == []){
+  $tugas3 = 'Belum';
+}else{
+  $penugasan3 = query("SELECT nama_file FROM penugasan3 WHERE username_peserta = '$username_peserta'")[0];
+  $tugas3 = 'Sudah';
+}
+
+$penugasan4 = query("SELECT * FROM penugasan4 WHERE username_peserta = '$username_peserta'");
+if ($penugasan4 == []){
+  $tugas4 = 'Belum';
+}else{
+  $penugasan4 = query("SELECT nama_file FROM penugasan4 WHERE username_peserta = '$username_peserta'")[0];
+  $tugas4 = 'Sudah';
+}
+
+
 if(isset($_POST["submit1"])){
   verivikasi_tugas($settings, 3, "penugasan1", "Life Mapping");
 }
@@ -93,6 +126,9 @@ if(isset($_POST["submit4"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas Life Mapping</h5>
               <p class="card-text mt-3">Deadline : 22 Agustus 2021</p>
+              <?php if($tugas1 === 'Sudah' ) : ?>
+                <p class="text-center" style="color: green;">Tugas telah dikumpulkan</p>
+              <?php endif; ?>
               <?php setting_tugas($settings, "#tugas1", 3); ?>
             </div>
           </div>
@@ -103,6 +139,9 @@ if(isset($_POST["submit4"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas Video 21st Century Skill</h5>
               <p class="card-text mt-3">Deadline : 29 Agustus 2021</p>
+              <?php if($tugas2 === 'Sudah' ) : ?>
+                <p class="text-center" style="color: green;">Tugas telah dikumpulkan</p>
+              <?php endif; ?>
               <?php setting_tugas($settings, "#tugas2", 4); ?>
             </div>
           </div>
@@ -113,6 +152,9 @@ if(isset($_POST["submit4"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas Review Audio</h5>
               <p class="card-text mt-3">Deadline : 28 Agustus 2021</p>
+              <?php if($tugas3 === 'Sudah' ) : ?>
+                <p class="text-center" style="color: green;">Tugas telah dikumpulkan</p>
+              <?php endif; ?>
               <?php setting_tugas($settings, "#tugas3", 5); ?>
             </div>
           </div>
@@ -123,6 +165,9 @@ if(isset($_POST["submit4"])){
             <div class="card-body text-center p-5">
               <h5 class="card-title">Tugas Esai Kemahasiswaan</h5>
               <p class="card-text mt-3">Deadline : 27 Agustus 2021</p>
+              <?php if($tugas4 === 'Sudah' ) : ?>
+                <p class="text-center" style="color: green;">Tugas telah dikumpulkan</p>
+              <?php endif; ?>
               <?php setting_tugas($settings, "#tugas4", 6); ?>
             </div>
           </div>
@@ -175,9 +220,15 @@ if(isset($_POST["submit4"])){
                     Penugasan individu berupa pembuatan skema life mapping diri Arkamuda selama 5 tahun yang akan datang dengan dikemas sesuai kreatifitas Arkamuda.
                     </p>
                     <p class="px-4">Deadline : 22 Agustus 2021</p>
+                    <?php if($tugas1 === 'Sudah' ) : ?>
+                      <p class="text" style="color: green;">Tugas telah dikumpulkan : </p>
+                      <a href="download.php?tabel=penugasan1&filename=<?= $penugasan1["nama_file"]; ?>" target="_new"><?= $penugasan1["nama_file"]; ?></a>
+                    <?php endif; ?>
+
                     <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
                     <input type="hidden" name="nama_peserta" value="<?= $database["nama_peserta"] ?>">
                     <input type="hidden" name="kelompok" value="<?= $database["kelompok"] ?>">
+
                     <div class="submit-form text-start mt-5">
                       <label for="file" class="form-label">Pengumpulan</label>
                       <input class="form-control" type="file" id="file" name="file" required />
@@ -224,6 +275,11 @@ if(isset($_POST["submit4"])){
                     Penugasan kelompok berupa pembuatan video pengaplikasian Arkamuda terhadap 21st Century Skill dalam menjadi sosok pemimpin ideal di abad 21 dengan melibatkan seluruh anggota kelompok dan dibuat semenarik mungkin. 
                   </p>
                     <p class="px-4">Deadline : 29 Agustus 2021</p>
+                    <?php if($tugas2 === 'Sudah' ) : ?>
+                      <p class="text" style="color: green;">Tugas telah dikumpulkan : </p>
+                      <a href="<?= $penugasan2["nama_file"]; ?>" target="_blank"><?= $penugasan2["nama_file"];?></a>
+                    <?php endif; ?>
+
                     <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
                     <input type="hidden" name="nama_peserta" value="<?= $database["nama_peserta"] ?>">
                     <input type="hidden" name="kelompok" value="<?= $database["kelompok"] ?>">
@@ -273,6 +329,14 @@ if(isset($_POST["submit4"])){
                     Penugasan individu berupa pengulasan secara lisan atas rangkaian Orasi 2021 pada hari pertama, kedua, dan ketiga. 
                   </p>
                     <p class="px-4">Deadline : 28 Agustus 2021</p>
+                    <?php if($tugas3 === 'Sudah' ) : ?>
+                      <p class="text" style="color: green;">Tugas telah dikumpulkan : </p>
+                      <audio controls>
+                        <source src="file/penugasan3/<?= $penugasan3["nama_file"]; ?>" type="audio/mpeg">
+                      </audio>
+                    <?php endif; ?>
+
+
                     <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
                     <input type="hidden" name="nama_peserta" value="<?= $database["nama_peserta"] ?>">
                     <input type="hidden" name="kelompok" value="<?= $database["kelompok"] ?>">
@@ -321,6 +385,12 @@ if(isset($_POST["submit4"])){
                     Penugasan individu berupa pembuatan esai mengenai peran Arkamuda sebagai mahasiswa serta keterkaitannya dengan Tri Dharma Perguruan Tinggi. 
                     </p>
                     <p class="px-4">Deadline : 27 Agustus 2021</p>
+
+                    <?php if($tugas4 === 'Sudah' ) : ?>
+                      <p class="text" style="color: green;">Tugas telah dikumpulkan : </p>
+                      <a href="download.php?tabel=penugasan4&filename=<?= $penugasan4["nama_file"]; ?>" target="_new"><?= $penugasan4["nama_file"]; ?></a>
+                    <?php endif; ?>
+
                     <input type="hidden" name="username_peserta" value="<?= $database["username_peserta"] ?>">
                     <input type="hidden" name="nama_peserta" value="<?= $database["nama_peserta"] ?>">
                     <input type="hidden" name="kelompok" value="<?= $database["kelompok"] ?>">

@@ -64,7 +64,7 @@ if(isset($_POST["regist_peserta"])){
               <div class="row">
                 <div class="col">
                   <label for="nameInput" class="form-label">Nama Lengkap</label>
-                  <input type="text" class="form-control" id="nameInput" placeholder="Masukkan Nama Lengkap" name="nama_peserta" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['nama_peserta']; }?>" required/>
+                  <input type="text" class="form-control" id="nameInput" placeholder="Contoh : Nagita Slavina Mariana" name="nama_peserta" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['nama_peserta']; }?>" required/>
                 </div>
               </div>
               <div class="row mt-2">
@@ -135,7 +135,7 @@ if(isset($_POST["regist_peserta"])){
               <div class="row mt-2">
                 <div class="col">
                   <label for="usernameInput" class="form-label">Username</label>
-                  <input type="text" class="form-control" id="usernameInput" placeholder="Masukkan Username" name="username_peserta" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['username_peserta']; }?>" required/>
+                  <input type="text" class="form-control" id="usernameInput" placeholder="Contoh : nagita.slavina123" name="username_peserta" value="<?php if(isset($_POST["regist_peserta"])){ echo $_POST['username_peserta']; }?>" required/>
                 </div>
               </div>
               <div class="row mt-2 g-2 mb-1">

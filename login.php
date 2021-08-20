@@ -14,7 +14,7 @@ if(isset($_COOKIE["username"]) && isset($_COOKIE["key"])){
 
   //cek cookie dan username
   if($key === hash('sha256', $database['username_peserta'])){
-    $_SESSION["login_peserta"] = true;
+    // $_SESSION["login_peserta"] = true;
   }
 }
 
@@ -52,8 +52,8 @@ if(isset($_POST["login_peserta"])){
       //cek tetap masuk
       if(isset($_POST["keep_login"])){
         //buat cookie
-        setcookie('username', $database['username_peserta'], time()+(60 * 60 * 24));
-        setcookie('key', hash('sha256', $database['username_peserta']), time()+(60 * 60 * 24));
+        // setcookie('username', $database['username_peserta'], time()+(60 * 60 * 24));
+        // setcookie('key', hash('sha256', $database['username_peserta']), time()+(60 * 60 * 24));
       }
 
       header("Location: index.php");
@@ -119,10 +119,10 @@ if(isset($_POST["login_peserta"])){
               <input type="text" class="form-control" id="usernameInput" placeholder="Masukkan Username" name="username_peserta" value="<?php if(isset($_POST["login_peserta"])){ echo $_POST['username_peserta']; }?>" required/>
               <label for="passwordInput" class="form-label mt-2 mb-1">Password</label>
               <input type="password" class="form-control" id="passwordInput" placeholder="Masukkan Password" name="password_peserta" value="<?php if(isset($_POST["login_peserta"])){ echo $_POST['password_peserta']; }?>" required/>
-              <div class="form-check mt-1">
+              <!-- <div class="form-check mt-1">
                 <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="keep_login" />
                 <label class="form-check-label" for="defaultCheck1"> Ingat Saya </label>
-              </div>
+              </div> -->
               <div class="sign-button text-center">
                 <button href="#" class="btn btn-primary mt-4" type="submit" name="login_peserta" style="width: 50%">LOG IN</button>
                 <p class="mt-2 align-self-center">Belum registrasi? <a href="registrasi.php">Registrasi di sini</a></p>
