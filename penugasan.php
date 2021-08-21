@@ -11,8 +11,6 @@ $username_peserta = $_SESSION["login_peserta"];
 $database = query("SELECT * FROM peserta WHERE username_peserta = '$username_peserta'")[0];
 $settings = query("SELECT * FROM settings");
 
-
-
 $penugasan1 = query("SELECT * FROM penugasan1 WHERE username_peserta = '$username_peserta'");
 if ($penugasan1 == []){
   $tugas1 = 'Belum';
