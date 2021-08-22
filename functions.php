@@ -63,7 +63,15 @@ function registrasi_peserta($data){
 	return mysqli_affected_rows($conn);
 }
 
-function upload($penugasan){
+function get_jumlah_baris($tabel){
+	global $conn;
+	mysqli_query($conn, "SELECT * FROM $tabel");
+	$jumlah_baris = mysqli_affected_rows($conn);
+
+	return $jumlah_baris;
+}
+
+function upload($penugasan, $kelompok, $nama_peserta){
 	$nama_file = $_FILES["file"]["name"];
 	$ukuran_file = $_FILES["file"]["size"];
 	$error = $_FILES["file"]["error"];
@@ -79,7 +87,7 @@ function upload($penugasan){
 	}
 
 	//cek yg diupload harus gambar
-	$ekstensi_valid = ['pdf ', 'png', 'jpg', 'jpeg', 'png', 'pdf', 'mp3', 'wav', 'wma', 'm4a'];
+	$ekstensi_valid = ['pdf ', 'png', 'jpg', 'jpeg', 'jfif', 'png', 'pdf', 'mp3', 'wav', 'wma', 'm4a'];
 	//split nama file
 	$ekstensi_file = explode('.', $nama_file);
 	//amnil ektensi
@@ -102,6 +110,7 @@ function upload($penugasan){
 
 	//lolos cek, file diupload
 
+	$nama_file = $kelompok . '_' . $nama_peserta . '_' . $penugasan . '.' . $ekstensi_file;
 	
 	//upload ke directory
 	move_uploaded_file($temp, 'file/' . $penugasan . '/' . $nama_file);
@@ -119,9 +128,9 @@ function submit($data, $penugasan){
 	$nama_peserta = htmlspecialchars($data["nama_peserta"]);
 	$kelompok = htmlspecialchars($data["kelompok"]);
 	//upload gambar
-	$file = upload($penugasan);
+	$file = upload($penugasan, $kelompok, $nama_peserta);
 
-	$id_tugas = $nama_peserta . '_' . $penugasan;
+	$id_tugas = $username_peserta . '_' . $penugasan;
 
 	if(!$file){return false;}
 

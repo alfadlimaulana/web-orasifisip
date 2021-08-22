@@ -4,6 +4,7 @@ require 'functions.php';
 
 wajib_login("login-catatan-hati.php");
 $students = query("SELECT * FROM peserta");
+$jumlah_baris = get_jumlah_baris("peserta");
 
 //tombol cari ditekan
 if(isset($_POST["cari"])){
@@ -54,6 +55,7 @@ if(isset($_POST["cari"])){
     <div class="container-fluid bg-admin">
       <div class="container">
       <div class="row">
+      <div class="col-12"><p>Jumlah peserta : <?= $jumlah_baris ?></p></div>
       <form action="" method="post">
           <div class="col-6 col-sm-4 col-lg-3 ms-auto">
             <div class="input-group search-form mt-4 mb-1">
