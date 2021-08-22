@@ -308,6 +308,19 @@ footer {
   color: #395caa;
 }
 
+/* dashboard penugasan panitia */
+.jumlah-kumpul p {
+  margin: 0px;
+  color: white;
+}
+
+@media screen and (max-width: 576px) {
+  .jumlah-kumpul p {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+}
+
 /* sponsors */
 .sponsors {
   background-color: #f399bf;

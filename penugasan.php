@@ -195,7 +195,7 @@ if(isset($_POST["submit4"])){
     </div>
     <!-- akhir grid tugas -->
 
-       <!-- Modal 1-->
+    <!-- Modal 1-->
     <form action="" method="post" enctype="multipart/form-data">
       <div class="modal fade" id="tugas1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">

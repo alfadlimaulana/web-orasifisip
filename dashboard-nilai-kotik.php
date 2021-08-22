@@ -72,17 +72,19 @@ if(isset($_POST["submit_nilai"])){
     <!-- akhir navbar -->
 
     <div class="container-fluid bg-admin">
-      <div class="container">
-        <div class="row">
-          <div class="col-12"><p>Jumlah yang mengumpulkan : <?= $jumlah_baris ?></p></div>
-        <form action="" method="post">
-          <div class="col-6 col-sm-4 col-lg-3 ms-auto">
-            <div class="input-group search-form mt-4 mb-1">
-              <span class="input-group-text" id="basic-addon1"><button class="fas fa-search" name="cari" type="submit"></button></span>
-              <input type="text" class="form-control" placeholder="Kata Kunci" aria-label="Username" aria-describedby="basic-addon1" name="kata_kunci"/>
-            </div>
+      <div class="container pt-4">
+        <div class="row align-items-center">
+          <div class="col-12 col-sm-8 col-lg-9 p-0 m-0">
+            <div class="jumlah-kumpul"><p>Jumlah yang mengumpulkan : <?= $jumlah_baris ?></p></div>
           </div>
-          </form>
+          <div class="col-6 col-sm-4 col-lg-3 p-0 m-0">
+            <form action="" method="post">
+              <div class="input-group search-form mb-1" style="width: 100%;">
+                <span class="input-group-text" id="basic-addon1"><button class="fas fa-search" name="cari" type="submit"></button></span>
+                <input type="text" class="form-control" placeholder="Kata Kunci" aria-label="Username" aria-describedby="basic-addon1" name="kata_kunci"/>
+              </div>
+            </form>
+          </div>
         </div>
         <div class="row table-responsive">
           <table class="table align-middle">
