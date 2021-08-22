@@ -111,7 +111,15 @@ if(isset($_POST["submit4"])){
             <?php if(!isset($_SESSION["login_peserta"])) : ?>
             <a class="nav-link" href="login.php">Login</a>
             <?php endif; ?> 
-            <a class="nav-link hide-link" href="logout.php">Logout</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Account
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: #f7c42a;">
+                <li><a class="nav-link hide-link" href="profile.html">Profile</a></li>
+                <li><a class="nav-link hide-link" href="logout.php">Logout</a></li>
+              </ul>
+            </li>          
           </div>
         </div>
       </div>
