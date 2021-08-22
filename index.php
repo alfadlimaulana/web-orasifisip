@@ -46,7 +46,7 @@ if(!isset($_SESSION["login_peserta"])){
     <title>Orasi Fisip Unpad</title>
   </head>
   <body>
-    <!-- navbar -->
+    <!-- navbar --> 
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
         <a class="navbar-brand d-flex align-items-center" href="index.php" style="font-weight: 490;"> <img src="img/Logo w text.svg" alt="logo" width="auto" height="40" class="d-inline-block align-text-top" style="box-sizing: border-box" /></a>
