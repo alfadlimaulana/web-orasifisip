@@ -93,21 +93,30 @@ $tugas4 = status_tugas("penugasan4", $username_peserta);
             </div>
             <!-- status tugas -->
             <h2 class="text-center">Status Tugas</h2>
-            <div class="my-3">
-              <p><strong>Tugas Life Mapping: </strong><?= $tugas1 ?></p>
-            </div>
-            <div class="mb-3">
-              <p><strong>Tugas Video 21st Century Skill: </strong><?= $tugas2 ?></p>
-            </div>
-            <div class="mb-3">
-              <p><strong>Tugas Review Audio: </strong><?= $tugas3 ?></p>
-            </div>
-            <div class="mb-3">
-              <p><strong>Tugas Esai Kemahasiswaan: </strong><?= $tugas4 ?></p>
-            </div>
-            <div class="mb-3">
-              <p><strong>Tugas Ke-FISIP-an & Keorganisasian: </strong>Belum</p>
-            </div>
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <th scope="row">Tugas Life Mapping</th>
+                  <td><?= $tugas1 ?></td>
+                </tr>
+                <tr>
+                  <th scope="row">Tugas Video 21st Century Skill</th>
+                  <td><?= $tugas2 ?></td>
+                </tr>
+                <tr>
+                  <th scope="row">Tugas Review Audio</th>
+                  <td><?= $tugas3 ?></td>
+                </tr>
+                <tr>
+                  <th scope="row">Tugas Esai Kemahasiswaan</th>
+                  <td><?= $tugas4 ?></td>
+                </tr>
+                <tr>
+                  <th scope="row">Tugas Ke-FISIP-an & Keorganisasian</th>
+                  <td>Belum</td>
+                </tr>
+              </tbody>
+            </table>
            <!-- akhir status tugas -->
           </div>
         </div>

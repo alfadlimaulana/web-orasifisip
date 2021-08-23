@@ -1,8 +1,8 @@
 <?php 
 // Koneksi ke database
 
-$conn = mysqli_connect("localhost", "root", "", "orasi_fisip");
-// $conn = mysqli_connect("localhost", "u263889387_wafifz", "AdminWafiFadli8", "u263889387_orasi_fisip");
+//$conn = mysqli_connect("localhost", "root", "", "orasi_fisip");
+$conn = mysqli_connect("localhost", "u263889387_wafifz", "AdminWafiFadli8", "u263889387_orasi_fisip");
 
 // Koneksi ke database
 function query($query){

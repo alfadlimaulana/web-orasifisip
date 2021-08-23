@@ -62,7 +62,7 @@ if(!isset($_SESSION["login_peserta"])){
                   Account
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: #f7c42a;">
-                  <li><a class="nav-link" href="profile.html">Profile</a></li>
+                  <li><a class="nav-link" href="profile.php">Profile</a></li>
                   <li><a class="nav-link" href="logout.php">Logout</a></li>
                 </ul>
               </li>            

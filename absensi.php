@@ -67,7 +67,7 @@ $students = query("SELECT absen1, absen2, absen3 FROM peserta WHERE username_pes
                 Account
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: #f7c42a;">
-                <li><a class="nav-link hide-link" href="profile.html">Profile</a></li>
+                <li><a class="nav-link hide-link" href="profile.php">Profile</a></li>
                 <li><a class="nav-link hide-link" href="logout.php">Logout</a></li>
               </ul>
             </li>          
