@@ -86,12 +86,12 @@ if(isset($_POST["submit4"])){
             <a class="nav-link" href="login.php">Login</a>
             <?php endif; ?> 
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle hide-link" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Account
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: #f7c42a;">
-                <li><a class="nav-link hide-link" href="profile.html">Profile</a></li>
-                <li><a class="nav-link hide-link" href="logout.php">Logout</a></li>
+                <li><a class="nav-link" href="profile.html">Profile</a></li>
+                <li><a class="nav-link" href="logout.php">Logout</a></li>
               </ul>
             </li>          
           </div>

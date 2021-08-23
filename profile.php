@@ -77,41 +77,36 @@ $tugas4 = status_tugas("penugasan4", $username_peserta);
             <h2 class="text-center">My Profile</h2>
             <div class="my-3">
               <h6>Nama</h6>
-              <p><?= $database["nama_peserta"] ?></p>
+              <input class="form-control" type="text" placeholder="<?= $database['nama_peserta'] ?>" aria-label="Disabled input example" disabled>
             </div>
             <div class="mb-3">
               <h6>Program Studi</h6>
-              <p><?= $database["program_studi"] ?></p>
+              <input class="form-control" type="text" placeholder="<?= $database['program_studi'] ?>" aria-label="Disabled input example" disabled>
             </div>
             <div class="mb-3">
               <h6>Kelompok</h6>
-              <p><?= $database["kelompok"] ?></p>
+              <input class="form-control" type="text" placeholder="<?= $database['kelompok'] ?>" aria-label="Disabled input example" disabled>
             </div>
             <div class="mb-3">
               <h6>Username</h6>
-              <p><?= $database["username_peserta"] ?></p>
+              <input class="form-control" type="text" placeholder="<?= $database['username_peserta'] ?>" aria-label="Disabled input example" disabled>
             </div>
             <!-- status tugas -->
             <h2 class="text-center">Status Tugas</h2>
             <div class="my-3">
-              <h6>Tugas Life Mapping</h6>
-              <p><?= $tugas1 ?></p>
+              <p><strong>Tugas Life Mapping: </strong><?= $tugas1 ?></p>
             </div>
             <div class="mb-3">
-              <h6>Tugas Video 21st Century Skill</h6>
-              <p><?= $tugas2 ?></p>
+              <p><strong>Tugas Video 21st Century Skill: </strong><?= $tugas2 ?></p>
             </div>
             <div class="mb-3">
-              <h6>Tugas Review Audio</h6>
-              <p><?= $tugas3 ?></p>
+              <p><strong>Tugas Review Audio: </strong><?= $tugas3 ?></p>
             </div>
             <div class="mb-3">
-              <h6>Tugas Esai Kemahasiswaan</h6>
-              <p><?= $tugas4 ?></p>
+              <p><strong>Tugas Esai Kemahasiswaan: </strong><?= $tugas4 ?></p>
             </div>
             <div class="mb-3">
-              <h6>Tugas Ke-FISIP-an & Keorganisasian</h6>
-              <p><?= "Belum" ?></p>
+              <p><strong>Tugas Ke-FISIP-an & Keorganisasian: </strong>Belum</p>
             </div>
            <!-- akhir status tugas -->
           </div>

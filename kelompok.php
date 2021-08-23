@@ -60,13 +60,13 @@ if(!isset($_SESSION["login_peserta"])){
             <?php if(!isset($_SESSION["login_peserta"])) : ?>
             <a class="nav-link" href="login.php">Login</a>
             <?php endif; ?> 
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown hide-link">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Account
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: #f7c42a;">
-                <li><a class="nav-link hide-link" href="profile.html">Profile</a></li>
-                <li><a class="nav-link hide-link" href="logout.php">Logout</a></li>
+                <li><a class="nav-link" href="profile.html">Profile</a></li>
+                <li><a class="nav-link" href="logout.php">Logout</a></li>
               </ul>
             </li>          
           </div>
