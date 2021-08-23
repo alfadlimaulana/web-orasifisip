@@ -4,7 +4,7 @@ require 'functions.php';
 
 wajib_login("login-catatan-hati.php");
 
-$students = query("SELECT * FROM penugasan3");
+$students = query("SELECT * FROM penugasan3 ORDER BY kelompok");
 $jumlah_baris = get_jumlah_baris("penugasan3");
 
 // tombol cari ditekan

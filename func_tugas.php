@@ -35,4 +35,18 @@ function verivikasi_tugas($settings, $index, $tabel, $nama_tugas){
 	  }
 }
 
+function status_tugas($penugasan, $username_peserta){
+	global $conn;
+	$penugasan1 = query("SELECT * FROM $penugasan WHERE username_peserta = '$username_peserta'");
+	
+	if ($penugasan1 == []){
+		$tugas = 'Belum';
+	}else{
+		$penugasan1 = query("SELECT nama_file FROM penugasan1 WHERE username_peserta = '$username_peserta'")[0];
+		$tugas = 'Sudah';
+	}
+	
+	return $tugas;
+}
+
 ?>

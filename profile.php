@@ -1,3 +1,23 @@
+<?php
+session_start();
+require 'functions.php';
+require 'func_tugas.php';
+
+
+wajib_login("login.php");
+
+$username_peserta = $_SESSION["login_peserta"];
+
+$database = query("SELECT * FROM peserta WHERE username_peserta = '$username_peserta'")[0];
+
+$tugas1 = status_tugas("penugasan1", $username_peserta);
+$tugas2 = status_tugas("penugasan2", $username_peserta);
+$tugas3 = status_tugas("penugasan3", $username_peserta);
+$tugas4 = status_tugas("penugasan4", $username_peserta);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,16 +54,15 @@
             <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
             <a class="nav-link hide-link" href="absensi.php">Absensi</a>
             <a class="nav-link" href="kelompok.php">Info Kelompok</a>
-            <?php if(!isset($_SESSION["login_peserta"])) : ?>
-            <a class="nav-link" href="login.php">Login</a>
-            <?php endif; ?>
+            <?php if(isset($_SESSION["login_peserta"])) : ?>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"> Account </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" style="background-color: #f7c42a">
-                <li><a class="nav-link hide-link" href="profile.html">Profile</a></li>
+                <li><a class="nav-link hide-link" href="profile.php">Profile</a></li>
                 <li><a class="nav-link hide-link" href="logout.php">Logout</a></li>
               </ul>
             </li>
+            <?php endif; ?>
           </div>
         </div>
       </div>
@@ -57,24 +76,48 @@
           <div class="sign-form col-md-8 col-lg-6 mb-4 p-5">
             <h2 class="text-center">My Profile</h2>
             <div class="my-3">
-              <h6>Username</h6>
-              <p>Username Peserta</p>
-            </div>
-            <div class="mb-3">
               <h6>Nama</h6>
-              <p>Nama Peserta</p>
+              <p><?= $database["nama_peserta"] ?></p>
             </div>
             <div class="mb-3">
               <h6>Program Studi</h6>
-              <p>Program Studi</p>
+              <p><?= $database["program_studi"] ?></p>
             </div>
             <div class="mb-3">
               <h6>Kelompok</h6>
-              <p>Kelompok</p>
+              <p><?= $database["kelompok"] ?></p>
             </div>
+            <div class="mb-3">
+              <h6>Username</h6>
+              <p><?= $database["username_peserta"] ?></p>
+            </div>
+            <!-- status tugas -->
+            <h2 class="text-center">Status Tugas</h2>
+            <div class="my-3">
+              <h6>Tugas Life Mapping</h6>
+              <p><?= $tugas1 ?></p>
+            </div>
+            <div class="mb-3">
+              <h6>Tugas Video 21st Century Skill</h6>
+              <p><?= $tugas2 ?></p>
+            </div>
+            <div class="mb-3">
+              <h6>Tugas Review Audio</h6>
+              <p><?= $tugas3 ?></p>
+            </div>
+            <div class="mb-3">
+              <h6>Tugas Esai Kemahasiswaan</h6>
+              <p><?= $tugas4 ?></p>
+            </div>
+            <div class="mb-3">
+              <h6>Tugas Ke-FISIP-an & Keorganisasian</h6>
+              <p><?= "Belum" ?></p>
+            </div>
+           <!-- akhir status tugas -->
           </div>
         </div>
       </div>
+
     </div>
     <!-- akhir login container -->
 

@@ -3,6 +3,22 @@ session_start();
 require 'functions.php';
 
 wajib_login("login-catatan-hati.php"); 
+
+if(isset($_POST["submit"])){
+  //cek berhasil atau tidak
+  if(submit($_POST, $_POST["penugasan"]) > 0){
+    echo "<script> 
+            alert('Tugas BERHASIL dikumpulkan!'); 
+            document.location.href = ''; 
+          </script>";
+  }else{
+    echo "<script> 
+            alert('Tugas GAGAL dikumpulkan!'); 
+            document.location.href = ''; 
+          </script>";
+  }
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -54,7 +70,6 @@ wajib_login("login-catatan-hati.php");
               <div class="card-body text-center px-4 py-5">
                 <h5 class="card-title">Tugas Life Mapping</h5>
                 <p class="card-text mt-3">Penugasan Life Mapping merupakan penugasan individu berupa pembuatan skema life mapping diri Arkamuda selama 5 tahun yang akan datang dengan dikemas sesuai kreatifitas Arkamuda.</p>
-                <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#tugas1">Upload Tugas</button>
                 <a href="dashboard-nilai-kotik.php" role="button" class="btn btn-primary flex-grow-1 mt-2">Lihat Nilai</a> <br>
               </div>
             </div>
@@ -65,7 +80,6 @@ wajib_login("login-catatan-hati.php");
               <div class="card-body text-center px-4 py-5">
                 <h5 class="card-title">Tugas Video 21st Century Skill</h5>
                 <p class="card-text mt-3">Merupakan penugasan kelompok berupa pembuatan video pengaplikasian Arkamuda terhadap 21st Century Skill dalam menjadi sosok pemimpin ideal di abad 21 dengan melibatkan seluruh anggota kelompok dan dibuat semenarik mungkin. </p>
-                <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#tugas1">Upload Tugas</button>
                 <a href="dashboard-nilai-kotik.php" role="button" class="btn btn-primary flex-grow-1 mt-2">Lihat Nilai</a> <br>          
               </div>
             </div>
@@ -76,7 +90,6 @@ wajib_login("login-catatan-hati.php");
               <div class="card-body text-center px-4 py-5">
                 <h5 class="card-title">Tugas Review Audio</h5>
                 <p class="card-text mt-3">Merupakan penugasan individu berupa pengulasan secara lisan atas rangkaian Orasi 2021 pada hari pertama, kedua, dan ketiga. </p>
-                <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#tugas1">Upload Tugas</button>
                 <a href="dashboard-nilai-kotik.php" role="button" class="btn btn-primary flex-grow-1 mt-2">Lihat Nilai</a> <br>
               </div>
             </div>
@@ -87,11 +100,13 @@ wajib_login("login-catatan-hati.php");
               <div class="card-body text-center px-4 py-5">
                 <h5 class="card-title">Tugas Esai Kemahasiswaan</h5>
                 <p class="card-text mt-3">Merupakan penugasan individu berupa pembuatan esai mengenai peran Arkamuda sebagai mahasiswa serta keterkaitannya dengan Tri Dharma Perguruan Tinggi. </p>
-                <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#tugas1">Upload Tugas</button>
                 <a href="dashboard-nilai-kotik.php" role="button" class="btn btn-primary flex-grow-1 mt-2">Lihat Nilai</a> <br>
               </div>
             </div>
           </div>
+        </div>
+        <div class="row justify-content-center pt-3">
+          <button type="button" class="btn btn-primary mt-2" data-bs-toggle="modal" data-bs-target="#tugas1" style="width: 40%;">Upload Tugas</button>
         </div>
       </div>
     <!-- akhir grid tugas -->
@@ -103,36 +118,45 @@ wajib_login("login-catatan-hati.php");
           <div class="modal-content">
             <!-- header modal -->
             <div class="modal-header border-0 d-flex align-items-start text-center">
-              <h2 class="align-midle">Life Mapping</h2>
+              <h2 class="align-midle">Upload Tugas</h2>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
             <!-- body modal -->
-            <div class="rounded-bottom">
-              <div class="modal-body px-5">
-                <div class="mb-3">
-                  <label for="username" class="form-label">Username Peserta</label>
-                  <input type="text" class="form-control" id="username" placeholder="Username Peserta">
-                </div>
-                <div class="mb-3">
-                  <label for="nama" class="form-label">Nama Peserta</label>
-                  <input type="text" class="form-control" id="nama" placeholder="Nama Peserta">
-                </div>
-                <div class="mb-3">
-                  <label for="kelompok" class="form-label">Kelompok </label>
-                  <input type="text" class="form-control" id="kelompok" placeholder="Kelompok ">
-                </div>
-                <div class="mb-3">
-                  <label for="waktu" class="form-label">Waktu Pengumpulan</label>
-                  <input type="text" class="form-control" id="waktu" placeholder="Waktu Pengumpulan">
+            <form action="" method="post" enctype="multipart/form-data">
+              <div class="rounded-bottom">
+                <div class="modal-body px-5">
+                  <select class="form-select mb-3" aria-label="Default select example"  name="penugasan">
+                    <option>Pilih Penugasan</option>
+                    <option value="penugasan1">Life Mapping</option>
+                    <option value="penugasan2">Video 21st Century Skil</option>
+                    <option value="penugasan3">Review Audio</option>
+                    <option value="penugasan4">Esai Kemahasiswaan</option>
+                  </select>
+                  <div class="mb-3">
+                    <label for="username" class="form-label">Username Peserta</label>
+                    <input type="text" class="form-control" id="username" placeholder="Username Peserta" name="username_peserta" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="nama" class="form-label">Nama Peserta</label>
+                    <input type="text" class="form-control" id="nama" placeholder="Nama Peserta" name="nama_peserta" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="kelompok" class="form-label">Kelompok </label>
+                    <input type="text" class="form-control" id="kelompok" placeholder="Kelompok" name="kelompok" required>
+                  </div>
+                  <div class="submit-form text-start">
+                      <label for="file" class="form-label">File</label>
+                      <input class="form-control" type="file" id="file" name="file" required />
+                  </div>
                 </div>
               </div>
-            </div>
+            </form>
 
             <!-- modal footer -->
             <div class="modal-footer border-0">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-              <button type="submit" class="btn btn-primary" name="submit1" onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan')">Selesai</button>
+              <button type="submit" class="btn btn-primary" name="submit" onclick="return confirm('Kumpulkan?\nFile yang telah dikumpulkan tidak dapat diubah\ntekan \'OK\' untuk mengumpulkan')">Selesai</button>
               <!--  -->
             </div>
           </div>

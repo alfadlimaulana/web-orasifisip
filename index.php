@@ -151,9 +151,9 @@ if(!isset($_SESSION["login_peserta"])){
         <div class="row justify-content-center pt-3 g-4">
           <div class="col-sm-6 col-lg-3 card-1">
             <div class="card card-gallery" data-aos="fade-up">
-              <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
+              <iframe src="https://www.youtube.com/embed/i3MJVR8NJ-w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <div class="card-body">
-                <h5 class="card-title">COMING SOON</h5>
+                <h5 class="card-title">FISIPedia: Get to Know All About FISIP Unpad!</h5>
                 <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <a href="#">Watch on Youtube</a> -->
               </div>

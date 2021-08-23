@@ -134,6 +134,10 @@ div#info i {
   justify-content: center;
 }
 
+.card-gallery {
+  height: 100%;
+}
+
 /* login signup*/
 .sign-bg {
   min-height: calc(100vh - 180px);

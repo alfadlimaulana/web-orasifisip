@@ -3,7 +3,7 @@ session_start();
 require 'functions.php';
 
 wajib_login("login-catatan-hati.php");
-$students = query("SELECT * FROM peserta");
+$students = query("SELECT * FROM peserta ORDER BY kelompok");
 $jumlah_baris = get_jumlah_baris("peserta");
 
 //tombol cari ditekan
