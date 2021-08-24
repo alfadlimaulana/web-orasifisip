@@ -331,4 +331,9 @@ footer {
   box-sizing: border-box;
   border-radius: 20px;
   padding: 20px;
+  height: 150px;
+}
+
+.sponsors img {
+  height: 100%;
 }
