@@ -19,7 +19,7 @@ function query($query){
 
 //style
 function style_orasi(){
-	echo '<link rel="stylesheet" href="style2.css" />'; 
+	echo '<link rel="stylesheet" href="style3.css" />'; 
 }
 
 function registrasi_peserta($data){

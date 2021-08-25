@@ -47,6 +47,8 @@ if(isset($_POST["regist_peserta"])){
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ms-auto">
             <a class="nav-link" href="panitia.php">Panitia</a>
+            <a class="nav-link" href="kelompok.php">Info Kelompok</a>
+            <a class="nav-link" href="sponsors.php">Sponsors</a>
             <a class="nav-link" href="login.php">Login</a>
           </div>
         </div>

@@ -2,13 +2,6 @@
 session_start();
 require 'functions.php';
 
-$students = query("SELECT * FROM fasil");
-
-// tombol cari ditekan
-if(isset($_POST["cari"])){
-  $students = cari_fasil("fasil", $_POST["kata_kunci"]);
-}
-
 //cek session
 if(!isset($_SESSION["login_peserta"])){
   echo "<script>
@@ -38,12 +31,15 @@ if(!isset($_SESSION["login_peserta"])){
     <!-- font -->
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
 
+    <!-- AoS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <!-- icon -->
     <link rel="shortcut icon" href="img/logo-favicon.ico" />
 
     <title>Orasi Fisip Unpad</title>
   </head>
-  <body>
+  <body style="background-color: white">
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
       <div class="container-fluid">
@@ -60,7 +56,7 @@ if(!isset($_SESSION["login_peserta"])){
             <a class="nav-link" href="sponsors.php">Sponsors</a>
             <?php if(!isset($_SESSION["login_peserta"])) : ?>
             <a class="nav-link" href="login.php">Login</a>
-            <?php endif; ?> 
+            <?php endif; ?>
             <li class="nav-item dropdown hide-link">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Account
@@ -69,50 +65,57 @@ if(!isset($_SESSION["login_peserta"])){
                 <li><a class="nav-link" href="profile.php">Profile</a></li>
                 <li><a class="nav-link" href="logout.php">Logout</a></li>
               </ul>
-            </li>         
+            </li>
           </div>
         </div>
       </div>
     </nav>
     <!-- akhir navbar -->
-    
-    <!-- tabel -->
-    <div class="container-fluid kelompok-bg">
-      <div class="container">
-        <div class="row">
-          <div class="col-6 col-sm-4 col-lg-3 ms-auto">
-          <form action="" method="post">  
-            <div class="input-group search-form mt-4 mb-2">
-              <span class="input-group-text" id="basic-addon1"><button class="fas fa-search" name="cari" type="submit"></button></span>
-              <input type="text" class="form-control" placeholder="Kata Kunci" aria-label="Username" aria-describedby="basic-addon1" name="kata_kunci"/>
-            </div>
-          </form>  
+
+    <!-- grid panitia -->
+    <div class="container p-5">
+      <div class="row text-center" data-aos="fade-up">
+        <h2>Sponsors</h2>
+      </div>
+      <div class="row my-1 g-2 justify-content-center">
+        <div class="col-12 col-sm-10 col-lg-5 hover-scale-up">
+          <div class="sponsors text-center" data-aos="fade-up">
+            <a href="https://ajaib.co.id/" target="_blank">
+              <img class="img-fluid" src="img/sponsor/xl_ajaib.png" alt="" />
+            </a>
           </div>
         </div>
-
-        <div class="row table-responsive">
-          <table class="table align-middle">
-            <thead>
-              <tr>
-                <th scope="col">Kelompok</th>
-                <th scope="col">Nama Fasilitator</th>
-                <th scope="col">ID Line</th>
-              </tr>
-            </thead>
-            <tbody>
-            <?php  foreach($students as $student): ?> 
-              <tr>
-                <td><?= $student["kelompok"]; ?></td>
-                <th scope="row"><?= $student["nama_fasil"]; ?></th>
-                <td><?= $student["id_line"]; ?></td>
-              </tr>
-              <?php  endforeach; ?>
-            </tbody>
-          </table>
+        <div class="col-12 col-sm-10 col-lg-5 hover-scale-up">
+          <div class="sponsors text-center" data-aos="fade-up">
+            <a href="https://www.auntieannes.com/" target="_blank">
+              <img class="img-fluid" src="img/sponsor/xl_auntie_annes3.png" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="col-10 col-sm-6 col-lg-4 hover-scale-up">
+          <div class="sponsors text-center" data-aos="fade-up">
+            <a href="https://www.hydrococo.com/" target="_blank">
+              <img class="img-fluid" src="img/sponsor/m_hydro_coco.png" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="col-10 col-sm-6 col-lg-4 hover-scale-up">
+          <div class="sponsors text-center" data-aos="fade-up">
+            <a href="https://www.byu.id/id" target="_blank">
+              <img class="img-fluid" src="img/sponsor/m_by_u.png" alt="" />
+            </a>
+          </div>
+        </div>
+        <div class="col-8 col-sm-5 col-lg-2 hover-scale-up">
+          <div class="sponsors text-center" data-aos="fade-up">
+            <a href="https://instagram.com/paperwhitepro?utm_medium=copy_link" target="_blank">
+              <img class="img-fluid" src="img/sponsor/s_paperwhite.png" alt="" />
+            </a>
+          </div>
         </div>
       </div>
     </div>
-    <!-- akhir tabel -->
+    <!-- akhir grid panitia -->
 
     <!-- footer -->
     <footer class="text-center">
@@ -131,13 +134,18 @@ if(!isset($_SESSION["login_peserta"])){
         <p class="mt-3">©2021. Orasi FISIP Unpad. All Rights Reserved.</p>
       </div>
     </footer>
+    <!-- akhir footer -->
 
-    <script src="js/script.js"></script>
-    <script>
-      btntoggle();
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
-    <script>navbarcollapse();</script>
+    <script>
+      navbarcollapse();
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+      });
+    </script>
   </body>
 </html>

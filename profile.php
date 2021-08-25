@@ -9,9 +9,18 @@ wajib_login("login.php");
 $username_peserta = $_SESSION["login_peserta"];
 
 $database = query("SELECT * FROM peserta WHERE username_peserta = '$username_peserta'")[0];
+$kelompok = $database['kelompok'];
 
 $tugas1 = status_tugas("penugasan1", $username_peserta);
-$tugas2 = status_tugas("penugasan2", $username_peserta);
+$penugasan2 = query("SELECT * FROM penugasan2 WHERE kelompok = '$kelompok'");
+	
+if ($penugasan2 == []){
+  $tugas2 = 'Belum';
+}else{
+  $penugasan2 = query("SELECT nama_file FROM penugasan2 WHERE kelompok = '$kelompok'")[0];
+  $tugas2 = 'Sudah';
+}
+
 $tugas3 = status_tugas("penugasan3", $username_peserta);
 $tugas4 = status_tugas("penugasan4", $username_peserta);
 

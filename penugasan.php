@@ -92,6 +92,7 @@ if(isset($_POST["submit4"])){
             <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
             <a class="nav-link hide-link" href="absensi.php">Absensi</a>
             <a class="nav-link hide-link" href="kelompok.php">Info Kelompok</a>
+            <a class="nav-link" href="sponsors.php">Sponsors</a>
             <?php if(!isset($_SESSION["login_peserta"])) : ?>
             <a class="nav-link" href="login.php">Login</a>
             <?php endif; ?> 
