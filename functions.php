@@ -55,6 +55,8 @@ function registrasi_peserta($data){
 
 	//enkripsi password
 	$password_peserta_enkripsi = password_hash($password_peserta, PASSWORD_DEFAULT);
+	var_dump($password_peserta_enkripsi);
+	die;
 
 	//insert petugas ke database
 	mysqli_query($conn, "INSERT INTO peserta VALUES
