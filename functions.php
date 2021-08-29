@@ -181,7 +181,7 @@ function absensi($data, $absen){
 
 function cari_tugas($tabel, $kata_kunci){
 	$query = "SELECT * FROM $tabel
-			  WHERE id_tugas LIKE '%$kata_kunci%' 
+			  WHERE id_tugas LIKE '$kata_kunci' 
 			  OR nama_peserta LIKE '%$kata_kunci%'
 			  OR kelompok LIKE '$kata_kunci'
 			  OR username_peserta LIKE '$kata_kunci'
