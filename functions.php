@@ -184,7 +184,7 @@ function cari_tugas($tabel, $kata_kunci){
 			  WHERE id_tugas LIKE '%$kata_kunci%' 
 			  OR nama_peserta LIKE '%$kata_kunci%'
 			  OR kelompok LIKE '$kata_kunci'
-			  OR username_peserta LIKE '%$kata_kunci%'
+			  OR username_peserta LIKE '$kata_kunci'
 			  ";
 	return query($query);
 }
