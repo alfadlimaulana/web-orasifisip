@@ -120,10 +120,6 @@ $tugas4 = status_tugas("penugasan4", $username_peserta);
                   <th scope="row">Tugas Esai Kemahasiswaan</th>
                   <td><?= $tugas4 ?></td>
                 </tr>
-                <tr>
-                  <th scope="row">Tugas Ke-FISIP-an & Keorganisasian</th>
-                  <td>Belum</td>
-                </tr>
               </tbody>
             </table>
            <!-- akhir status tugas -->
