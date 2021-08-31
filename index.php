@@ -155,8 +155,6 @@ if(!isset($_SESSION["login_peserta"])){
               <iframe src="https://www.youtube.com/embed/i3MJVR8NJ-w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <div class="card-body">
                 <h5 class="card-title">FISIPedia: Get to Know All About FISIP Unpad!</h5>
-                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#">Watch on Youtube</a> -->
               </div>
             </div>
           </div>
@@ -165,28 +163,22 @@ if(!isset($_SESSION["login_peserta"])){
             <iframe src="https://www.youtube.com/embed/8kdDzb88ylc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <div class="card-body">
                 <h5 class="card-title">Satu FISIP Bangga (Jingle Orasi 2021) Music Video</h5>
-                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#">Watch on Youtube</a> -->
               </div>
             </div>
           </div>
           <div class="col-sm-6 col-lg-3">
             <div class="card card-3 card-gallery" data-aos="fade-up">
-              <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
+            <iframe src="https://www.youtube.com/embed/Gu-01LJJW6o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <div class="card-body">
-                <h5 class="card-title">COMING SOON</h5>
-                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#">Watch on Youtube</a> -->
+                <h5 class="card-title">FISIP <br> Welcoming Ceremony</h5>
               </div>
             </div>
           </div>
           <div class="col-sm-6 col-lg-3">
             <div class="card card-3 card-gallery" data-aos="fade-up">
-              <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
+            <iframe src="https://www.youtube.com/embed/j4R-61AYfXk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <div class="card-body">
-                <h5 class="card-title">COMING SOON</h5>
-                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#">Watch on Youtube</a> -->
+                <h5 class="card-title">Teaser <br> Orasi 2021</h5>
               </div>
             </div>
           </div>
