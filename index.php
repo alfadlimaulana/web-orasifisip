@@ -191,7 +191,7 @@ if(!isset($_SESSION["login_peserta"])){
         <iframe class="hover-scale-up" src="https://open.spotify.com/embed/episode/4dYtmHfNQEksXRNYaZmIu9" width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
         <div class="row justify-content-center mt-4" data-aos="fade-up">
-          <iframe class="hover-scale-up" src="https://open.spotify.com/embed/show/3ugBv6xjp7badgoG18IpHo" width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <iframe src="https://open.spotify.com/embed/episode/3owEcZSYowZhHNE147GeoV" width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
         <!-- AKHIR BOOSTER -->
       </section>
