@@ -80,7 +80,7 @@ if(isset($_POST["submit"])){
               <div class="card-body text-center px-4 py-5">
                 <h5 class="card-title">Tugas Video 21st Century Skill</h5>
                 <p class="card-text mt-3">Merupakan penugasan kelompok berupa pembuatan video pengaplikasian Arkamuda terhadap 21st Century Skill dalam menjadi sosok pemimpin ideal di abad 21 dengan melibatkan seluruh anggota kelompok dan dibuat semenarik mungkin. </p>
-                <a href="dashboard-nilai-kotik.php" role="button" class="btn btn-primary flex-grow-1 mt-2">Lihat Nilai</a> <br>          
+                <a href="dashboard-nilai-video.php" role="button" class="btn btn-primary flex-grow-1 mt-2">Lihat Nilai</a> <br>          
               </div>
             </div>
           </div>
@@ -90,7 +90,7 @@ if(isset($_POST["submit"])){
               <div class="card-body text-center px-4 py-5">
                 <h5 class="card-title">Tugas Review Audio</h5>
                 <p class="card-text mt-3">Merupakan penugasan individu berupa pengulasan secara lisan atas rangkaian Orasi 2021 pada hari pertama, kedua, dan ketiga. </p>
-                <a href="dashboard-nilai-kotik.php" role="button" class="btn btn-primary flex-grow-1 mt-2">Lihat Nilai</a> <br>
+                <a href="dashboard-nilai-audio.php" role="button" class="btn btn-primary flex-grow-1 mt-2">Lihat Nilai</a> <br>
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@ if(isset($_POST["submit"])){
               <div class="card-body text-center px-4 py-5">
                 <h5 class="card-title">Tugas Esai Kemahasiswaan</h5>
                 <p class="card-text mt-3">Merupakan penugasan individu berupa pembuatan esai mengenai peran Arkamuda sebagai mahasiswa serta keterkaitannya dengan Tri Dharma Perguruan Tinggi. </p>
-                <a href="dashboard-nilai-kotik.php" role="button" class="btn btn-primary flex-grow-1 mt-2">Lihat Nilai</a> <br>
+                <a href="dashboard-nilai-esai.php" role="button" class="btn btn-primary flex-grow-1 mt-2">Lihat Nilai</a> <br>
               </div>
             </div>
           </div>

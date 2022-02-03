@@ -9,9 +9,18 @@ wajib_login("login.php");
 $username_peserta = $_SESSION["login_peserta"];
 
 $database = query("SELECT * FROM peserta WHERE username_peserta = '$username_peserta'")[0];
+$kelompok = $database['kelompok'];
 
 $tugas1 = status_tugas("penugasan1", $username_peserta);
-$tugas2 = status_tugas("penugasan2", $username_peserta);
+$penugasan2 = query("SELECT * FROM penugasan2 WHERE kelompok = '$kelompok'");
+	
+if ($penugasan2 == []){
+  $tugas2 = 'Belum';
+}else{
+  $penugasan2 = query("SELECT nama_file FROM penugasan2 WHERE kelompok = '$kelompok'")[0];
+  $tugas2 = 'Sudah';
+}
+
 $tugas3 = status_tugas("penugasan3", $username_peserta);
 $tugas4 = status_tugas("penugasan4", $username_peserta);
 
@@ -27,7 +36,7 @@ $tugas4 = status_tugas("penugasan4", $username_peserta);
 
     <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <link rel="stylesheet" href="style2.css" />
+    <link rel="stylesheet" href="style3.css" />
 
     <!-- font -->
     <script src="https://kit.fontawesome.com/b249d00227.js" crossorigin="anonymous"></script>
@@ -110,10 +119,6 @@ $tugas4 = status_tugas("penugasan4", $username_peserta);
                 <tr>
                   <th scope="row">Tugas Esai Kemahasiswaan</th>
                   <td><?= $tugas4 ?></td>
-                </tr>
-                <tr>
-                  <th scope="row">Tugas Ke-FISIP-an & Keorganisasian</th>
-                  <td>Belum</td>
                 </tr>
               </tbody>
             </table>

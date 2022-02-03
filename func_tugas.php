@@ -42,7 +42,7 @@ function status_tugas($penugasan, $username_peserta){
 	if ($penugasan1 == []){
 		$tugas = 'Belum';
 	}else{
-		$penugasan1 = query("SELECT nama_file FROM penugasan1 WHERE username_peserta = '$username_peserta'")[0];
+		$penugasan1 = query("SELECT nama_file FROM $penugasan WHERE username_peserta = '$username_peserta'")[0];
 		$tugas = 'Sudah';
 	}
 	

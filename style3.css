@@ -337,3 +337,7 @@ footer {
 .sponsors img {
   height: 100%;
 }
+
+.hover-scale-up:hover {
+  transform: scale(1.03);
+}

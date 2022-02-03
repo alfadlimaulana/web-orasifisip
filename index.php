@@ -60,6 +60,7 @@ if(!isset($_SESSION["login_peserta"])){
             <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
             <a class="nav-link hide-link" href="absensi.php">Absensi</a>
             <a class="nav-link" href="kelompok.php">Info Kelompok</a>
+            <a class="nav-link" href="sponsors.php">Sponsors</a>
             <?php if(!isset($_SESSION["login_peserta"])) : ?>
             <a class="nav-link" href="login.php">Login</a>
             <?php endif; ?>
@@ -100,9 +101,9 @@ if(!isset($_SESSION["login_peserta"])){
     <!-- about us -->
     <div class="index-container container-fluid text-center">
       <div class="container about-us py-4 px-5 mt-5">
-        <img class="img-fluid my-4" src="img/Logo.svg" alt="logo" />
+        <img class="img-fluid my-4 hover-scale-up" src="img/Logo.svg" alt="logo" />
         <div class="row mb-2 justify-content-center">
-          <div class="col-8 col-md-6 col-lg-4">
+          <div class="col-8 col-md-6 col-lg-4 hover-scale-up">
             <img class="img-fluid" src="img/Website-Orasi-2021 1.svg" alt="Orasi 2021" data-aos="fade-up">
           </div>
         </div>
@@ -117,7 +118,7 @@ if(!isset($_SESSION["login_peserta"])){
           </div>
         </div>
         <div class="row justify-content-center mt-4 mb-2">
-          <div class="col-12 col-md-10 col-lg-8 p-0">
+          <div class="col-12 col-md-10 col-lg-8 p-0 hover-scale-up">
             <img class="img-fluid" src="img/Website-Empowering-Collaboration 1.svg" alt="EMPOWERING COLLABORATION" data-aos="fade-up">
           </div>
         </div>
@@ -144,52 +145,55 @@ if(!isset($_SESSION["login_peserta"])){
       <!-- Gallery -->
       <section id="gallery" class="container text-center bg-transparent p-4 mb-5" style="background-color: lightgrey">
         <div class="row justify-content-center">
-          <div class="col-10 col-md-8 col-lg-6">
+          <div class="col-10 col-md-8 col-lg-6 hover-scale-up">
             <img class="img-fluid" src="img/Website-Check-This-Out-2 1.svg" alt="Check This Out" data-aos="fade-up">
           </div>
         </div>
         <div class="row justify-content-center pt-3 g-4">
-          <div class="col-sm-6 col-lg-3 card-1">
+          <div class="hover-scale-up col-sm-6 col-lg-3 card-1">
             <div class="card card-gallery" data-aos="fade-up">
               <iframe src="https://www.youtube.com/embed/i3MJVR8NJ-w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <div class="card-body">
                 <h5 class="card-title">FISIPedia: Get to Know All About FISIP Unpad!</h5>
-                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#">Watch on Youtube</a> -->
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-lg-3">
+          <div class="hover-scale-up col-sm-6 col-lg-3">
             <div class="card card-gallery" data-aos="fade-up">
-              <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
+            <iframe src="https://www.youtube.com/embed/8kdDzb88ylc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <div class="card-body">
-                <h5 class="card-title">COMING SOON</h5>
-                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#">Watch on Youtube</a> -->
+                <h5 class="card-title">Satu FISIP Bangga (Jingle Orasi 2021) Music Video</h5>
               </div>
             </div>
           </div>
           <div class="col-sm-6 col-lg-3">
             <div class="card card-3 card-gallery" data-aos="fade-up">
-              <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
+            <iframe src="https://www.youtube.com/embed/Gu-01LJJW6o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <div class="card-body">
-                <h5 class="card-title">COMING SOON</h5>
-                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#">Watch on Youtube</a> -->
+                <h5 class="card-title">FISIP <br> Welcoming Ceremony</h5>
               </div>
             </div>
           </div>
           <div class="col-sm-6 col-lg-3">
             <div class="card card-3 card-gallery" data-aos="fade-up">
-              <img src="img/thumbnail website 1.svg" class="card-img-top" alt="coming soon" />
+            <iframe src="https://www.youtube.com/embed/j4R-61AYfXk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               <div class="card-body">
-                <h5 class="card-title">COMING SOON</h5>
-                <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#">Watch on Youtube</a> -->
+                <h5 class="card-title">Teaser <br> Orasi 2021</h5>
               </div>
             </div>
           </div>
         </div>
+        <!-- BOOSTER -->
+        <div class="row justify-content-center mt-4" data-aos="fade-up">
+        <iframe class="hover-scale-up" src="https://open.spotify.com/embed/episode/6LGo16oGK2C7nmLxFHzfo7" width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+        <div class="row justify-content-center mt-4" data-aos="fade-up">
+        <iframe class="hover-scale-up" src="https://open.spotify.com/embed/episode/4dYtmHfNQEksXRNYaZmIu9" width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+        <div class="row justify-content-center mt-4" data-aos="fade-up">
+        <iframe src="https://open.spotify.com/embed/episode/3owEcZSYowZhHNE147GeoV" width="100%" height="232" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        </div>
+        <!-- AKHIR BOOSTER -->
       </section>
     </div>
     <!-- akhir gallery -->

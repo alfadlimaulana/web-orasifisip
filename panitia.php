@@ -52,6 +52,7 @@ if(!isset($_SESSION["login_peserta"])){
               <a class="nav-link" href="absensi.php">Absensi</a>
             <?php endif; ?> 
             <a class="nav-link" href="kelompok.php">Info Kelompok</a>
+            <a class="nav-link" href="sponsors.php">Sponsors</a>
             <?php if(!isset($_SESSION["login_peserta"])) : ?>
               <a class="nav-link" href="index.php">Home</a>
               <a class="nav-link" href="login.php">Login</a>

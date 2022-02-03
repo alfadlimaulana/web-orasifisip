@@ -19,7 +19,7 @@ function query($query){
 
 //style
 function style_orasi(){
-	echo '<link rel="stylesheet" href="style2.css" />'; 
+	echo '<link rel="stylesheet" href="style3.css" />'; 
 }
 
 function registrasi_peserta($data){
@@ -55,6 +55,8 @@ function registrasi_peserta($data){
 
 	//enkripsi password
 	$password_peserta_enkripsi = password_hash($password_peserta, PASSWORD_DEFAULT);
+	var_dump($password_peserta_enkripsi);
+	die;
 
 	//insert petugas ke database
 	mysqli_query($conn, "INSERT INTO peserta VALUES
@@ -179,10 +181,10 @@ function absensi($data, $absen){
 
 function cari_tugas($tabel, $kata_kunci){
 	$query = "SELECT * FROM $tabel
-			  WHERE id_tugas LIKE '%$kata_kunci%' 
+			  WHERE id_tugas LIKE '$kata_kunci' 
 			  OR nama_peserta LIKE '%$kata_kunci%'
 			  OR kelompok LIKE '$kata_kunci'
-			  OR username_peserta LIKE '%$kata_kunci%'
+			  OR username_peserta LIKE '$kata_kunci'
 			  ";
 	return query($query);
 }

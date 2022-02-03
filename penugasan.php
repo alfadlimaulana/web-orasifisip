@@ -13,9 +13,15 @@ $settings = query("SELECT * FROM settings");
 
 $kelompok = $database['kelompok'];
 
-$tugas1 = status_tugas("penugasan1", $username_peserta);
-$penugasan2 = query("SELECT * FROM penugasan2 WHERE kelompok = '$kelompok'");
-	
+$penugasan1 = query("SELECT * FROM penugasan1 WHERE username_peserta = '$username_peserta'");	
+if ($penugasan1 == []){
+  $tugas1 = 'Belum';
+}else{
+  $penugasan1 = query("SELECT nama_file FROM penugasan1 WHERE username_peserta = '$username_peserta'")[0];
+  $tugas1 = 'Sudah';
+}
+
+$penugasan2 = query("SELECT * FROM penugasan2 WHERE kelompok = '$kelompok'");	
 if ($penugasan2 == []){
   $tugas2 = 'Belum';
 }else{
@@ -23,8 +29,21 @@ if ($penugasan2 == []){
   $tugas2 = 'Sudah';
 }
 
-$tugas3 = status_tugas("penugasan3", $username_peserta);
-$tugas4 = status_tugas("penugasan4", $username_peserta);
+$penugasan3 = query("SELECT * FROM penugasan3 WHERE username_peserta = '$username_peserta'");	
+if ($penugasan3 == []){
+  $tugas3 = 'Belum';
+}else{
+  $penugasan3 = query("SELECT nama_file FROM penugasan3 WHERE username_peserta = '$username_peserta'")[0];
+  $tugas3 = 'Sudah';
+}
+
+$penugasan4 = query("SELECT * FROM penugasan4 WHERE username_peserta = '$username_peserta'");	
+if ($penugasan4 == []){
+  $tugas4 = 'Belum';
+}else{
+  $penugasan4 = query("SELECT nama_file FROM penugasan4 WHERE username_peserta = '$username_peserta'")[0];
+  $tugas4 = 'Sudah';
+}
 
 
 
@@ -92,6 +111,7 @@ if(isset($_POST["submit4"])){
             <a class="nav-link hide-link" href="penugasan.php">Penugasan</a>
             <a class="nav-link hide-link" href="absensi.php">Absensi</a>
             <a class="nav-link hide-link" href="kelompok.php">Info Kelompok</a>
+            <a class="nav-link" href="sponsors.php">Sponsors</a>
             <?php if(!isset($_SESSION["login_peserta"])) : ?>
             <a class="nav-link" href="login.php">Login</a>
             <?php endif; ?> 
